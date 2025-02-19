@@ -1,9 +1,10 @@
-'use client'
-import { Extend } from "@/lib/ui/animation"
-import { motion } from "motion/react"
+"use client";
+import { Extend } from "@/lib/ui/animation";
 
 export default function Services() {
-  return <div>
-    <Extend></Extend>
-  </div>
+  return (
+    <div>
+      <Extend></Extend>
+    </div>
+  );
 }

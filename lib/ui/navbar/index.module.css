@@ -1,0 +1,32 @@
+.flex {
+  display: flex;
+}
+
+.justify_between {
+  justify-content: space-between;
+}
+
+.items_center {
+  align-items: center;
+}
+
+.gap_4 {
+  gap: 1rem;
+}
+
+.text_xl {
+  font-size: 18px;
+}
+
+.gap_8 {
+  gap: 2rem;
+}
+
+.padding_header {
+  padding: 1rem 2rem;
+}
+
+.font_family {
+  font-family: var(--courier-family);
+  font-weight: 800;
+}
