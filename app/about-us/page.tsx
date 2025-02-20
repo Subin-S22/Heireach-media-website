@@ -2,10 +2,29 @@
 
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import {motion} from 'motion/react'
+
+const extend = {
+  rest: {
+    opacity:0,
+    width: 200,
+  },
+  hover: {
+    opacity:1,
+    width: 300,
+  },
+};
+
+type Extend = 'hover' | 'rest';
+type Index = '0' | '1' | '2' | '3'
+
+type Content = `${Extend}-${Index}`
 
 export default function AboutUs() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [contentExtend, setExtend] = useState<
+  Content>('rest-0');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +41,16 @@ export default function AboutUs() {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const animateExtend = (type: Content, index:number)=>{
+    const [typeName, indexNumber] = type.split('-'); 
+    const num = Number(indexNumber);
+    if(num === index){
+      return typeName
+    }
+    return 'rest';
+
+  }
 
   return (
     <section id="about-us-section" className="relative bg-black text-white py-16 overflow-hidden">
@@ -84,6 +113,39 @@ export default function AboutUs() {
               </div>
               <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">{feature.title}</h3>
             </div>
+          ))}
+        </div>
+        <div className='flex flex-wrap'>
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              className={`relative flex flex-col items-center text-center cursor-pointer transition-all duration-300 ease-out ${
+                isVisible ? 'fade-in-up' : 'opacity-0 translate-y-10'
+              } ${hoveredIndex === index ? 'max-w-[350px]' : 'max-w-[300px]'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+              whileHover="hover"
+              initial= "rest"
+              onHoverStart={()=>{
+                setExtend(`hover-${index}` as Content)
+              }}
+              onHoverEnd={()=>setExtend(`rest-${index}` as Content)}
+              // onMouseEnter={() => setHoveredIndex(index)}
+              // onMouseLeave={() => setHoveredIndex(null)}
+            >
+              <div className="flex">
+              <motion.div className="relative w-[150px] h-[150px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0">
+                <Image src={feature.icon} alt={feature.title} layout="fill" objectFit="contain" />
+              </motion.div>
+              <motion.div
+              className='w-[200px]'
+              variants={extend}
+              animate={animateExtend(contentExtend, index)}
+              >
+                {feature.description}
+              </motion.div>
+              </div>
+              <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">{feature.title}</h3>
+            </motion.div>
           ))}
         </div>
       </div>
