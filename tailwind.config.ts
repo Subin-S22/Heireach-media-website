@@ -17,6 +17,7 @@ export default {
     },
     fontFamily: {
       courier: ["Courier Prime", "serif"],
+      amazingSlab: ["AmazingSlab", 'serif'],
     },
   },
   plugins: [],
