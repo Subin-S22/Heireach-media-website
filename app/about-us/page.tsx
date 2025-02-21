@@ -1,34 +1,43 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import {motion} from 'motion/react'
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion } from "motion/react";
 
 const extend = {
   rest: {
-    opacity:0,
-    width: 200,
+    opacity: 0,
+    x: 0,
+    width: 0,
   },
   hover: {
-    opacity:1,
-    width: 300,
+    opacity: 1,
+    x: -15,
+    width: 200,
+  },
+};
+const extendsImage = {
+  rest: {
+    x: 0,
+  },
+  hover: {
+    x: -10,
   },
 };
 
-type Extend = 'hover' | 'rest';
-type Index = '0' | '1' | '2' | '3'
+type Extend = "hover" | "rest";
+type Index = "0" | "1" | "2" | "3";
 
-type Content = `${Extend}-${Index}`
+type Content = `${Extend}-${Index}`;
 
 export default function AboutUs() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isVisible, setIsVisible] = useState(false);
-  const [contentExtend, setExtend] = useState<
-  Content>('rest-0');
+  const [contentExtend, setExtend] = useState<Content>("rest-0");
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById('about-us-section');
+      const section = document.getElementById("about-us-section");
       if (section) {
         const sectionTop = section.getBoundingClientRect().top;
         const isVisible = sectionTop < window.innerHeight - 100;
@@ -36,24 +45,26 @@ export default function AboutUs() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const animateExtend = (type: Content, index:number)=>{
-    const [typeName, indexNumber] = type.split('-'); 
+  const animateExtend = (type: Content, index: number) => {
+    const [typeName, indexNumber] = type.split("-");
     const num = Number(indexNumber);
-    if(num === index){
-      return typeName
+    if (num === index) {
+      return typeName;
     }
-    return 'rest';
-
-  }
+    return "rest";
+  };
 
   return (
-    <section id="about-us-section" className="relative bg-black text-white py-16 overflow-hidden">
+    <section
+      id="about-us-section"
+      className="relative bg-black text-white py-16 overflow-hidden"
+    >
       {/* Top Left Image */}
       <div className="absolute top-0 left-0 w-[150px] h-[200px] animate-slideInFromLeft">
         <Image
@@ -76,7 +87,7 @@ export default function AboutUs() {
       <div className="container mx-auto relative z-10">
         <h2
           className={`text-[32px] mx-auto max-w-[913px] font-amazingSlab font-bold text-blue-500 transition-opacity duration-700 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
           Why Choose Us?
@@ -84,10 +95,13 @@ export default function AboutUs() {
 
         <p
           className={`mt-4 text-lg font-amazingSlab max-w-[913px] leading-[22.5px] mx-auto transition-opacity duration-700 delay-150 ease-out ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          At Heireach Media, we don’t just execute marketing—we craft strategic, data-driven roadmaps that position your brand for long-term success & market dominance. We analyze, innovate & implement solutions that ensure brand stability, scalability & impact.
+          At Heireach Media, we don’t just execute marketing—we craft strategic,
+          data-driven roadmaps that position your brand for long-term success &
+          market dominance. We analyze, innovate & implement solutions that
+          ensure brand stability, scalability & impact.
         </p>
 
         <div className="mt-12 flex flex-wrap justify-center gap-[6rem] relative">
@@ -95,56 +109,74 @@ export default function AboutUs() {
             <div
               key={feature.title}
               className={`relative flex flex-col items-center text-center cursor-pointer transition-all duration-300 ease-out ${
-                isVisible ? 'fade-in-up' : 'opacity-0 translate-y-10'
-              } ${hoveredIndex === index ? 'max-w-[350px]' : 'max-w-[300px]'}`}
+                isVisible ? "fade-in-up" : "opacity-0 translate-y-10"
+              } ${hoveredIndex === index ? "max-w-[350px]" : "max-w-[300px]"}`}
               style={{ transitionDelay: `${index * 150}ms` }}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="relative w-[150px] h-[150px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0">
-                <Image src={feature.icon} alt={feature.title} layout="fill" objectFit="contain" />
+                <Image
+                  src={feature.icon}
+                  alt={feature.title}
+                  layout="fill"
+                  objectFit="contain"
+                />
               </div>
               <div
                 className={`absolute left-[150px] top-0 h-[150px] bg-blue-600 text-white text-sm p-4 rounded-r-lg shadow-lg transition-all duration-300 ease-in-out ${
-                  hoveredIndex === index ? 'w-[300px] opacity-100' : 'w-0 opacity-0'
+                  hoveredIndex === index
+                    ? "w-[300px] opacity-100"
+                    : "w-0 opacity-0"
                 }`}
               >
                 {feature.description}
               </div>
-              <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">{feature.title}</h3>
+              <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">
+                {feature.title}
+              </h3>
             </div>
           ))}
         </div>
-        <div className='flex flex-wrap'>
+        <div className="flex flex-wrap gap-2 justify-center items-center">
           {features.map((feature, index) => (
             <motion.div
+              className="basis-[90%] md:basis-[40%] xl:basis-[20%]"
               key={feature.title}
-              className={`relative flex flex-col items-center text-center cursor-pointer transition-all duration-300 ease-out ${
-                isVisible ? 'fade-in-up' : 'opacity-0 translate-y-10'
-              } ${hoveredIndex === index ? 'max-w-[350px]' : 'max-w-[300px]'}`}
               style={{ transitionDelay: `${index * 150}ms` }}
               whileHover="hover"
-              initial= "rest"
-              onHoverStart={()=>{
-                setExtend(`hover-${index}` as Content)
+              initial="rest"
+              onHoverStart={() => {
+                setExtend(`hover-${index}` as Content);
               }}
-              onHoverEnd={()=>setExtend(`rest-${index}` as Content)}
+              onHoverEnd={() => setExtend(`rest-${index}` as Content)}
               // onMouseEnter={() => setHoveredIndex(index)}
               // onMouseLeave={() => setHoveredIndex(null)}
             >
               <div className="flex">
-              <motion.div className="relative w-[150px] h-[150px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0">
-                <Image src={feature.icon} alt={feature.title} layout="fill" objectFit="contain" />
-              </motion.div>
-              <motion.div
-              className='w-[200px]'
-              variants={extend}
-              animate={animateExtend(contentExtend, index)}
-              >
-                {feature.description}
-              </motion.div>
+                <motion.div
+                  variants={extendsImage}
+                  animate={animateExtend(contentExtend, index)}
+                  className="relative w-[150px] h-[150px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
+                >
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </motion.div>
+                <motion.div
+                  className="w-[200px] h-[150px] bg-blue-500 rounded-r-md rounded-b-md text-sm p-4 z-[1]"
+                  variants={extend}
+                  animate={animateExtend(contentExtend, index)}
+                >
+                  {feature.description}
+                </motion.div>
               </div>
-              <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">{feature.title}</h3>
+              <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">
+                {feature.title}
+              </h3>
             </motion.div>
           ))}
         </div>
@@ -153,45 +185,39 @@ export default function AboutUs() {
   );
 }
 const features = [
-
   {
+    title: "Creative Expertise",
 
-  title: 'Creative Expertise',
+    icon: "/images/Creative-Expertise.svg",
 
- icon: '/images/Creative-Expertise.svg',
-
- description: 'Innovative solutions tailored to captivate your audience and set your brand apart.'
-
+    description:
+      "Innovative solutions tailored to captivate your audience and set your brand apart.",
   },
 
   {
+    title: "Client Focused",
 
-  title: 'Client Focused',
+    icon: "/images/Client-Focused.svg",
 
-  icon: '/images/Client-Focused.svg',
-
-  description: 'We prioritize your needs and work collaboratively to achieve your goals.'
-
+    description:
+      "We prioritize your needs and work collaboratively to achieve your goals.",
   },
 
   {
+    title: "Proven Results",
 
-  title: 'Proven Results',
+    icon: "/images/Proven-Result.svg",
 
-  icon: '/images/Proven-Result.svg',
-
-  description: 'With a track record of High-Performance Campaigns & Measurable Success, we ensure Brand Visibility, Engagement & Tangible ROI.'
-
+    description:
+      "With a track record of High-Performance Campaigns & Measurable Success, we ensure Brand Visibility, Engagement & Tangible ROI.",
   },
 
   {
+    title: "One Stop-Shop",
 
-  title: 'One Stop-Shop',
+    icon: "/images/One-stop-shop.svg",
 
-  icon: '/images/One-stop-shop.svg',
-
-  description: 'Comprehensive marketing services under one roof to streamline your brand growth.'
-
+    description:
+      "Comprehensive marketing services under one roof to streamline your brand growth.",
   },
-
 ];
