@@ -27,56 +27,76 @@ export default function AboutUs() {
 
   return (
     <section>
-      <section id="about-us-section">
+      <section id="about-us-section" className='bg-black font-amazingSlab pb-20 px-10'>
           {/* About HEIREACH MEDIA */}
-        <div className="mb-12">
-          <h1 className="text-3xl font-bold">About <span className="text-blue-500">HEIREACH MEDIA</span></h1>
-          <h2 className="text-2xl font-bold text-blue-500 mt-2">Highlighting Brands That Matter</h2>
-          <p className="mt-4 max-w-3xl">
-            At <span className="font-bold">Heireach Media</span>, we don’t just create designs—we craft experiences that leave a lasting impact. Born from a passion for storytelling and innovation, our creative agency is dedicated to elevating brands that matter. Whether it’s building a compelling visual identity, crafting engaging digital experiences, or producing captivating content, we make sure your brand stands out in a crowded marketplace.
+        <div className="mb-12 pt-20 px-20 xs:px-0">
+          <h1 className="text-2xl text-white mx-auto  font-amazingSlab font-bold">About <span className="text-blue-500">HEIREACH MEDIA</span></h1>
+          <h2 className="text-2xl font-bold mx-auto xs:text-xl font-amazingSlab text-blue-500 mt-2">Highlighting Brands That Matter</h2>
+          <p className="mt-4 mx-auto font-amazingSlab text-white xs:text-xs xs:text-justify">
+            At <span className="font-bold ">Heireach Media</span>, we don’t just create designs—we craft experiences that leave a lasting impact. Born from a passion for storytelling and innovation, our creative agency is dedicated to elevating brands that matter. Whether it’s building a compelling visual identity, crafting engaging digital experiences, or producing captivating content, we make sure your brand stands out in a crowded marketplace.
           </p>
         </div>
 
         {/* Our Vision & Mission */}
-        <h3 className="text-3xl text-blue-500 font-bold mb-6">Our Vision & Mission</h3>
-        <div className="bg-[#1a1a1a] p-8 rounded-lg flex flex-col md:flex-row gap-8 relative">
-          {/* Vision Section */}
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <Image src="/icons/vision-icon.svg" alt="Vision Icon" width={24} height={24} />
-              <h4 className="text-blue-500 font-bold">Vision</h4>
-            </div>
-            <h5 className="font-bold">Shaping the Future of Brands</h5>
-            <p className="text-gray-300 mt-2">
-              To be the driving force behind brands that inspire, innovate, and influence. We believe in creativity that not only looks good but also works effectively, delivering real value to businesses.
-            </p>
+        <div className="bg-[#0f0f0f] relative text-white pb-10 px-6 md:px-16">
+      <div className="grid relative md:grid-cols-3 gap-8 items-center text-center md:text-left">
+        {/* Vision Section */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-center xs:pt-3 md:justify-start space-x-2">
+            <h2 className="text-xl font-bold text-blue-500">Vision</h2>
+            <Image src="/images/vision-icon.svg" className='md:top-[-4%] md:left-[5%] xs:top-[-2%] xs:right-[16%] absolute ' alt="Vision Icon" width={70} height={70} />
           </div>
-
-          {/* Mission Section */}
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <Image src="/icons/mission-icon.svg" alt="Mission Icon" width={24} height={24} />
-              <h4 className="text-blue-500 font-bold">Mission</h4>
-            </div>
-            <h5 className="font-bold">Turning Ideas into Iconic Brands</h5>
-            <p className="text-gray-300 mt-2">
-              We exist to transform ideas into powerful brand stories. By blending strategy, design, and cutting-edge technology, we empower businesses to connect with their audience on a deeper level.
-            </p>
-          </div>
+          <h3 className="font-bold text-lg">Shaping the Future of Brands</h3>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            To be the driving force behind brands that inspire, innovate, and influence. We believe in creativity that
+            not only looks good but also works effectively, delivering real value to businesses.
+          </p>
+          <hr className="border-gray-600 w-full mx-auto" />
         </div>
+
+        {/* Center Quote Icon */}
+        <div className="flex justify-center items-center">
+          <Image src="/images/layer-seperator.svg" alt="Quote Icon" width={140} height={140} />
+        </div>
+        <div className="md:hidden lg:hidden xs:block">
+          <hr className="border-gray-600 w-full mx-auto" />
+        </div>
+        {/* Mission Section */}
+        <div className="space-y-4">
+          <div className="flex items-center justify-center md:justify-end space-x-2">
+          <Image src="/images/mission-icon.svg" className='md:top-[-4%] md:right-[5%] xs:top-[-2%] xs:left-[10%] xs:static md:absolute' alt="Mission Icon" width={70} height={70} />
+
+            <h2 className="text-xl font-bold text-blue-500">Mission</h2>
+          </div>
+          <h3 className="font-bold text-lg">Turning Ideas into Iconic Brands</h3>
+          <p className="text-gray-300 text-sm leading-relaxed">
+            We exist to transform ideas into powerful brand stories. By blending strategy, design, and cutting-edge
+            technology, we empower businesses to connect with their audience on a deeper level.
+          </p>
+          <hr className="border-gray-600 w-full mx-auto" />
+        </div>
+      </div>
+
+      {/* What We Do Best Section */}
+      <div className="text-center mt-10">
+        <h2 className="text-xl font-bold text-blue-500">What We Do Best?</h2>
+        <div className="grid md:grid-cols-2 gap-4 text-gray-300 text-sm mt-4">
+          <ul className="space-y-2">
+            <li>• Branding & Identity</li>
+            <li>• UI/UX & Web Design</li>
+            <li>• AI-Powered Solutions</li>
+          </ul>
+          <ul className="space-y-2">
+            <li>• Social Media & Marketing</li>
+            <li>• Creative Content</li>
+            <li>• Video Production</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
         {/* What We Do Best */}
-        <div className="mt-8 text-center">
-          <h4 className="text-xl font-bold text-blue-500">What We Do Best?</h4>
-          <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-gray-300">
-            <p>&bull; Branding & Identity</p>
-            <p>&bull; Social Media & Marketing</p>
-            <p>&bull; UI/UX & Web Design</p>
-            <p>&bull; Creative Content</p>
-            <p>&bull; AI-Powered Solutions</p>
-            <p>&bull; Video Production</p>
-          </div>
-        </div>
+        
 
       </section>
       <section id="why-choose-us-section" className="relative bg-black text-white py-16 overflow-hidden">
@@ -153,10 +173,21 @@ export default function AboutUs() {
         </p>
         <div className="flex flex-wrap gap-[5rem] justify-center">
           {brands.map((brand, index) => (
-            <div className='flex-[0_0_calc(21%-20px)] xs:flex-[0_0_calc(35%-20px)] flex justify-center items-center' onMouseEnter={() => setHoveredBrandIndex(index)}
-            onMouseLeave={() => setHoveredBrandIndex(null)} key={brand.title}> 
-              <img className="h-[90px] object-contain w-full" src={ hoveredBrandIndex === index ? brand.icon : brand.iconshaded} alt={brand.title}/>
+           <div
+            className="flex-[0_0_calc(21%-20px)] xs:flex-[0_0_calc(35%-20px)] flex justify-center items-center"
+            onMouseEnter={() => setHoveredBrandIndex(index)}
+            onMouseLeave={() => setHoveredBrandIndex(null)}
+            key={brand.title}
+           >
+            <div className="relative h-[90px] w-full">
+              <Image
+                src={hoveredBrandIndex === index ? brand.icon : brand.iconshaded}
+                alt={brand.title}
+                fill
+                style={{ objectFit: "contain" }}
+              />
             </div>
+          </div>
           ))}
         </div>
 
