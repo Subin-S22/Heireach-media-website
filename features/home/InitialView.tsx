@@ -25,13 +25,13 @@ function TopRightLogo() {
 function BigText() {
   return (
     <div
-      className="font-courier text-[80px] md:text-[200px] font-bold text-center tracking-tighter 
-    flex justify-center items-center flex-col"
+      className="font-courier text-[80px] md:text-[200px] font-bold text-center 
+    flex justify-center items-center flex-col tracking-wide"
     >
       <span>HEIREACH</span>
       <span
         className="font-courier text-2xl md:text-[100px] font-semibold text-center -translate-y-8
-       tracking-[1rem]"
+       tracking-[4rem]"
       >
         Media
       </span>
