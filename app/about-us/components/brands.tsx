@@ -1,23 +1,23 @@
 "use client"
 import {useState } from 'react';
-
+import { motion } from 'motion/react';
 import Image from "next/image"
-export default function AboutUsBrandsWeWorked(){
+export default function Brands(){
     const [hoveredBrandIndex, setHoveredBrandIndex] = useState<number | null>(null);
     return(
         <section className="bg-black text-white py-12">
             <div className="container mx-auto">
-                <h2 className="text-[32px] mx-auto max-w-[913px] font-amazingSlab font-bold text-blue-500 mb-4 xs:text-center md:text-center lg:text-left">Brands That Matter</h2>
-                <p className="mb-8 mt-4 mx-auto max-w-[913px] text-lg xs:text-center md:text-center lg:text-left text-gray-300 font-amazingSlab">
+                <h2 className="text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto max-w-[913px] font-amazingSlab font-bold text-blue-500 mb-4 xs:text-center md:text-center lg:text-left">Brands That Matter</h2>
+                <p className="mb-8 mt-4 mx-auto md:mx-[3rem] lg:mx-[auto] max-w-[913px] text-lg xs:text-center md:text-center lg:text-left text-gray-300 font-amazingSlab">
                     We’re proud to have partnered with clients across all the industries. Delivering impactful results for startups, SMEs,
                     and global enterprises. Our collaborative projects have spanned
                 </p>
                 <div className="flex flex-wrap gap-[5rem] justify-center">
                     {brands.map((brand, index) => (
-                    <div
+                    <motion.div
                     className="flex-[0_0_calc(21%-20px)] xs:flex-[0_0_calc(35%-20px)] flex justify-center items-center"
-                    onMouseEnter={() => setHoveredBrandIndex(index)}
-                    onMouseLeave={() => setHoveredBrandIndex(null)}
+                    onHoverStart={() => setHoveredBrandIndex(index)}
+                    onHoverEnd={() => setHoveredBrandIndex(null)}
                     key={brand.title}
                     >
                     <div className="relative h-[90px] w-full">
@@ -28,7 +28,7 @@ export default function AboutUsBrandsWeWorked(){
                         style={{ objectFit: "contain" }}
                         />
                     </div>
-                    </div>
+                    </motion.div>
                     ))}
                 </div>
         

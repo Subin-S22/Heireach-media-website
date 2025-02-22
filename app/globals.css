@@ -44,38 +44,3 @@ body {
   font-style: italic;
 }
 
-@keyframes slideInFromLeft {
-  from {
-    transform: translateX(-100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideInFromRight {
-  from {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-.animate-slideInFromLeft {
-  animation: slideInFromLeft 1.5s ease-out forwards;
-}
-
-.animate-slideInFromRight {
-  animation: slideInFromRight 1.5s ease-out forwards;
-}
-
-.fade-in-up {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-}

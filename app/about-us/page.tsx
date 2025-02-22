@@ -1,15 +1,15 @@
 "use client"
 
-import AboutUsDescription from './components/about-us-description';
-import AboutUsChooseUs from './components/about-us-why-choosen-us';
-import AboutUsBrandsWeWorked from './components/about-us-brands';
+import Description from './components/description';
+import WhyChooseUs from './components/why-choosen-us';
+import Brands from './components/brands';
 export default function AboutUs() {
 
   return (
-    <section>
-      <AboutUsDescription/>
-      <AboutUsChooseUs/>
-      <AboutUsBrandsWeWorked/>
+    <section className='bg-back'>
+      <Description/>
+      <WhyChooseUs/>
+      <Brands/>
   </section>
   
 
