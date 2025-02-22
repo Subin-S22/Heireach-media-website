@@ -9,7 +9,7 @@ export default function Brands(){
             <div className="container mx-auto">
                 <h2 className="text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto max-w-[913px] font-amazingSlab font-bold text-blue-500 mb-4 xs:text-center md:text-center lg:text-left">Brands That Matter</h2>
                 <p className="mb-8 mt-4 mx-auto md:mx-[3rem] lg:mx-[auto] max-w-[913px] text-lg xs:text-center md:text-center lg:text-left text-gray-300 font-amazingSlab">
-                    We’re proud to have partnered with clients across all the industries. Delivering impactful results for startups, SMEs,
+                    We're proud to have partnered with clients across all the industries. Delivering impactful results for startups, SMEs,
                     and global enterprises. Our collaborative projects have spanned
                 </p>
                 <div className="flex flex-wrap gap-[5rem] justify-center">
