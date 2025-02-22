@@ -10,6 +10,9 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+          'xs': { min: '380px', max: '639px' }, // Range: 480px - 639px
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -17,6 +20,7 @@ export default {
     },
     fontFamily: {
       courier: ["Courier Prime", "serif"],
+      amazingSlab: ["AmazingSlab", 'serif'],
     },
   },
   plugins: [],
