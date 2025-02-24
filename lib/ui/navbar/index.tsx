@@ -34,7 +34,7 @@ export default function Navbar() {
       //   style.items_center,
       //   style.padding_header
       // )}
-      className="flex justify-between items-center px-8 py-4"
+      className="flex justify-between items-center px-8 py-4 sticky top-0 bg-[#0a0a0a] z-50"
     >
       <div className={classnames(style.flex, style.gap_4)}>
         <Image src="/images/logo.svg" alt="logo" width={40} height={40} />
@@ -45,11 +45,11 @@ export default function Navbar() {
           height={100}
         /> */}
         <div className="leading-0">
-          <div className="font-courier font-extrabold text-xl md:text-3xl text-white whitespace-nowrap">
+          <div className="font-amazingSlab font-extrabold text-xl md:text-3xl text-white whitespace-nowrap">
             HEIREACH MEDIA
           </div>
           <div
-            className="font-courier font-normal text-[6px] md:text-[8px] text-white whitespace-nowrap
+            className="font-amazingSlab font-normal text-[6px] md:text-[8px] text-white whitespace-nowrap
            text-right -translate-y-2"
           >
             Highlighting Brands That Matter

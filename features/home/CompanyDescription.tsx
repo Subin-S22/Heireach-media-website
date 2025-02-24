@@ -26,7 +26,7 @@ export default function CompanyDescription() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className="relative">
+    <div className="relative font-amazingSlab">
       <CustomSection sectionId="company-description-side-section">
         <motion.div
           initial={{ opacity: 0 }}
@@ -43,7 +43,7 @@ export default function CompanyDescription() {
               <div
                 className={classnames(
                   style.h1,
-                  "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap ps-4",
+                  "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap ps-4"
                 )}
               >
                 HEIREACH MEDIA
@@ -51,16 +51,24 @@ export default function CompanyDescription() {
             </div>
 
             <div
-              className={classnames(style.h2, "flex text-[var(--bg-blue-200)]")}
+              className={classnames(
+                style.h2,
+                "flex text-[var(--bg-blue-200)] text-2xl"
+              )}
             >
-              WE DON’T JUST MARKET BRANDS - WE BRING THEIR STORIES TO LIFE
+              WE DON&apos;T JUST MARKET BRANDS - WE BRING THEIR STORIES TO LIFE
             </div>
 
-            <div className={classnames(style.h5, "text-[var(--bg-grey-100)]")}>
+            <div
+              className={classnames(
+                style.h5,
+                "text-[var(--bg-grey-100)] text-base"
+              )}
+            >
               Our mission is simple yet powerful
             </div>
 
-            <div className={classnames(style.h4, "text-white")}>
+            <div className={classnames(style.h4, "text-white text-base")}>
               To craft innovative, customized solutions that align with your
               goals and position your brand at the forefront of the market. With
               a team of creative visionaries, state-of-the-art tools, and an
@@ -69,19 +77,23 @@ export default function CompanyDescription() {
 
             <div className="w-full h-[auto]">
               <div
-                className={classnames(style.h2, "text-[var(--bg-blue-100)]")}
+                className={classnames(
+                  style.h2,
+                  "text-[var(--bg-blue-100)] text-base mb-2"
+                )}
               >
                 We ensure your brand not only stands out but shines.
               </div>
             </div>
 
-            <div className={classnames(style.h4, "text-white")}>
+            <div className={classnames(style.h4, "text-white text-base")}>
               We believe every brand has a unique story to tell, & our job is to
               amplify it in a way that captivates and inspires. By combining
               creativity with strategy, we turn challenges into opportunities
               and ideas into impactful campaigns that deliver results. Whether
-              you’re looking to redefine your identity or expand your market
-              reach, we’re here to make it happen with passion and precision.
+              you&apos;re looking to redefine your identity or expand your
+              market reach, we&apos;re here to make it happen with passion and
+              precision.
             </div>
           </div>
         </motion.div>
