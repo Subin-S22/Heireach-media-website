@@ -14,10 +14,10 @@ const extend = {
     opacity: 1,
     x: -15,
   },
-  exit:{
+  exit: {
     opacity: 0,
-    x:-100,
-  }
+    x: -100,
+  },
 };
 const extendsImage = {
   rest: {
@@ -66,7 +66,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="about-us-section"
-      className="relative bg-black text-white py-16 overflow-hidden"
+      className="relative bg-[#0a0a0a] text-white py-16 overflow-hidden"
     >
       {/* Top Left Image */}
       <motion.div
@@ -130,9 +130,9 @@ export default function WhyChooseUs() {
 
         <div className="mt-12 flex flex-wrap xs:flex-col gap-7 justify-center items-center">
           {features.map((feature, index) => (
-            <AnimatePresence mode="popLayout">
+            <AnimatePresence mode="popLayout" key={feature.title}>
               <motion.div
-                className={`flex flex-col items-center ${
+                className={`flex flex-col sm:basis-1/3 xl:basis-1/5 items-center ${
                   isVisible
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-10"
@@ -149,10 +149,10 @@ export default function WhyChooseUs() {
               >
                 <div className="flex">
                   <motion.div
-                  layout
+                    layout
                     variants={extendsImage}
                     animate={animateExtend(contentExtend, index)}
-                    className="relative w-[150px] h-[150px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
+                    className="relative w-[120px] h-[120px] lg:w-[140px] lg:h-[140px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
                   >
                     <Image
                       src={feature.icon}
@@ -162,12 +162,12 @@ export default function WhyChooseUs() {
                     />
                   </motion.div>
                   <motion.div
-                    className={`w-[300px] h-[150px] flex items-center bg-blue-500 text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
+                    className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] flex items-center bg-blue-500 text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
                       contentExtend === `hover-${index}` ? "block" : "hidden"
                     }`}
                     variants={extend}
                     animate={animateExtend(contentExtend, index)}
-                    exit={{ opacity: 0, x: -200, scale:0 }}
+                    exit={{ opacity: 0, x: -200, scale: 0 }}
                   >
                     {feature.description}
                   </motion.div>

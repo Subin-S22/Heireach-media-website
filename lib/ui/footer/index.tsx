@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const personalDetails = [
   { info: "grow@heireachmedia.com", href: "" },
@@ -69,8 +69,12 @@ const redirects = [
     href: "/lets-connect",
   },
 ];
+interface TypeProps {
+  children: React.ReactNode;
+  href: string;
+}
 
-const Typeography = ({ children, href }) => {
+const Typeography = ({ children, href }: TypeProps) => {
   return (
     <Link href={href} className={classnames(style.font_family, "block")}>
       {children}
@@ -82,7 +86,7 @@ const PlaneBox = () => {
     <div
       className={classnames(
         style.bg_white_100,
-        "w-full sm:w-[150px] md:w-[150px] lg:w-[200px] h-[100px] sm:h-[150px] md:h-[150px] lg:h-[200px]",
+        "w-full sm:w-[150px] md:w-[150px] lg:w-[200px] h-[100px] sm:h-[150px] md:h-[150px] lg:h-[200px]"
       )}
     />
   );
