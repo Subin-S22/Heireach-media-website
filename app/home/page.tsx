@@ -1,4 +1,4 @@
-// import CompanyDescription from "@/features/home/CompanyDescription";
+import CompanyDescription from "@/features/home/CompanyDescription";
 import InitialView from "@/features/home/InitialView";
 import WhyChooseUs from "../about-us/components/why-choosen-us";
 import OurWorks from "./components/our-works";
@@ -9,7 +9,7 @@ export default function Home() {
       <main className="">
         <InitialView />
         {/* <Space className="w-full h-4" /> */}
-        {/* <CompanyDescription /> */}
+        <CompanyDescription />
         <OurWorks />
         <WhyChooseUs />
       </main>
