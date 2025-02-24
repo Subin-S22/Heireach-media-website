@@ -25,28 +25,6 @@ const ternsAndConditions = [
   },
 ];
 
-const socials = [
-  {
-    name: "linkedin.svg",
-    href: "/",
-  },
-  {
-    name: "youtube.svg",
-    href: "/",
-  },
-  {
-    name: "Vector.svg",
-    href: "/",
-  },
-  {
-    name: "facebook.svg",
-    href: "/",
-  },
-  {
-    name: "whatsapp.svg",
-    href: "/",
-  },
-];
 const redirects = [
   {
     name: "Home",

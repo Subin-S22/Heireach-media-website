@@ -2,9 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export default function CustomSection({ children }) {
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function CustomSection({ children }: Props) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
@@ -122,61 +122,63 @@ export default function WhyChooseUs() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          At Heireach Media, we don't just execute marketing—we craft strategic,
-          data-driven roadmaps that position your brand for long-term success &
-          market dominance. We analyze, innovate & implement solutions that
-          ensure brand stability, scalability & impact.
+          At Heireach Media, we don&apos;t just execute marketing—we craft
+          strategic, data-driven roadmaps that position your brand for long-term
+          success & market dominance. We analyze, innovate & implement solutions
+          that ensure brand stability, scalability & impact.
         </p>
 
         <div className="mt-12 flex flex-wrap xs:flex-col gap-7 justify-center items-center">
           {features.map((feature, index) => (
-            <AnimatePresence mode="popLayout" key={feature.title}>
-              <motion.div
-                className={`flex flex-col sm:basis-1/3 xl:basis-1/5 items-center ${
-                  isVisible
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 translate-y-10"
-                }`}
-                key={feature.title}
-                style={{ transitionDelay: `${index * 150}ms` }}
-                whileHover="hover"
-                transition={{ duration: 1.5, ease: "easeInOut" }}
-                initial="rest"
-                onHoverStart={() => {
-                  setExtend(`hover-${index}` as Content);
-                }}
-                onHoverEnd={() => setExtend(`rest-${index}` as Content)}
-              >
-                <div className="flex">
-                  <motion.div
-                    layout
-                    variants={extendsImage}
-                    animate={animateExtend(contentExtend, index)}
-                    className="relative w-[120px] h-[120px] lg:w-[140px] lg:h-[140px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
-                  >
-                    <Image
-                      src={feature.icon}
-                      alt={feature.title}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </motion.div>
-                  <motion.div
-                    className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] flex items-center bg-blue-500 text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
-                      contentExtend === `hover-${index}` ? "block" : "hidden"
-                    }`}
-                    variants={extend}
-                    animate={animateExtend(contentExtend, index)}
-                    exit={{ opacity: 0, x: -200, scale: 0 }}
-                  >
-                    {feature.description}
-                  </motion.div>
-                </div>
-                <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">
-                  {feature.title}
-                </h3>
-              </motion.div>
-            </AnimatePresence>
+            <Fragment key={feature.title}>
+              <AnimatePresence mode="popLayout">
+                <motion.div
+                  className={`flex flex-col sm:basis-1/3 xl:basis-1/5 items-center ${
+                    isVisible
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-10"
+                  }`}
+                  key={feature.title}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                  whileHover="hover"
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  initial="rest"
+                  onHoverStart={() => {
+                    setExtend(`hover-${index}` as Content);
+                  }}
+                  onHoverEnd={() => setExtend(`rest-${index}` as Content)}
+                >
+                  <div className="flex">
+                    <motion.div
+                      layout
+                      variants={extendsImage}
+                      animate={animateExtend(contentExtend, index)}
+                      className="relative w-[120px] h-[120px] lg:w-[140px] lg:h-[140px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
+                    >
+                      <Image
+                        src={feature.icon}
+                        alt={feature.title}
+                        layout="fill"
+                        objectFit="contain"
+                      />
+                    </motion.div>
+                    <motion.div
+                      className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] flex items-center bg-blue-500 text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
+                        contentExtend === `hover-${index}` ? "block" : "hidden"
+                      }`}
+                      variants={extend}
+                      animate={animateExtend(contentExtend, index)}
+                      exit={{ opacity: 0, x: -200, scale: 0 }}
+                    >
+                      {feature.description}
+                    </motion.div>
+                  </div>
+                  <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">
+                    {feature.title}
+                  </h3>
+                </motion.div>
+              </AnimatePresence>
+            </Fragment>
           ))}
         </div>
       </div>
