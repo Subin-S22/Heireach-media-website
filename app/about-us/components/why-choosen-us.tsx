@@ -3,18 +3,21 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { AnimatePresence } from "motion/react";
 
 const extend = {
   rest: {
     opacity: 0,
-    x: 0,
-    width: 0,
+    x: 200,
   },
   hover: {
     opacity: 1,
     x: -15,
-    width: 300,
   },
+  exit:{
+    opacity: 0,
+    x:-100,
+  }
 };
 const extendsImage = {
   rest: {
@@ -39,7 +42,8 @@ export default function WhyChooseUs() {
       const section = document.getElementById("about-us-section");
       if (section) {
         const rect = section.getBoundingClientRect();
-        const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+        const isVisible =
+          rect.top < window.innerHeight - 100 && rect.bottom > 100;
         setIsVisible(isVisible);
       }
     };
@@ -65,7 +69,7 @@ export default function WhyChooseUs() {
       className="relative bg-black text-white py-16 overflow-hidden"
     >
       {/* Top Left Image */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-0 w-[150px] h-[200px]"
         initial={{ x: -100, opacity: 0 }}
         animate={isVisible ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
@@ -80,10 +84,21 @@ export default function WhyChooseUs() {
       </motion.div>
 
       {/* Bottom Right Image */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 right-0 w-[150px] h-[200px]"
         initial={{ x: 100, opacity: 0 }}
-        animate={isVisible ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
+        animate={
+          isVisible
+            ? {
+                x: 0,
+                opacity: 1,
+                transition: {
+                  duration: 1,
+                  ease: "easeInOut",
+                },
+              }
+            : { x: 100, opacity: 0 }
+        }
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <Image
@@ -107,7 +122,7 @@ export default function WhyChooseUs() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          At Heireach Media, we don’t just execute marketing—we craft strategic,
+          At Heireach Media, we don't just execute marketing—we craft strategic,
           data-driven roadmaps that position your brand for long-term success &
           market dominance. We analyze, innovate & implement solutions that
           ensure brand stability, scalability & impact.
@@ -115,43 +130,53 @@ export default function WhyChooseUs() {
 
         <div className="mt-12 flex flex-wrap xs:flex-col gap-7 justify-center items-center">
           {features.map((feature, index) => (
-            <motion.div
-            
-              className={`flex flex-col items-center ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-              key={feature.title}
-              style={{ transitionDelay: `${index * 150}ms` }}
-              whileHover="hover"
-              initial="rest"
-              onHoverStart={() => {
-                setExtend(`hover-${index}` as Content);
-              }}
-              onHoverEnd={() => setExtend(`rest-${index}` as Content)}
-            >
-              <div className="flex">
-                <motion.div
-                  variants={extendsImage}
-                  animate={animateExtend(contentExtend, index)}
-                  className="relative w-[150px] h-[150px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
-                >
-                  <Image
-                    src={feature.icon}
-                    alt={feature.title}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </motion.div>
-                <motion.div
-                  className={`w-[300px] h-[150px] flex items-center bg-blue-500 text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${contentExtend === `hover-${index}` ? "block" : "hidden"}`}
-                  variants={extend}
-                  animate={animateExtend(contentExtend, index)}
-                >
-                  {feature.description}
-                </motion.div>
-              </div>
-              <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">
-                {feature.title}
-              </h3>
-            </motion.div>
+            <AnimatePresence mode="popLayout">
+              <motion.div
+                className={`flex flex-col items-center ${
+                  isVisible
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+                key={feature.title}
+                style={{ transitionDelay: `${index * 150}ms` }}
+                whileHover="hover"
+                transition={{ duration: 1.5, ease: "easeInOut" }}
+                initial="rest"
+                onHoverStart={() => {
+                  setExtend(`hover-${index}` as Content);
+                }}
+                onHoverEnd={() => setExtend(`rest-${index}` as Content)}
+              >
+                <div className="flex">
+                  <motion.div
+                  layout
+                    variants={extendsImage}
+                    animate={animateExtend(contentExtend, index)}
+                    className="relative w-[150px] h-[150px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
+                  >
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </motion.div>
+                  <motion.div
+                    className={`w-[300px] h-[150px] flex items-center bg-blue-500 text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
+                      contentExtend === `hover-${index}` ? "block" : "hidden"
+                    }`}
+                    variants={extend}
+                    animate={animateExtend(contentExtend, index)}
+                    exit={{ opacity: 0, x: -200, scale:0 }}
+                  >
+                    {feature.description}
+                  </motion.div>
+                </div>
+                <h3 className="font-bold font-amazingSlab leading-[25px] text-xl">
+                  {feature.title}
+                </h3>
+              </motion.div>
+            </AnimatePresence>
           ))}
         </div>
       </div>
