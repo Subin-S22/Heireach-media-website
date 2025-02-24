@@ -48,7 +48,10 @@ export default function Navbar() {
           <div className="font-courier font-extrabold text-xl md:text-3xl text-white whitespace-nowrap">
             HEIREACH MEDIA
           </div>
-          <div className="font-courier font-normal text-[6px] md:text-[8px] text-white whitespace-nowrap text-right">
+          <div
+            className="font-courier font-normal text-[6px] md:text-[8px] text-white whitespace-nowrap
+           text-right -translate-y-2"
+          >
             Highlighting Brands That Matter
           </div>
         </div>
