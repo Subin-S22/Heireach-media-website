@@ -27,7 +27,7 @@ export default function CompanyDescription() {
   }, []);
   return (
     <div className="relative font-amazingSlab">
-      <CustomSection>
+      <CustomSection sectionId="company-description-side-section">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}

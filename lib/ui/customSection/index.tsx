@@ -6,14 +6,15 @@ import React, { useEffect, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
+  sectionId: string;
 }
 
-export default function CustomSection({ children }: Props) {
+export default function CustomSection({ children, sectionId }: Props) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById("custom-section");
+      const section = document.getElementById(sectionId);
       if (section) {
         const rect = section.getBoundingClientRect();
         const isVisible =
@@ -28,7 +29,7 @@ export default function CustomSection({ children }: Props) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div id="custom-section" className="min-h-96 relative">
+    <div id={sectionId} className="min-h-96 relative">
       <motion.div
         className="absolute top-0 left-0 w-[200px] h-[300px]"
         initial={{ x: -100, opacity: 0 }}
@@ -45,8 +46,7 @@ export default function CustomSection({ children }: Props) {
       </motion.div>
       {children}
       <motion.div
-        className="absolute bottom-0 right-0 w-[200px] h-[400px]"
-        id="custom-section"
+        className="absolute bottom-0 right-0 w-[200px] h-[300px]"
         initial={{ x: 100, opacity: 0 }}
         animate={
           isVisible
