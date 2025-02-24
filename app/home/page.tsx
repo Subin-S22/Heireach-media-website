@@ -1,5 +1,6 @@
 import CompanyDescription from "@/features/home/CompanyDescription";
 import InitialView from "@/features/home/InitialView";
+import OurServices from "@/features/home/OurServices";
 import Image from "next/image";
 
 export default function Home() {
@@ -8,6 +9,7 @@ export default function Home() {
       <main className="">
         <InitialView />
         <CompanyDescription />
+        <OurServices />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
