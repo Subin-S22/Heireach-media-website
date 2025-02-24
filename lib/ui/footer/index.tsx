@@ -64,7 +64,7 @@ const PlaneBox = () => {
     <div
       className={classnames(
         style.bg_white_100,
-        "w-full sm:w-[150px] md:w-[150px] lg:w-[200px] h-[100px] sm:h-[150px] md:h-[150px] lg:h-[200px]"
+        "w-full sm:w-[150px] md:w-[150px] lg:w-[200px] h-[100px] sm:h-[150px] md:h-[150px] lg:h-[200px]",
       )}
     />
   );

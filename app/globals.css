@@ -8,6 +8,9 @@
   --background: #0a0a0a;
   --foreground: #ededed;
   --bg-white-100: #d9d9d9;
+  --bg-blue-100: #0066ee;
+  --bg-blue-200: #0022aa;
+  --bg-grey-100: #8a8a8a;
   --courier-family: "Courier Prime", serif;
 }
 
@@ -48,23 +51,22 @@ body {
 }
 
 @font-face {
-  font-family: 'RockwellNova';
-  src: url('/fonts/rockwell-nova/RockwellNova.ttf') format('truetype');
+  font-family: "RockwellNova";
+  src: url("/fonts/rockwell-nova/RockwellNova.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'RockwellNova';
-  src: url('/fonts/rockwell-nova/RockwellNova-Bold.ttf') format('truetype');
+  font-family: "RockwellNova";
+  src: url("/fonts/rockwell-nova/RockwellNova-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'RockwellNova';
-  src: url('/fonts/rockwell-nova/RockwellNova-Italic.ttf') format('truetype');
+  font-family: "RockwellNova";
+  src: url("/fonts/rockwell-nova/RockwellNova-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
-
