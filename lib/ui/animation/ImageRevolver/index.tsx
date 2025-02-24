@@ -23,6 +23,7 @@ const ImageRevolver = ({ imageSrc, text, animationDuration = 10 }: Props) => {
       rotate: 360,
       transition: {
         loop: Infinity,
+        repeat: Infinity,
         duration: animationDuration,
         ease: "linear",
       },
