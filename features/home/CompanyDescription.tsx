@@ -27,7 +27,7 @@ export default function CompanyDescription() {
   }, []);
   return (
     <div className="relative">
-      <CustomSection>
+      <CustomSection sectionId="company-description-side-section">
         <motion.div
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
@@ -43,7 +43,7 @@ export default function CompanyDescription() {
               <div
                 className={classnames(
                   style.h1,
-                  "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap ps-4"
+                  "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap ps-4",
                 )}
               >
                 HEIREACH MEDIA
