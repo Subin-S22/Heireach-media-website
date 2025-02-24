@@ -125,8 +125,11 @@ export default function OurServices() {
   };
   return (
     <CustomSection>
-      <div className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] md:min-h-[1000px] lg:min-h-[870px] py-8">
-        <div className="pb-32 flex w-full">
+      <div
+        className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] 
+      md:min-h-[1000px] lg:min-h-[870px] py-4"
+      >
+        <div className="pb-12 flex w-full">
           <div className="text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
             Our services
           </div>

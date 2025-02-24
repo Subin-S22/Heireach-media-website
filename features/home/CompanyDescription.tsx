@@ -53,7 +53,7 @@ export default function CompanyDescription() {
             <div
               className={classnames(style.h2, "flex text-[var(--bg-blue-200)]")}
             >
-              WE DON’T JUST MARKET BRANDS - WE BRING THEIR STORIES TO LIFE
+              WE DON&apos;T JUST MARKET BRANDS - WE BRING THEIR STORIES TO LIFE
             </div>
 
             <div className={classnames(style.h5, "text-[var(--bg-grey-100)]")}>
@@ -80,8 +80,9 @@ export default function CompanyDescription() {
               amplify it in a way that captivates and inspires. By combining
               creativity with strategy, we turn challenges into opportunities
               and ideas into impactful campaigns that deliver results. Whether
-              you’re looking to redefine your identity or expand your market
-              reach, we’re here to make it happen with passion and precision.
+              you&apos;re looking to redefine your identity or expand your
+              market reach, we&apos;re here to make it happen with passion and
+              precision.
             </div>
           </div>
         </motion.div>
