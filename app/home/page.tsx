@@ -1,4 +1,4 @@
-import CompanyDescription from "@/features/home/CompanyDescription";
+// import CompanyDescription from "@/features/home/CompanyDescription";
 import InitialView from "@/features/home/InitialView";
 import WhyChooseUs from "../about-us/components/why-choosen-us";
 import OurWorks from "./components/our-works";
