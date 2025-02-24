@@ -1,4 +1,4 @@
-// import CompanyDescription from "@/features/home/CompanyDescription";
+import CompanyDescription from "@/features/home/CompanyDescription";
 import InitialView from "@/features/home/InitialView";
 import OurServices from "@/features/home/OurServices";
 import Image from "next/image";
