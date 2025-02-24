@@ -12,18 +12,18 @@ const navbarContent = [
     name: "About Us",
     href: "/about-us",
   },
-  {
-    name: "Services",
-    href: "/services",
-  },
-  {
-    name: "Careers",
-    href: "/careers",
-  },
-  {
-    name: "Let's Connect",
-    href: "/lets-connect",
-  },
+  // {
+  //   name: "Services",
+  //   href: "/services",
+  // },
+  // {
+  //   name: "Careers",
+  //   href: "/careers",
+  // },
+  // {
+  //   name: "Let's Connect",
+  //   href: "/lets-connect",
+  // },
 ];
 export default function Navbar() {
   return (
@@ -45,22 +45,18 @@ export default function Navbar() {
           height={100}
         /> */}
         <div className="leading-0">
-          <div className="font-courier font-extrabold text-3xl text-white whitespace-nowrap">
+          <div className="font-courier font-extrabold text-xl md:text-3xl text-white whitespace-nowrap">
             HEIREACH MEDIA
           </div>
-          <div className="font-courier font-normal text-[8px] text-white whitespace-nowrap text-right">
+          <div
+            className="font-courier font-normal text-[6px] md:text-[8px] text-white whitespace-nowrap
+           text-right -translate-y-2"
+          >
             Highlighting Brands That Matter
           </div>
         </div>
       </div>
-      <ul
-        className={classnames(
-          style.flex,
-          style.justify_between,
-          style.items_center,
-          style.gap_8
-        )}
-      >
+      <ul className={"hidden md:flex justify-between items-center gap-8"}>
         {navbarContent.map((content) => {
           return (
             <li key={content.name} className={classnames(style.text_xl)}>
