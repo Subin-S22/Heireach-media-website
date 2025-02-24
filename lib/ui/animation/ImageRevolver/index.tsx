@@ -58,14 +58,13 @@ const ImageRevolver = ({ imageSrc, text, animationDuration = 10 }: Props) => {
           return (
             <motion.span
               key={index}
-              className="tracking-wide font-semibold "
+              className="tracking-wide font-semibold text-[6px] md:text-[8px]"
               style={{
                 position: "absolute",
                 top: "50%",
                 left: "50%",
                 transformOrigin: "0 0",
                 color: "#adadad",
-                fontSize: "8px",
                 whiteSpace: "nowrap",
                 x: x,
                 y: y,

@@ -43,7 +43,7 @@ export default function CompanyDescription() {
               <div
                 className={classnames(
                   style.h1,
-                  "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap ps-4",
+                  "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap ps-4"
                 )}
               >
                 HEIREACH MEDIA

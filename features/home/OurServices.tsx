@@ -114,12 +114,12 @@ const extendsImage = {
 };
 export default function OurServices() {
   const [contentExtend, setExtend] = useState("rest");
-  const [hoveredImage, setHoveredImage] = useState(null);
+  const [hoveredImage, setHoveredImage] = useState<number | null>(null);
   const handleHoverEnd = () => {
     setExtend("rest");
     setHoveredImage(null);
   };
-  const handleHoverStart = (id) => {
+  const handleHoverStart = (id: number) => {
     setExtend("hover");
     setHoveredImage(id);
   };
@@ -141,21 +141,21 @@ export default function OurServices() {
             />
           </div>
         </div>
-        <div className="pb-56 grid grid-flow-row sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
+        <div className="pb-56 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
           <AnimatePresence mode="wait">
             {serviceDetails.map((service) => (
               <motion.div
                 key={service.id}
                 id="image-scroll"
-                className="flex border-2 border-[#0066FF] rounded-[15px] bg-[#000000] min-w-[450px] w-auto h-[179px] group hover:shadow-[2px_2px_6px_0px_#0066FF]"
+                className="flex border-2 border-[#0066FF] rounded-[15px] bg-[#000000] w-full h-[179px] group hover:shadow-[2px_2px_6px_0px_#0066FF]"
                 whileHover="hover"
                 transition={{ duration: 8, ease: "easeInOut" }}
                 initial="rest"
                 onHoverStart={() => handleHoverStart(service.id)}
                 onHoverEnd={handleHoverEnd}
               >
-                <div className="pl-12 flex justify-center items-center ">
-                  <p className="break-words min-w-max text-white text-lg font-semibold h-[22px] group-hover:text-[#0066FF]">
+                <div className="pl-2 md:pl-10 flex justify-center items-center ">
+                  <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF]">
                     {service.id === 6
                       ? service.title.split("&").map((part, index) => (
                           <span key={index}>
@@ -183,13 +183,13 @@ export default function OurServices() {
                           ? index === 0
                             ? 95 + 50
                             : index === 1
-                              ? 55 + 30
-                              : 27 + 20
+                            ? 55 + 30
+                            : 27 + 20
                           : index === 0
-                            ? 95
-                            : index === 1
-                              ? 55
-                              : 27
+                          ? 95
+                          : index === 1
+                          ? 55
+                          : 27
                       }
                       height={175}
                       className="object-cover h-[175px] rounded-tr-[15px] rounded-br-[15px] absolute right-0 group-hover:shadow-[-4px_4px_4px_0px_#00000040]"
