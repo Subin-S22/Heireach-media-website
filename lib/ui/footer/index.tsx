@@ -90,9 +90,9 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div id="footer-section" className={classnames(style.footer_container)}>
-      <div className="grid grid-cols-5 gap-4 auto-rows-auto relative">
-        <div>
+    <div id="footer-section" className={"bg-[#121212] px-4 md:px-8"}>
+      <div className="grid grid-cols-4 gap-4 auto-rows-auto relative place-content-center">
+        {/* <div>
           <motion.div
             className="absolute top-0 left-0 w-[150px] h-[200px]"
             initial={{ x: -100, opacity: 0 }}
@@ -105,7 +105,7 @@ export default function Footer() {
               layout="fill"
             />
           </motion.div>
-        </div>
+        </div> */}
 
         <AnimatePresence mode="popLayout">
           <motion.div
@@ -186,7 +186,6 @@ export default function Footer() {
       </div>
 
       <div className="flex relative">
-        <div className="flex-grow w-16"></div>
         <AnimatePresence mode="popLayout">
           <motion.div
             initial={{ opacity: 0, clipPath: "inset(0% 0 100% 0)" }}
@@ -195,23 +194,26 @@ export default function Footer() {
                 ? { opacity: 1, clipPath: "inset(0% 0 0% 0)" }
                 : { opacity: 0, clipPath: "inset(0% 0 100% 0)" }
             }
-            transition={{ duration: 2, delay: 2, ease: "easeOut" }}
-            className="flex-shrink justify-self-center"
+            transition={{ duration: 2, ease: "easeOut" }}
+            className="flex-shrink justify-self-center my-20 
+            flex flex-col gap-8 justify-center items-center"
           >
-            <Image
-              src="/images/footer/footerText1.svg"
-              alt="company name"
-              width={1500}
-              height={180}
-              className="mt-24 justify-self-center mb-20"
-            />
-            <Image
-              src="/images/footer/footerText2.svg"
-              alt="company name"
-              width={350}
-              height={45}
-              className="absolute top-2/3 left-1/2 transform -translate-x-1/2"
-            />
+            <div className="flex flex-col justify-center items-center">
+              <Image
+                src="/images/footer/footerText1.svg"
+                alt="company name"
+                width={1000}
+                height={180}
+                className="justify-self-center"
+              />
+              <Image
+                src="/images/footer/footerText2.svg"
+                alt="company name"
+                width={250}
+                height={45}
+                className="w-32 md:w-60 -translate-y-2"
+              />
+            </div>
             <Image
               src="/images/footer/copyright.svg"
               alt="copyright"
@@ -221,31 +223,31 @@ export default function Footer() {
             />
           </motion.div>
         </AnimatePresence>
-        <div className="flex-grow w-16"></div>
-
-        <motion.div
-          className="absolute bottom-0 right-0 w-[150px] h-[200px]"
-          initial={{ x: 100, opacity: 0 }}
-          animate={
-            isVisible
-              ? {
-                  x: 0,
-                  opacity: 1,
-                  transition: {
-                    duration: 1,
-                    ease: "easeInOut",
-                  },
-                }
-              : { x: 100, opacity: 0 }
-          }
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        >
-          <Image
-            src="/images/footer/footerRectangle2.svg"
-            alt="rectangle2"
-            layout="fill"
-          />
-        </motion.div>
+        {/* <div className="flex-grow w-16">
+          <motion.div
+            className="absolute bottom-0 right-0 w-[150px] h-[200px]"
+            initial={{ x: 100, opacity: 0 }}
+            animate={
+              isVisible
+                ? {
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      duration: 1,
+                      ease: "easeInOut",
+                    },
+                  }
+                : { x: 100, opacity: 0 }
+            }
+            transition={{ duration: 1.5, ease: "easeOut" }}
+          >
+            <Image
+              src="/images/footer/footerRectangle2.svg"
+              alt="rectangle2"
+              layout="fill"
+            />
+          </motion.div>
+        </div> */}
       </div>
     </div>
   );

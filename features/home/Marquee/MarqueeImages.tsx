@@ -23,15 +23,6 @@ const marqueeVariants = {
 const Marquee = () => {
   return (
     <div>
-      {/* <div className="marquee">
-        <motion.div
-          className="track"
-          variants={marqueeVariants}
-          animate="animate"
-        >
-          <h1 className=" relative w-[100vw] h-20 flex"></h1>
-        </motion.div>
-      </div> */}
       <div id="marquee">
         <div className="marquee-container">
           <Figma />

@@ -2,12 +2,16 @@ import { MotionConfig } from "motion/react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import ImageRevolver from "@/lib/ui/animation/ImageRevolver";
+import Marquee from "./Marquee/MarqueeImages";
+import Space from "@/lib/ui/space";
 
 export default function InitialView() {
   return (
     <section>
       <TopRightLogo />
       <BigText />
+      <Space className="mb-20" />
+      <Marquee />
     </section>
   );
 }
@@ -24,16 +28,18 @@ function TopRightLogo() {
 function BigText() {
   return (
     <div
-      className="font-courier text-[80px] md:text-[150px] lg:text-[200px] font-bold text-center 
-    flex justify-center items-center flex-col tracking-wide"
+      className="text-white font-amazingSlab text-[50px] md:text-[120px] lg:text-[180px] 
+      font-bold 
+    flex justify-center items-center flex-col tracking-wide text-center"
     >
-      <span>HEIREACH</span>
-      <span
-        className="font-courier text-2xl md:text-[100px] font-semibold text-center -translate-y-8
-       tracking-[1rem]"
+      <div>HEIREACH</div>
+      <div
+        className="uppercase font-amazingSlab text-xl md:text-[40px] 
+        font-medium text-center -translate-y-6 w-full
+       tracking-[1rem] md:tracking-[3rem] xl:tracking-[6rem]"
       >
         Media
-      </span>
+      </div>
     </div>
   );
 }
