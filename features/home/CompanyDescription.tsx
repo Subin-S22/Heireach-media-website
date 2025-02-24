@@ -1,6 +1,5 @@
 "use client";
 
-import CustomSection from "@/lib/ui/customSection";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -10,7 +9,7 @@ export default function CompanyDescription() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById("custom-section");
+      const section = document.getElementById("company-description");
       if (section) {
         const rect = section.getBoundingClientRect();
         const isVisible =
@@ -25,7 +24,7 @@ export default function CompanyDescription() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div id="custom-section" className="min-h-96 relative">
+    <div id="company-description" className="min-h-96 relative">
       <motion.div
         className="absolute top-0 left-0 w-[200px] h-[300px]"
         initial={{ x: -100, opacity: 0 }}
@@ -44,8 +43,7 @@ export default function CompanyDescription() {
         transition={{ duration: 2, ease: "anticipate" }}
         className="flex justify-center items-center min-h-[650px] px-4"
       >
-        <div className="w-full sm:w-[870px] grid gap-4 justify-center items-center">
-          {/* Centered Image and Content */}
+        <div className="w-full grid gap-4 justify-center items-center">
           <div className="flex items-center justify-center gap-4">
             <div className="w-[40px] h-[40px] relative">
               <Image
@@ -57,7 +55,7 @@ export default function CompanyDescription() {
                 height={40}
               />
             </div>
-            <div className="w-full sm:w-[540px] h-[auto] relative">
+            <div className="w-full h-[auto] relative">
               <Image
                 src="/images/aboutCompany/heireach_media.svg"
                 className="object-contain"
@@ -69,8 +67,7 @@ export default function CompanyDescription() {
             </div>
           </div>
 
-          {/* Responsive Description Images */}
-          <div className="w-full sm:w-[870px] h-[auto]">
+          <div className="w-full h-[auto]">
             <Image
               src="/images/aboutCompany/description1.svg"
               className="object-contain"
@@ -81,7 +78,7 @@ export default function CompanyDescription() {
             />
           </div>
 
-          <div className="w-full sm:w-[310px] h-[auto]">
+          <div className="w-full h-[auto]">
             <Image
               src="/images/aboutCompany/description2.svg"
               className="object-contain"
@@ -92,7 +89,7 @@ export default function CompanyDescription() {
             />
           </div>
 
-          <div className="w-full sm:w-[1070px] h-[auto]">
+          <div className="w-full h-[auto]">
             <Image
               src="/images/aboutCompany/description3.svg"
               className="object-contain"
@@ -103,7 +100,7 @@ export default function CompanyDescription() {
             />
           </div>
 
-          <div className="w-full sm:w-[650px] h-[auto]">
+          <div className="w-full h-[auto]">
             <Image
               src="/images/aboutCompany/description4.svg"
               className="object-contain"
@@ -114,7 +111,7 @@ export default function CompanyDescription() {
             />
           </div>
 
-          <div className="w-full sm:w-[1070px] h-[auto]">
+          <div className="w-full h-[auto]">
             <Image
               src="/images/aboutCompany/description5.svg"
               className="object-contain"

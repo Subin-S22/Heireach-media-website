@@ -1,7 +1,9 @@
 import CompanyDescription from "@/features/home/CompanyDescription";
 import InitialView from "@/features/home/InitialView";
-import WhyChooseUs from "../about-us/components/why-choosen-us";
+import OurServices from "@/features/home/OurServices";
+import Image from "next/image";
 import OurWorks from "./components/our-works";
+import WhyChooseUs from "../about-us/components/why-choosen-us";
 
 export default function Home() {
   return (
@@ -10,10 +12,10 @@ export default function Home() {
         <InitialView />
         {/* <Space className="w-full h-4" /> */}
         <CompanyDescription />
-        <OurWorks />
+        <OurServices />
         <WhyChooseUs />
+        <OurWorks />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
   );
 }

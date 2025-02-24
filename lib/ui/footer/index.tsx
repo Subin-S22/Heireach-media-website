@@ -185,7 +185,7 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="flex relative">
+      <div className="flex relative justify-center items-center">
         <AnimatePresence mode="popLayout">
           <motion.div
             initial={{ opacity: 0, clipPath: "inset(0% 0 100% 0)" }}
