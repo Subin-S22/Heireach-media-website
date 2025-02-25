@@ -20,6 +20,7 @@ export default {
     },
     fontFamily: {
       courier: ["Courier Prime", "serif"],
+      rockwellNova:["RockwellNova", 'serif'],
       amazingSlab: ["AmazingSlab", 'serif'],
     },
   },

@@ -6,14 +6,15 @@ import React, { useEffect, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
+  sectionId: string;
 }
 
-export default function CustomSection({ children }: Props) {
+export default function CustomSection({ children, sectionId }: Props) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById("custom-section");
+      const section = document.getElementById(sectionId);
       if (section) {
         const rect = section.getBoundingClientRect();
         const isVisible =
@@ -28,22 +29,24 @@ export default function CustomSection({ children }: Props) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div id="custom-section" className="min-h-96 relative">
+    <div id={sectionId} className="min-h-96 relative">
       <motion.div
-        className="absolute top-0 left-0 w-[200px] h-[200px]"
+        className="absolute top-0 left-0 w-[200px] h-[300px]"
         initial={{ x: -100, opacity: 0 }}
         animate={isVisible ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
+        id="custom-section"
       >
         <Image
-          src="/images/footer/footerRectangle1.svg"
+          src="/images/aboutCompany/rectangle1.svg"
           alt="rectangle1"
           layout="fill"
+          className="-z-10"
         />
       </motion.div>
       {children}
       <motion.div
-        className="absolute bottom-0 right-0 w-[150px] h-[200px]"
+        className="absolute bottom-0 right-0 w-[200px] h-[300px]"
         initial={{ x: 100, opacity: 0 }}
         animate={
           isVisible
@@ -60,9 +63,10 @@ export default function CustomSection({ children }: Props) {
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <Image
-          src="/images/footer/footerRectangle2.svg"
+          src="/images/aboutCompany/rectangle2.svg"
           alt="rectangle2"
           layout="fill"
+          className="-z-10"
         />
       </motion.div>
     </div>
