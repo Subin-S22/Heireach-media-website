@@ -142,7 +142,7 @@ const InputField = ({ labelName, name, value, onChange }: InputFieldProps) => {
         name={name}
         onChange={onChange}
         value={value}
-        className="bg-background border-b border-white outline-none text-white"
+        className="bg-background border-b border-white outline-none text-white px-1 py-2"
       />
     </div>
   );
