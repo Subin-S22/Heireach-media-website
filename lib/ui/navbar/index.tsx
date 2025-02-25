@@ -20,10 +20,10 @@ const navbarContent = [
   //   name: "Careers",
   //   href: "/careers",
   // },
-  // {
-  //   name: "Let's Connect",
-  //   href: "/lets-connect",
-  // },
+  {
+    name: "Let's Connect",
+    href: "/lets-connect",
+  },
 ];
 export default function Navbar() {
   return (

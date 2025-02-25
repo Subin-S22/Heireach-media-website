@@ -11,17 +11,18 @@ export default {
   theme: {
     extend: {
       screens: {
-          'xs': { min: '380px', max: '639px' }, // Range: 480px - 639px
+        xs: { min: "380px", max: "639px" }, // Range: 480px - 639px
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        primary_text: "var(--primary-color)",
       },
     },
     fontFamily: {
       courier: ["Courier Prime", "serif"],
-      rockwellNova:["RockwellNova", 'serif'],
-      amazingSlab: ["AmazingSlab", 'serif'],
+      rockwellNova: ["RockwellNova", "serif"],
+      amazingSlab: ["AmazingSlab", "serif"],
     },
   },
   plugins: [],
