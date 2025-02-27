@@ -5,13 +5,29 @@ import style from "./index.module.css";
 import classnames from "@/lib/function/classnames";
 import Image from "next/image";
 
-const Tail = ({ deg, width, position }) => {
+interface TailProps {
+  deg: number;
+  width: string;
+  position: { left: string; top: string };
+}
+
+type HeadProps = Pick<TailProps, "deg" | "position">;
+
+interface InfoCardProps {
+  src: string;
+  heading: string;
+  content: string;
+  reverse?: boolean;
+}
+
+const Tail = ({ deg, width, position }: TailProps) => {
   const transformStyle = position
     ? `rotate(${deg}deg) translate(${position.left}, ${position.top})`
     : `rotate(${deg}deg)`;
 
   return (
     <div
+      /**TODO hidden for the mobile view */
       className="h-0 border-t-4 border-dashed border-white"
       style={{
         transform: transformStyle,
@@ -21,7 +37,7 @@ const Tail = ({ deg, width, position }) => {
   );
 };
 
-const Head = ({ deg, position }) => {
+const Head = ({ deg, position }: HeadProps) => {
   return (
     <div
       className="w-0 h-0 border-l-[11px] border-r-[11px] border-b-[32.6px] border-l-transparent border-r-transparent border-b-white-500"
@@ -32,7 +48,12 @@ const Head = ({ deg, position }) => {
   );
 };
 
-const InfoCard = ({ src, heading, content, reverse = false }) => {
+const InfoCard = ({
+  src,
+  heading,
+  content,
+  reverse = false,
+}: InfoCardProps) => {
   return (
     <div>
       {!reverse && (
