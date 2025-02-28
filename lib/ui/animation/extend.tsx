@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const extend = {
   rest: { height: 400, opacity: 1, backgroundColor: "#A6A6A6" },
-  hover: { height: 600, opacity: 1, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", backgroundColor: "#0066FF" },
+  hover: { height: 550, opacity: 1, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", backgroundColor: "#0066FF" },
   shrink: { height: 250, opacity: 0.8, backgroundColor: "#E5E7EB" },
 };
 
@@ -15,19 +15,15 @@ const widthExtend = {
 };
 
 const contentDisappear = {
-  rest: { opacity: 1, display:'block' },
-  hover: { opacity: 0 , display:'none'},
+  rest: { opacity: 1},
+  hover: {opacity: 0}
 };
 
-const contentAppear ={
-  rest: {opacity: 0, display:'none'},
-  hover: {opacity: 1, display:'block' }
-}
 interface CardItem {
   title: string;
   description: string;
   longDescription: string;
-  image: string
+  image: string;
 }
 
 interface HoverEffectCardsProps {
@@ -80,36 +76,33 @@ export default function HoverEffectCards({ cardItems }: HoverEffectCardsProps) {
             className={`${style.card_background} text-white rounded-lg overflow-hidden shadow-lg ${dynamicClass} ${getCardClass(index, cardItems.length)}`}
             variants={animation}
           >
-            <motion.div className={`p-6 flex ${isLastTwoRows(index, cardItems.length) ? 'flex-row' : 'flex-col'} h-full gap-4`}>
-              <div>
-                <h3 className="lg:text-2xl md:text-xl xs:text-lg font-semibold mb-2 text-white">
-                  {item.title}
-                </h3>
-                <motion.p
-                  className="text-white mb-4 lg:text-base md:text-sm xs:text-sm"
-                  variants={contentDisappear}
-                  dangerouslySetInnerHTML={{ __html: item.description }}
-                />
-                <motion.p
-                  className="text-white mb-4 lg:text-base md:text-sm xs:text-sm"
-                  variants={contentAppear}
-                  dangerouslySetInnerHTML={{ __html: item.longDescription }}
-                />
-                <motion.span
-                  className="text-white lg:text-base md:text-sm xs:text-sm cursor-pointer"
-                  variants={contentDisappear}
-                >
-                  More...
-                </motion.span>
-              </div>
-              <div className="w-full h-[207px] relative">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                />
+            <motion.div className="p-6 flex  flex-col h-full">
+              <div className={`flex gap-4 h-full ${isLastTwoRows(index, cardItems.length) ? 'flex-row' : 'flex-col'}`}>
+                <div>
+                  <h3 className="lg:text-2xl md:text-xl xs:text-lg font-semibold mb-2 text-white">
+                    {item.title}
+                  </h3>
+                  <motion.p
+                    className="text-white mb-4 lg:text-base md:text-sm xs:text-sm"
+                    dangerouslySetInnerHTML={{ __html: hoverIndex !== index ? item.description : item.longDescription}}
+                  />
+                  <motion.span
+                    className="text-white lg:text-base md:text-sm xs:text-sm cursor-pointer"
+                    variants={contentDisappear}
+                  >
+                    More...
+                  </motion.span>
+                </div>
+                <motion.div className={`mt-auto w-full h-[207px] relative self-end ${(isLastTwoRows(index, cardItems.length) && hoverIndex ==index) ? 'w-[700px] ':'w-full'}`}>
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-lg"
+                    
+                  />
+                </motion.div>
               </div>
             </motion.div>
           </motion.div>
