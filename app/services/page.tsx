@@ -1,30 +1,45 @@
 "use client";
 import HoverEffectCards from "@/lib/ui/animation/extend";
 import { useState, useEffect } from "react";
-const cardData = [
-  { title: "Branding", description: "A strong <strong>Brand Identity</strong> sets you apart in a competitive market." },
-  { title: "SEO & Marketing", description: "Our SEO Strategies drive organic traffic, improve Google rankings, and enhance visibility." },
-  { title: "Retargeting", description: "We implement Strategic Retargeting campaigns to reconnect with potential customers." },
-  { title: "Social Media Marketing", description: "We craft data-driven Social Media Strategies to enhance brand awareness." },
-  { title: "Email Marketing", description: "Engage with your audience through personalized email campaigns." },
-  { title: "Web Development", description: "Custom websites tailored to your business needs." },
-];
+import servicesData from "@/features/Json/ServicesData.json";
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
+  const [cardData, setCardData] = useState<{ header: string; cardData: { title: string; description: string,longDescription: string, image: string }[] }[]>([]);
 
   useEffect(() => {
     const service = localStorage.getItem("selectedService");
     if (service) {
       setSelectedService(service);
-      localStorage.removeItem("selectedService"); // Optional: Remove after retrieving
+
+      if (service.toLowerCase() === "all") {
+        setCardData(servicesData.services); // Show all sections separately
+      } else {
+        const foundService = servicesData.services.find(
+          (item) => item.header.toLowerCase() === service.toLowerCase()
+        );
+        setCardData(foundService ? [foundService] : []);
+      }
     }
   }, []);
 
   return (
     <div>
-      <h3>{selectedService}</h3>
-      <HoverEffectCards cardItems={cardData} ></HoverEffectCards>
+      {selectedService && <h2 className="text-3xl lg:mx-[10rem] text-[#0066FF] md:mx-[3rem] xs:flex xs:justify-center xs:text-justify md:my-[3rem] xs:my-[3rem] lg:text-[32px] md:[text-lg] xs:[text-base] font-amazingSlab font-bold mb-6">{selectedService === "All" ? "Our Services" : selectedService}</h2>}
+
+      {cardData.length > 0 ? (
+        cardData.map((section, index) => (
+          <div key={index} className="mb-10 font-amazingSlab text-3xl lg:text-[32px] md:[text-lg] xs:[text-base]">
+            {
+              selectedService === "All" ? <h2 className="text-2xl lg:mx-[10rem] text-[#0066FF] md:mx-[3rem] xs:flex xs:justify-center xs:text-justify md:my-[3rem] xs:my-[3rem] lg:text-[32px] md:[text-lg] xs:[text-base] font-amazingSlab font-semibold mb-4">{section.header}</h2> :''
+            }
+            
+            <HoverEffectCards cardItems={section.cardData} />
+          </div>
+        ))
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

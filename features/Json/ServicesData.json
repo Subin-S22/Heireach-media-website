@@ -1,0 +1,89 @@
+{
+    "services": [
+      {
+        "header": "Digital Marketing",
+        "cardData": [
+            {
+              "title": "Branding",
+              "description": "A strong <strong> Brand Identity </strong> sets you apart in a competitive market.",
+              "longDescription":"A strong Brand identity sets you apart in a competitive market.<br></br> We create Strategic Branding Solutions that enhance brand recognition, build customer trust, and drive business growth through compelling visual storytelling and market positioning.",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+            },
+            {
+              "title": "Search Engine Optimization & Marketing",
+              "description": "Our <strong> SEO Strategies </strong> drive organic traffic, improve Google rankings, and enhance visibility.",
+              "longDescription":"Our SEO Strategies drive organic traffic, improve Google rankings, and enhance online visibility. We optimize with high-intent keywords, technical SEO, and content marketing, ensuring your brand stays ahead in search engine results and attracts qualified leads.",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+
+            },
+            {
+              "title": "Retargetting & Remarketing",
+              "description": "We implement <strong> Strategic Retargeting & Remarketing </strong> campaigns to reconnect with potential customers.",
+              "longDescription": "We implement strategic retargeting & remarketing campaigns to reconnect with potential customers who have shown interest in your brand. Through personalized ad placements, dynamic content, & cross-platform targeting, we enhance brand recall & drive higher conversion rates",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+
+            },
+            {
+              "title": "Social Media Management & Marketing",
+              "description": "We craft data-driven <strong>Social Media Strategies </strong> to enhance brand awareness.",
+              "longDescription": "We craft data-driven Social Media Strategies to enhance brand awareness, boost customer engagement, and drive high-converting traffic. From content creation to performance optimization, we manage your presence across Facebook, Instagram, LinkedIn, and more for measurable success.",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+            },
+            {
+              "title": "Pay-per-Click",
+              "description": "Our pay-per-click (PPC) campaigns deliver high-converting leads through <strong>Google Ads</strong>.",
+              "longDescription":"Our pay-per-click (PPC) campaigns deliver high-converting leads through Google Ads, Meta Ads, and LinkedIn Ads. With data-driven bidding strategies, A/B testing, and audience targeting, we ensure maximum ROI and Immediate brand visibility.",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+            },
+            {
+              "title": "Lead Generation & Sales Funnel Optimization",
+              "description": "We design <strong> High-Converting Lead Generation Strategies </strong> & optimize sales.",
+              "longDescription":"We design high-converting lead generation strategies & optimize sales funnels to nurture prospects at every stage. Using targeted outreach, persuasive landing pages, & automation, we drive qualified leads & maximize customer acquisition.",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+            },
+            {
+              "title": "SMS & WhatsApp Marketing",
+              "description": "We create <strong> Personalized SMS & WhatsApp Marketing Campaigns </strong> to drive customer engagement & boost conversion rates.",
+              "longDescription":"We create personalized SMS & WhatsApp marketing campaigns to drive customer engagement & boost conversion rates. With automated messaging, segmentation, & interactive chat strategies, we ensure real-time communication & stronger brand connections.",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+            },
+            {
+              "title": "Email Marketing",
+              "description": "Our <strong> Email Marketing Strategies </strong> focus on personalized content, automation, & audience segmentation.",
+              "longDescription":"Our email marketing strategies focus on personalized content, automation, & audience segmentation to maximize open rates & customer engagement. From drip campaigns to newsletter optimization, we help build lasting customer relationships & boost ROI.",
+              "image":"/images/services/Digital Marketing/brands-marketing.svg"
+
+            }
+          ]
+      },
+      {
+        "header": "Creative Services",
+        "cardData": [
+          {
+            "title": "Graphic Design",
+            "description": "Visually stunning designs that communicate your brand message.",
+            "longDescription":"Our email marketing strategies focus on personalized content, automation, & audience segmentation to maximize open rates & customer engagement. From drip campaigns to newsletter optimization, we help build lasting customer relationships & boost ROI.",
+
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+
+          },
+          {
+            "title": "Video Production",
+            "description": "High-quality video content to engage your audience.",
+            "longDescription":"Our email marketing strategies focus on personalized content, automation, & audience segmentation to maximize open rates & customer engagement. From drip campaigns to newsletter optimization, we help build lasting customer relationships & boost ROI.",
+
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+
+          },
+          {
+            "title": "Photography",
+            "description": "Capture your brand's essence with professional photography.",
+            "longDescription":"Our email marketing strategies focus on personalized content, automation, & audience segmentation to maximize open rates & customer engagement. From drip campaigns to newsletter optimization, we help build lasting customer relationships & boost ROI.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+
+          }
+        ]
+      }
+    ]
+  }
+  

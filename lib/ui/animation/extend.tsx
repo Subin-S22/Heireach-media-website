@@ -1,26 +1,33 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import style from "./extend.module.css";
+import Image from "next/image";
 
 const extend = {
-  rest: { height: 300, opacity: 1, backgroundColor: "#F3F4F6" },
-  hover: { height: 500, opacity: 1, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", backgroundColor: "#0066FF" },
+  rest: { height: 400, opacity: 1, backgroundColor: "#A6A6A6" },
+  hover: { height: 600, opacity: 1, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", backgroundColor: "#0066FF" },
   shrink: { height: 250, opacity: 0.8, backgroundColor: "#E5E7EB" },
 };
 
 const widthExtend = {
-  rest: { width: "41%", backgroundColor: "#F3F4F6" },
+  rest: { width: "41%", backgroundColor: "#A6A6A6" },
   hover: { width: "50%", backgroundColor: "#0066FF" },
 };
 
 const contentDisappear = {
-  rest: { opacity: 1 },
-  hover: { opacity: 0 },
+  rest: { opacity: 1, display:'block' },
+  hover: { opacity: 0 , display:'none'},
 };
 
+const contentAppear ={
+  rest: {opacity: 0, display:'none'},
+  hover: {opacity: 1, display:'block' }
+}
 interface CardItem {
   title: string;
   description: string;
+  longDescription: string;
+  image: string
 }
 
 interface HoverEffectCardsProps {
@@ -29,6 +36,7 @@ interface HoverEffectCardsProps {
 
 export default function HoverEffectCards({ cardItems }: HoverEffectCardsProps) {
   const [isMobile, setIsMobile] = useState(false);
+  const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 768px)");
@@ -57,7 +65,7 @@ export default function HoverEffectCards({ cardItems }: HoverEffectCardsProps) {
   };
 
   return (
-    <div className="flex flex-wrap gap-6 justify-center">
+    <div className="flex flex-wrap gap-8 justify-center">
       {cardItems.map((item, index) => {
         const dynamicClass = isLastTwoRows(index, cardItems.length) ? "" : style.card_size;
         const animation = isLastTwoRows(index, cardItems.length) ? widthExtend : extend;
@@ -66,20 +74,43 @@ export default function HoverEffectCards({ cardItems }: HoverEffectCardsProps) {
             key={index}
             whileHover="hover"
             initial="rest"
-            animate="rest"
-            className={`${style.card_background} rounded-lg overflow-hidden shadow-lg ${dynamicClass} ${getCardClass(index, cardItems.length)}`}
+            animate={hoverIndex === index ? "hover" : "rest"}
+            onMouseEnter={() => setHoverIndex(index)}
+            onMouseLeave={() => setHoverIndex(null)}
+            className={`${style.card_background} text-white rounded-lg overflow-hidden shadow-lg ${dynamicClass} ${getCardClass(index, cardItems.length)}`}
             variants={animation}
           >
-            <motion.div className="p-6">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">{item.title}</h3>
-              <motion.p
-                className="text-gray-600 mb-4"
-                variants={contentDisappear}
-                dangerouslySetInnerHTML={{ __html: item.description }}
-              />
-              <motion.span className="text-blue-500 underline cursor-pointer" variants={contentDisappear}>
-                More...
-              </motion.span>
+            <motion.div className={`p-6 flex ${isLastTwoRows(index, cardItems.length) ? 'flex-row' : 'flex-col'} h-full gap-4`}>
+              <div>
+                <h3 className="lg:text-2xl md:text-xl xs:text-lg font-semibold mb-2 text-white">
+                  {item.title}
+                </h3>
+                <motion.p
+                  className="text-white mb-4 lg:text-base md:text-sm xs:text-sm"
+                  variants={contentDisappear}
+                  dangerouslySetInnerHTML={{ __html: item.description }}
+                />
+                <motion.p
+                  className="text-white mb-4 lg:text-base md:text-sm xs:text-sm"
+                  variants={contentAppear}
+                  dangerouslySetInnerHTML={{ __html: item.longDescription }}
+                />
+                <motion.span
+                  className="text-white lg:text-base md:text-sm xs:text-sm cursor-pointer"
+                  variants={contentDisappear}
+                >
+                  More...
+                </motion.span>
+              </div>
+              <div className="w-full h-[207px] relative">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
             </motion.div>
           </motion.div>
         );

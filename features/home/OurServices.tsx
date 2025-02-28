@@ -145,7 +145,7 @@ export default function OurServices() {
           </div>
           <div
             className="flex gap-5 justify-center text-center whitespace-pre-wrap 
-          w-full text-lg capitalize font-bold text-white h-[29px]  size-14"
+          w-full text-lg capitalize font-bold text-white h-[29px]  size-14" onClick={() => handleNavigation('All')}
           >
             View all
             <Image
