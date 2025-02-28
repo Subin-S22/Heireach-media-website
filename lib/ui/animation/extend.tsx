@@ -4,8 +4,13 @@ import style from "./extend.module.css";
 
 const extend = {
   rest: { height: 300, opacity: 1, backgroundColor: "#F3F4F6" },
-  hover: { height: 400, opacity: 1, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", backgroundColor: "#0066FF" },
+  hover: { height: 500, opacity: 1, boxShadow: "0 10px 30px rgba(0, 0, 0, 0.2)", backgroundColor: "#0066FF" },
   shrink: { height: 250, opacity: 0.8, backgroundColor: "#E5E7EB" },
+};
+
+const widthExtend = {
+  rest: { width: "41%", backgroundColor: "#F3F4F6" },
+  hover: { width: "50%", backgroundColor: "#0066FF" },
 };
 
 const contentDisappear = {
@@ -13,7 +18,16 @@ const contentDisappear = {
   hover: { opacity: 0 },
 };
 
-export default function HoverEffectCards() {
+interface CardItem {
+  title: string;
+  description: string;
+}
+
+interface HoverEffectCardsProps {
+  cardItems: CardItem[];
+}
+
+export default function HoverEffectCards({ cardItems }: HoverEffectCardsProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -25,17 +39,6 @@ export default function HoverEffectCards() {
 
     return () => mediaQuery.removeEventListener("change", handleResize);
   }, []);
-
-  const cardItems = [
-    { title: "Branding", description: "A strong <strong>Brand Identity</strong> sets you apart in a competitive market." },
-    { title: "SEO & Marketing", description: "Our SEO Strategies drive organic traffic, improve Google rankings, and enhance visibility." },
-    { title: "Retargeting", description: "We implement Strategic Retargeting campaigns to reconnect with potential customers." },
-    { title: "Social Media Marketing", description: "We craft data-driven Social Media Strategies to enhance brand awareness." },
-    { title: "Social Media Marketing", description: "We craft data-driven Social Media Strategies to enhance brand awareness." },
-    { title: "Social Media Marketing", description: "We craft data-driven Social Media Strategies to enhance brand awareness." },
-    { title: "Social Media Marketing", description: "We craft data-driven Social Media Strategies to enhance brand awareness." },
-    { title: "Social Media Marketing", description: "We craft data-driven Social Media Strategies to enhance brand awareness." },
-  ];
 
   const getCardClass = (index: number, total: number) => {
     if (total === 4) {
@@ -52,10 +55,12 @@ export default function HoverEffectCards() {
   const isLastTwoRows = (index: number, total: number) => {
     return !isMobile && (total === 4 || (total > 6 && index >= total - 2));
   };
+
   return (
     <div className="flex flex-wrap gap-6 justify-center">
       {cardItems.map((item, index) => {
         const dynamicClass = isLastTwoRows(index, cardItems.length) ? "" : style.card_size;
+        const animation = isLastTwoRows(index, cardItems.length) ? widthExtend : extend;
         return (
           <motion.div
             key={index}
@@ -63,7 +68,7 @@ export default function HoverEffectCards() {
             initial="rest"
             animate="rest"
             className={`${style.card_background} rounded-lg overflow-hidden shadow-lg ${dynamicClass} ${getCardClass(index, cardItems.length)}`}
-            variants={extend}
+            variants={animation}
           >
             <motion.div className="p-6">
               <h3 className="text-xl font-semibold mb-2 text-gray-800">{item.title}</h3>
