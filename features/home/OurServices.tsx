@@ -4,8 +4,8 @@ import CustomSection from "@/lib/ui/customSection";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
-import { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const serviceDetails = [
   {
@@ -132,21 +132,12 @@ export default function OurServices() {
   
   return (
     <CustomSection sectionId="our-services">
-      <div
-        className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] 
-      md:min-h-[1000px] lg:min-h-[870px] py-4 font-amazingSlab"
-      >
-        <div className="pb-12 flex w-full">
-          <div
-            className="text-center whitespace-pre-wrap w-full text-2xl capitalize 
-          font-bold text-[#0066FF] h-[29px]  size-14"
-          >
+      <div className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] md:min-h-[1000px] lg:min-h-[870px] py-8">
+        <div className="pb-32 flex w-full">
+          <div className="text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
             Our services
           </div>
-          <div
-            className="flex gap-5 justify-center text-center whitespace-pre-wrap 
-          w-full text-lg capitalize font-bold text-white h-[29px]  size-14" onClick={() => handleNavigation('All')}
-          >
+          <div className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14">
             View all
             <Image
               src="/images/aboutCompany/arrow.svg"
@@ -200,13 +191,13 @@ export default function OurServices() {
                           ? index === 0
                             ? 95 + 50
                             : index === 1
-                            ? 55 + 30
-                            : 27 + 20
+                              ? 55 + 30
+                              : 27 + 20
                           : index === 0
-                          ? 95
-                          : index === 1
-                          ? 55
-                          : 27
+                            ? 95
+                            : index === 1
+                              ? 55
+                              : 27
                       }
                       height={175}
                       className="object-cover h-[175px] rounded-tr-[15px] rounded-br-[15px] absolute right-0 group-hover:shadow-[-4px_4px_4px_0px_#00000040]"
