@@ -32,28 +32,29 @@ export default function CompanyDescription() {
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 2, ease: "anticipate" }}
-          className="flex justify-center items-center min-h-[600px] sm:min-h-[700px] md:min-h-[800px] px-4 sm:px-6 lg:px-7"
+          // className="flex justify-center items-center min-h-[600px] sm:min-h-[700px] md:min-h-[800px] px-4 sm:px-6 lg:px-7"
+          className="p-10 pb-20 pt-36"
         >
           <div
             id="company-description"
-            className="w-full sm:w-[1000px] grid gap-4 justify-center items-center"
+            className="w-full"
           >
             <div className="flex items-center justify-start gap-4">
-              <div className={classnames(style.h1)}>At</div>
-              <div
-                className={classnames(
+              <div className={classnames(style.h1)}>At
+              <span               className={classnames(
                   style.h1,
                   "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap ps-4"
                 )}
               >
                 HEIREACH MEDIA
+              </span>
               </div>
             </div>
 
             <div
               className={classnames(
                 style.h2,
-                "flex text-[var(--bg-blue-200)] text-2xl"
+                "flex text-[var(--bg-blue-100)] text-2xl"
               )}
             >
               WE DON&apos;T JUST MARKET BRANDS - WE BRING THEIR STORIES TO LIFE

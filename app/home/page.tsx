@@ -8,7 +8,7 @@ import OurApproach from "@/features/home/OurApproach";
 export default function Home() {
   return (
     <div className="">
-      <main className="">
+      <main className="max-w-screen-xl mx-auto">
         <InitialView />
         <CompanyDescription />
         <OurServices />
