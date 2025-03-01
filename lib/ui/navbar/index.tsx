@@ -34,7 +34,7 @@ export default function Navbar() {
       //   style.items_center,
       //   style.padding_header
       // )}
-      className="flex justify-between items-center px-8 py-4 sticky top-0 bg-[#0a0a0a] z-50"
+      className="flex justify-between items-center px-8 py-4 sticky top-0 bg-[#0a0a0a] z-50 max-w-screen-xl mx-auto"
     >
       <div className={classnames(style.flex, style.gap_4)}>
         <Image src="/images/logo.svg" alt="logo" width={40} height={40} />

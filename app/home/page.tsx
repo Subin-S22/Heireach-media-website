@@ -7,7 +7,7 @@ import WhyChooseUs from "../about-us/components/why-choosen-us";
 export default function Home() {
   return (
     <div className="">
-      <main className="">
+      <main className="max-w-screen-xl mx-auto">
         <InitialView />
         <CompanyDescription />
         <OurServices />
