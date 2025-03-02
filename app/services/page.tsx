@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import servicesData from "@/features/Json/ServicesData.json";
 import ServiceContainer from "@/lib/ui/animation/services-container";
 import ServiceContainerRow from "@/lib/ui/animation/services-container-row";
+import DigitalServices from "./digital/page";
 
 export default function Services() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -37,34 +38,7 @@ export default function Services() {
 
   return (
     <div>
-      {selectedService && (
-        <h2 className="text-3xl lg:mx-[10rem] text-[#0066FF] md:mx-[3rem] xs:flex xs:justify-center xs:text-justify md:my-[3rem] xs:my-[3rem] lg:text-[32px] md:[text-lg] xs:[text-base] font-amazingSlab font-bold mb-6">
-          {selectedService === "All" ? "Our Services" : selectedService}
-        </h2>
-      )}
-
-      {/* {cardData.length > 0 ? (
-        cardData.map((section, index) => (
-          <div
-            key={index}
-            className="mb-10 font-amazingSlab text-3xl lg:text-[32px] md:[text-lg] xs:[text-base]"
-          >
-            {selectedService === "All" ? (
-              <h2 className="text-2xl lg:mx-[10rem] text-[#0066FF] md:mx-[3rem] xs:flex xs:justify-center xs:text-justify md:my-[3rem] xs:my-[3rem] lg:text-[32px] md:[text-lg] xs:[text-base] font-amazingSlab font-semibold mb-4">
-                {section.header}
-              </h2>
-            ) : (
-              ""
-            )}
-
-            <HoverEffectCards cardItems={section.cardData} />
-          </div>
-        ))
-      ) : (
-        <></>
-      )} */}
-      <ServiceContainer />
-      <ServiceContainerRow />
+      <DigitalServices />
     </div>
   );
 }

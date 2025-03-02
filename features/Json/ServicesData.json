@@ -57,6 +57,146 @@
           ]
       },
       {
+        "header": "Web & App Development",
+        "cardData":[
+          {
+          "title":"UI/UX Design",
+          "description":"We craft intuitive <strong>UI & seamless UX designs</strong> that enhance user engagement <br/><br/> More......",
+          "longDescription":"We craft intuitive UI & seamless UX designs that enhance user engagement & conversions. By focusing on user behavior, interactive prototypes, & responsive design, we ensure visually appealing, high-performance digital experiences that drive results.",
+          "image":"/images/services/Digital Marketing/brands-marketing.svg"
+        },
+          {
+          "title":"Progressive Web Apps",
+          "description":"We develop Progressive Web Apps (PWAs) that combine the best of web & mobile <br/><br/>More......",
+          "longDescription":"We develop Progressive Web Apps (PWAs) that combine the best of web & mobile apps, offering lightning-fast performance, offline accessibility, & seamless user experience. With responsive design & push notifications, we enhance engagement & retention.",
+          "image":"/images/services/Digital Marketing/brands-marketing.svg"
+        },
+          {
+          "title":"Chatbot Development",
+          "description":"We build AI-powered chatbots that provide instant customer support, lead generation <br/><br/> More....",
+          "longDescription":"We build AI-powered chatbots that provide instant customer support, lead generation, & personalized interactions. With NLP integration, multi-platform compatibility, & automation, our chatbots improve user experience & operational efficiency.",
+          "image":"/images/services/Digital Marketing/brands-marketing.svg"
+        },
+          {
+          "title":"Landing Page Optimization",
+          "description":"We design high-converting landing pages with compelling visuals, persuasive copy,<br/><br/> More......",
+          "longDescription":"We design high-converting landing pages with compelling visuals, persuasive copy, & seamless navigation to maximize user engagement & lead generation. Through A/B testing, speed optimization, & mobile responsiveness, we ensure peak performance & higher conversion rates..",
+          "image":"/images/services/Digital Marketing/brands-marketing.svg"
+        },
+          {
+          "title":"Custom Software Solutions",
+          "description":"We develop scalable & customized software solutions designed to meet unique <br/><br/>More......",
+          "longDescription":"We develop scalable & customized software solutions designed to meet unique business needs. With cutting-edge technology, seamless integrations, & user-centric design, we create efficient, high-performance applications that drive productivity & innovation.",
+          "image":"/images/services/Digital Marketing/brands-marketing.svg"
+        }
+      ]
+      },
+      {
+        "header":"E-Commerce & Marketing",
+        "cardData":[
+          {
+            "title":"E-Commerce Store Setup & Management",
+            "description":"We create & manage high-performance e-commerce stores on Overall <br/><br/>More....",
+            "longDescription":"We create & manage high-performance e-commerce stores on Overall Channels. Our solutions ensure smooth operations, seamless UX & optimized inventory management.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Product Listing & Optimization",
+            "description":"We optimize product listings with high-ranking keywords, compelling <br/><br/>More......",
+            "longDescription":"We optimize product listings with high-ranking keywords, compelling descriptions & SEO strategies to boost visibility, discoverability & conversions across marketplaces & e-commerce stores.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Festive & Seasonal Marketing",
+            "description":"We design seasonal promotions & festive campaigns that leverage <br/><br/> More....",
+            "longDescription":"We design seasonal promotions & festive campaigns that leverage consumer trends & holiday shopping behaviors, ensuring brands capture peak sales opportunities.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"E-Commerce Ad Campaigns",
+            "description":"We run data-driven ad campaigns across Google Shopping, Meta, Amazon  <br/><br/>More....",
+            "longDescription":"We run data-driven ad campaigns across Google Shopping, Meta, Amazon & Flipkart Ads to enhance product visibility, attract high-intent buyers & boost revenue.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          }
+        ]
+      },
+      {
+        "header":"Production",
+        "cardData":[
+          {
+            "title":"Video Production",
+            "description":"We produce high-impact videos, including brand films, promotional ads &<br/><br/> More......",
+            "longDescription":"We produce high-impact videos, including brand films, promotional ads & explainer videos, crafted for maximum audience engagement & conversion.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Motion Graphics & 3D Animations",
+            "description":"We create dynamic motion graphics & immersive 3D animations that enhance brand storytelling, product visualization & user engagement",
+            "longDescription":"We create dynamic motion graphics & immersive 3D animations that enhance brand storytelling, product visualization & user engagement",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"ScriptWriting & Story Boarding",
+            "description":"We develop compelling scripts & brand storytelling that align with business goals, <br/>More....",
+            "longDescription":"We develop compelling scripts & brand storytelling that align with business goals, emotional triggers & audience preferences for maximum brand recall.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"AI Generated Content & Voice Overs",
+            "description":"We leverage AI-driven content creation & voiceovers to generate natural, engaging & high-quality multimedia content for videos, podcasts & branding.",
+            "longDescription":"We leverage AI-driven content creation & voiceovers to generate natural, engaging & high-quality multimedia content for videos, podcasts & branding.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Podcast Production",
+            "description":"We produce professional podcasts, handling everything from scripting &  <br/>More....",
+            "longDescription":"We produce professional podcasts, handling everything from scripting & recording to editing & distribution, ensuring seamless listener engagement.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Promotional Content & Ad Films",
+            "description":"We create branded promotional videos & ad films tailored for social media, TV, & digital campaigns, delivering powerful messaging & audience engagement.",
+            "longDescription":"We create branded promotional videos & ad films tailored for social media, TV, & digital campaigns, delivering powerful messaging & audience engagement.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          }
+        ]
+      },
+      {
+        "header":"Print Media & Public Relations",
+        "cardData":[
+          {
+            "title":"Press Releases & Media Outreach",
+            "description":"We create & distribute press releases across top media outlets, securing <br/>More......",
+            "longDescription":"We create & distribute press releases across top media outlets, securing valuable coverage & brand credibility in digital & traditional media.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Event Marketing & Workshops",
+            "description":"We plan & execute event marketing strategies, influencer workshops & corporate seminars, ensuring maximum brand exposure & audience participation.",
+            "longDescription":"We plan & execute event marketing strategies, influencer workshops & corporate seminars, ensuring maximum brand exposure & audience participation.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Live Streaming & Event Coverage",
+            "description":"We provide high-quality live streaming & event coverage, helping brands reach wider audiences through seamless digital broadcasts.",
+            "longDescription":"We provide high-quality live streaming & event coverage, helping brands reach wider audiences through seamless digital broadcasts.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Merchandise & Swag Design",
+            "description":"We design branded merchandise, corporate gifts & promotional swag, enhancing brand loyalty & customer engagement with unique takeaways.",
+            "longDescription":"We design branded merchandise, corporate gifts & promotional swag, enhancing brand loyalty & customer engagement with unique takeaways.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          },
+          {
+            "title":"Print & Digital Collateral",
+            "description":"We create brochures, catalogs, business cards & digital assets, ensuring brand consistency & impactful messaging across all marketing channels.",
+            "longDescription":"We create brochures, catalogs, business cards & digital assets, ensuring brand consistency & impactful messaging across all marketing channels.",
+            "image":"/images/services/Digital Marketing/brands-marketing.svg"
+          }
+        ]
+      },
+      {
         "header": "Creative Services",
         "cardData": [
           {

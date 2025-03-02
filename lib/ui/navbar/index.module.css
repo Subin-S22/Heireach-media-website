@@ -14,10 +14,6 @@
   gap: 1rem;
 }
 
-.text_xl {
-  font-size: 18px;
-}
-
 .gap_8 {
   gap: 2rem;
 }
@@ -27,6 +23,5 @@
 }
 
 .font_family {
-  font-family: var(--courier-family);
   font-weight: 800;
 }
