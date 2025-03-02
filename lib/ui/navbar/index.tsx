@@ -12,10 +12,10 @@ const navbarContent = [
     name: "About Us",
     href: "/about-us",
   },
-  // {
-  //   name: "Services",
-  //   href: "/services",
-  // },
+  {
+    name: "Services",
+    href: "/services",
+  },
   // {
   //   name: "Careers",
   //   href: "/careers",
