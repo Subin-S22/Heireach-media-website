@@ -27,13 +27,18 @@ export default function CustomSection({ children, sectionId }: Props) {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [sectionId]);
+
   return (
     <div id={sectionId} className="min-h-96 relative">
       <motion.div
         className="absolute top-0 left-0 w-[120px] h-[200px] md:w-[200px] md:h-[300px]"
-        initial={{ x: -100, opacity: 0, width:0 }}
-        animate={isVisible ? { x: 20, opacity: 1, width:100 } : { x: -100, opacity: 0, width:0 }}
+        initial={{ x: -100, opacity: 0, width: 0 }}
+        animate={
+          isVisible
+            ? { x: 20, opacity: 1, width: 100 }
+            : { x: -100, opacity: 0, width: 0 }
+        }
         transition={{ duration: 1.5, ease: "easeOut" }}
         id="custom-section"
       >
@@ -47,7 +52,7 @@ export default function CustomSection({ children, sectionId }: Props) {
       {children}
       <motion.div
         className="absolute bottom-0 right-0 w-[120px] h-[200px] md:w-[200px] md:h-[300px]"
-        initial={{ x: 100, opacity: 0, width:0 }}
+        initial={{ x: 100, opacity: 0, width: 0 }}
         animate={
           isVisible
             ? {
@@ -57,9 +62,9 @@ export default function CustomSection({ children, sectionId }: Props) {
                   duration: 1,
                   ease: "easeInOut",
                 },
-                width:100
+                width: 100,
               }
-            : { x: 100, opacity: 0, width:0 }
+            : { x: 100, opacity: 0, width: 0 }
         }
         transition={{ duration: 1.5, ease: "easeOut" }}
       >

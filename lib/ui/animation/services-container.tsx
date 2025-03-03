@@ -1,8 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 import Image from "next/image";
-import DigiContent from "@/features/Json/ServicesData.json";
-import useWindowSize from "@/lib/function/useWindowSize";
 
 type TEffect = "extend" | "shrink";
 interface THoverEffect {

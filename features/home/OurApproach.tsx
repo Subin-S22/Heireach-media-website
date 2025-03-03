@@ -5,7 +5,7 @@ import style from "./index.module.css";
 import classnames from "@/lib/function/classnames";
 import Image from "next/image";
 
-const Tail = ({ deg, width, position, style }) => {
+const Tail = ({ deg, width, position, style }: any) => {
   const transformStyle = position
     ? `rotate(${deg}deg) translate(${position.left}, ${position.top})`
     : `rotate(${deg}deg)`;
@@ -22,7 +22,7 @@ const Tail = ({ deg, width, position, style }) => {
   );
 };
 
-const Head = ({ deg, position }) => {
+const Head = ({ deg, position }: any) => {
   return (
     <div
       className="w-0 h-0 border-l-[11px] border-r-[11px] border-b-[32.6px] border-l-transparent border-r-transparent border-b-white-500"
@@ -33,7 +33,7 @@ const Head = ({ deg, position }) => {
   );
 };
 
-const InfoCard = ({ src, heading, content, reverse = false }) => {
+const InfoCard = ({ src, heading, content, reverse = false }: any) => {
   return (
     <div>
       {!reverse && (
@@ -53,7 +53,7 @@ const InfoCard = ({ src, heading, content, reverse = false }) => {
         <div
           className={classnames(
             style.h4,
-            "whitespace-pre-wrap text-center max-w-72",
+            "whitespace-pre-wrap text-center max-w-72"
           )}
         >
           {content}

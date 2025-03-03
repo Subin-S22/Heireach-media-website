@@ -3,7 +3,7 @@ import InitialView from "@/features/home/InitialView";
 import OurServices from "@/features/home/OurServices";
 import OurWorks from "./components/our-works";
 import WhyChooseUs from "../about-us/components/why-choosen-us";
-import OurApproach from "@/features/home/OurApproach";
+// import OurApproach from "@/features/home/OurApproach";
 
 export default function Home() {
   return (
