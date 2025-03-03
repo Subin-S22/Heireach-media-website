@@ -32,7 +32,7 @@ const navbarContent = [
 const serviceContent = [
   { name: "Digital Marketing", href: "/services/digital" },
   { name: "Web & App Development", href: "/services/webapp" },
-  { name: "Marker Place & Marketing", href: "/services/webapp" },
+  { name: "Marker Place & Marketing", href: "/services/marketplace" },
   { name: "E-Commerce & Marketing", href: "/services/e-commerce" },
   { name: "Production", href: "/services/production" },
   { name: "Print Media & Public Relations (PR)", href: "/services/media" },
