@@ -142,7 +142,8 @@ export default function Careers() {
       </motion.div>
       {/** connect form */}
       <form
-        className="md:flex flex-col border border-primary_text relative mt-4 justify-center items-center bg-background"
+        className="md:flex flex-col border border-primary_text relative 
+        mt-4 mb-10 md:mb-20 justify-center items-center bg-background"
         onSubmit={formSubmit}
       >
         {/**background layout with border */}
