@@ -2,7 +2,7 @@
 import { useState } from "react";
 import "./index.css";
 import InputField from "@/lib/ui/input";
-import { ForwardRefComponent, HTMLMotionProps, motion } from "motion/react";
+import { motion } from "motion/react";
 
 const formContent = [
   { name: "First Name", state: "firstName", type: "text" },
@@ -68,10 +68,10 @@ export default function Careers() {
           <p id="c1" className="my-4 font-amazingSlab">
             {" "}
             Ready to shape the future of branding and creativity? At Heireach
-            Media, we're all about fresh ideas, bold creativity, and
-            <br /> collaborative growth. If you're a passionate, eager-to-learn
-            individual looking for an internship that challenges and inspires,
-            we'd
+            Media, we&apos;re all about fresh ideas, bold creativity, and
+            <br /> collaborative growth. If you&apos;re a passionate,
+            eager-to-learn individual looking for an internship that challenges
+            and inspires, we&apos;d
             <br /> love to hear from you.
           </p>
         </>
@@ -178,20 +178,3 @@ export default function Careers() {
     </div>
   );
 }
-
-interface DivProps
-  extends ForwardRefComponent<HTMLDivElement, HTMLMotionProps<"div">> {
-  children: React.ReactNode;
-}
-
-const Animate = ({ children }: DivProps) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 2, ease: "easeInOut" }}
-    >
-      {children}
-    </motion.div>
-  );
-};
