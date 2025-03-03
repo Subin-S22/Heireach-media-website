@@ -4,48 +4,32 @@ import CustomSection from "@/lib/ui/customSection";
 import style from "./index.module.css";
 import classnames from "@/lib/function/classnames";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const Tail = ({ deg, width, position, style }: any) => {
-  const transformStyle = position
-    ? `rotate(${deg}deg) translate(${position.left}, ${position.top})`
-    : `rotate(${deg}deg)`;
+interface InfoCardProps {
+  src: string;
+  heading: string;
+  content: string;
+}
 
+const InfoCard = ({ src, heading, content }: InfoCardProps) => {
   return (
-    <div
-      className="h-0 border-t-4 border-dashed border-white"
-      style={{
-        transform: transformStyle,
-        width: width,
-        ...style,
-      }}
-    ></div>
-  );
-};
-
-const Head = ({ deg, position }: any) => {
-  return (
-    <div
-      className="w-0 h-0 border-l-[11px] border-r-[11px] border-b-[32.6px] border-l-transparent border-r-transparent border-b-white-500"
-      style={{
-        transform: `rotate(${deg}deg) translate(${position?.left}, ${position?.top})`,
-      }}
-    ></div>
-  );
-};
-
-const InfoCard = ({ src, heading, content, reverse = false }: any) => {
-  return (
-    <div>
-      {!reverse && (
-        <div className="relative w-full h-60">
-          <Image
-            src={src}
-            alt="Side Graphic Bottom Right"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-      )}
+    <div className="p-5">
+      <div
+        className="relative w-full h-60 mt-6 overflow-hidden rounded-lg"
+        style={{
+          border: "2px solid var(--bg-blue-100)",
+        }}
+      >
+        <Image
+          src={src}
+          alt="Side Graphic Bottom Right"
+          layout="fill"
+          objectFit="contain"
+          className="rounded-lg"
+        />
+      </div>
       <div>
         <div className={classnames(style.h1, "flex justify-center")}>
           {heading}
@@ -59,88 +43,77 @@ const InfoCard = ({ src, heading, content, reverse = false }: any) => {
           {content}
         </div>
       </div>
-      {reverse && (
-        <div className="relative w-full h-60">
-          <Image
-            src={src}
-            alt="Side Graphic Bottom Right"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
-      )}
     </div>
   );
 };
 
+const infoCards = [
+  {
+    src: "/images/aboutCompany/contentColor1.svg",
+    heading: "Discovery",
+    content:
+      "We dive deep into understanding your brand essence, mission & vision.",
+  },
+  {
+    src: "/images/aboutCompany/contentColor1.svg",
+    heading: "Strategy",
+    content:
+      "We craft bespoke strategies that position your brand as a market leader.",
+  },
+  {
+    src: "/images/aboutCompany/contentColor1.svg",
+    heading: "Execution",
+    content:
+      "We bring ideas to life with stunning visuals, compelling content & data-backed campaigns.",
+  },
+  {
+    src: "/images/aboutCompany/contentColor1.svg",
+    heading: "Optimization",
+    content:
+      "We analyze, refine & elevate performance to ensure long-term success.",
+  },
+];
+
 export default function OurApproach() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("our-approach");
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        const isVisible =
+          rect.top < window.innerHeight - 100 && rect.bottom > 100;
+        setIsVisible(isVisible);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <CustomSection sectionId="our-approach-side">
-      <div className="flex justify-center p-20 space-4">
-        <div className="flex flex-col justify-center items-center ">
-          <Tail deg={90} width={"98px"} style={{ height: "10px" }} />
-          <InfoCard
-            src={"/images/aboutCompany/contentColor1.svg"}
-            heading="Discovery"
-            content="We dive deep into understanding your brand essence, mission &
-                  vision."
-          />
-        </div>
-        <div className="mt-24">
-          <Tail
-            deg={90}
-            width={"65px"}
-            position={{ left: "-3em", top: "-6em" }}
-          />
-          <Head deg={180} position={{ left: "-117px", top: "14px" }} />
-          <InfoCard
-            src={"/images/aboutCompany/contentColor1.svg"}
-            heading="Strategy"
-            content="We craft bespoke strategies that position your brand as a market leader."
-          />
-        </div>
-
-        <div className="mt-24">
-          <Tail
-            deg={90}
-            width={"65px"}
-            position={{ left: "-3em", top: "-6em" }}
-          />
-          <Head deg={180} position={{ left: "-117px", top: "14px" }} />
-          <InfoCard
-            src={"/images/aboutCompany/contentColor1.svg"}
-            heading="Execution"
-            content="We bring ideas to life with stunning visuals, compelling content & data-backed campaigns."
-          />
-        </div>
-
-        <div className="mt-24">
-          <Tail
-            deg={90}
-            width={"65px"}
-            position={{ left: "-3em", top: "-6em" }}
-          />
-          <Head deg={180} position={{ left: "-117px", top: "14px" }} />
-          <InfoCard
-            src={"/images/aboutCompany/contentColor1.svg"}
-            heading="Optimization"
-            content="We analyze, refine & elevate performance to ensure long-term success."
-          />
-          <Tail
-            deg={90}
-            width={"60px"}
-            position={{ left: "2em", top: "-6em" }}
-          />
-          <div className="relative w-full h-10 mt-20">
-            <Image
-              src={"/images/logo.svg"}
-              alt="logo"
-              layout="fill"
-              objectFit="contain"
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+        transition={{ duration: 2, ease: "anticipate" }}
+      >
+        <div
+          id="our-approach"
+          className="flex flex-wrap justify-center p-20 space-4"
+        >
+          {infoCards.map((card, index) => (
+            <InfoCard
+              key={index}
+              src={card.src}
+              heading={card.heading}
+              content={card.content}
             />
-          </div>
+          ))}
         </div>
-      </div>
+      </motion.div>
     </CustomSection>
   );
 }
