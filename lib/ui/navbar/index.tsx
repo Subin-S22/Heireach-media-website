@@ -81,9 +81,10 @@ const DropDown = ({ mouseEnter, setMouseEnter }: DropDownProps) => {
   return (
     <div className="relative inline-block text-left">
       <div>
-        <div
+        <button
           className="flex w-full justify-center items-center gap-x-1.5 rounded-md px-3 py-2 text-base font-amazingSlab shadow-xs "
           onClick={() => setMouseEnter(!mouseEnter)}
+          onBlur={() => setMouseEnter(false)}
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
@@ -102,7 +103,7 @@ const DropDown = ({ mouseEnter, setMouseEnter }: DropDownProps) => {
               clip-rule="evenodd"
             />
           </svg>
-        </div>
+        </button>
       </div>
 
       {mouseEnter ? (
