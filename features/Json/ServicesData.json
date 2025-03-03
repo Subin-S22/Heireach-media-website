@@ -121,35 +121,6 @@
       ]
       },
       {
-        "header":"Market Place & Marketing",
-        "cardData":[
-          {
-            "title":"Market Research & Competitor Analysis",
-            "description":"We conduct in-depth market research & competitor analysis to identify trends, customer behavior &<br/> More....",
-            "longDescription":"We conduct in-depth market research & competitor analysis to identify trends, customer behavior & opportunities. With data-backed insights & performance benchmarking, we help brands stay ahead of the competition.",
-            "image":"/images/services/Digital Marketing/brands-marketing.svg"
-          },
-          {
-            "title":"Concussion Rate Optimization",
-            "description":"We optimize customer journeys, landing pages & checkout processes to reduce  <br/>More....",
-            "longDescription":"We optimize customer journeys, landing pages & checkout processes to reduce drop-offs & boost conversions. Using A/B testing, UX improvements & analytics, we ensure higher ROI & sustained revenue growth.",
-            "image":"/images/services/Digital Marketing/brands-marketing.svg"
-          },
-          {
-            "title":"Growth & Business Solutions",
-            "description":"Our growth solutions focus on brand positioning, market expansion & digital transformation. <br/> More....",
-            "longDescription":"Our growth solutions focus on brand positioning, market expansion & digital transformation. With performance-driven tactics & automation, we help businesses achieve sustainable scalability & profitability.",
-            "image":"/images/services/Digital Marketing/brands-marketing.svg"
-          },
-          {
-            "title":"Business Consulting & Strategy",
-            "description":"We provide customized business consulting with strategic roadmaps,<br/> More....",
-            "longDescription":"We provide customized business consulting with strategic roadmaps, financial planning & process optimization. Our insights empower brands to navigate challenges, seize opportunities & drive exponential growth.",
-            "image":"/images/services/Digital Marketing/brands-marketing.svg"
-          }
-        ]
-      },
-      {
         "header":"E-Commerce & Marketing",
         "cardData":[
           {

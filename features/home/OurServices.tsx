@@ -132,7 +132,7 @@ export default function OurServices() {
       } else if(title.includes("Web & App")){
         router.push("/services/webapp")
       } else if(title.includes("Market Place")){
-        router.push("/services/marketing")
+        router.push("/services/marketplace")
       } else if(title.includes("E-Commerce")){
         router.push("/services/e-commerce")
       } else if(title.includes("Production")){
