@@ -55,16 +55,14 @@ export default function Navbar() {
                 "font-amazingSlab text-base"
               )}
             >
-              <Link href={content.href}>
-                {content.name === "Services" ? (
-                  <DropDown
-                    mouseEnter={mouseEnter}
-                    setMouseEnter={setMouseEnter}
-                  />
-                ) : (
-                  content.name
-                )}
-              </Link>
+              {content.name === "Services" ? (
+                <DropDown
+                  mouseEnter={mouseEnter}
+                  setMouseEnter={setMouseEnter}
+                />
+              ) : (
+                <Link href={content.href}>{content.name}</Link>
+              )}
             </li>
           );
         })}
@@ -78,13 +76,14 @@ interface DropDownProps {
   setMouseEnter: (x: boolean) => void;
 }
 const DropDown = ({ mouseEnter, setMouseEnter }: DropDownProps) => {
+  const dropClass = "block px-4 py-2 text-sm text-gray-700 hover:bg-gray-200";
   return (
     <div className="relative inline-block text-left">
       <div>
         <button
           className="flex w-full justify-center items-center gap-x-1.5 rounded-md px-3 py-2 text-base font-amazingSlab shadow-xs "
           onClick={() => setMouseEnter(!mouseEnter)}
-          onBlur={() => setMouseEnter(false)}
+          onBlur={() => setTimeout(() => setMouseEnter(false), 500)}
           id="menu-button"
           aria-expanded="true"
           aria-haspopup="true"
@@ -97,11 +96,7 @@ const DropDown = ({ mouseEnter, setMouseEnter }: DropDownProps) => {
             aria-hidden="true"
             data-slot="icon"
           >
-            <path
-              fill-rule="evenodd"
-              d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-              clip-rule="evenodd"
-            />
+            <path d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
           </svg>
         </button>
       </div>
@@ -113,59 +108,23 @@ const DropDown = ({ mouseEnter, setMouseEnter }: DropDownProps) => {
           aria-orientation="vertical"
           aria-labelledby="menu-button"
         >
-          <div className="py-1" role="none">
-            <Link
-              onClick={() => setMouseEnter(false)}
-              href="/services/digital"
-              className="block px-4 py-2 text-sm text-gray-700"
-              role="menuitem"
-              id="menu-item-0"
-            >
+          <div className="py-1">
+            <Link href="/services/digital" className={dropClass}>
               Digital Marketing
             </Link>
-            <Link
-              onClick={() => setMouseEnter(false)}
-              href="/services/webapp"
-              className="block px-4 py-2 text-sm text-gray-700"
-              role="menuitem"
-              id="menu-item-1"
-            >
+            <Link href="/services/webapp" className={dropClass}>
               Web & App Development
             </Link>
-            <Link
-              onClick={() => setMouseEnter(false)}
-              href="/services/webapp"
-              className="block px-4 py-2 text-sm text-gray-700"
-              role="menuitem"
-              id="menu-item-2"
-            >
+            <Link href="/services/webapp" className={dropClass}>
               Market Place & Marketing
             </Link>
-            <Link
-              onClick={() => setMouseEnter(false)}
-              href="/services/e-commerce"
-              className="block px-4 py-2 text-sm text-gray-700"
-              role="menuitem"
-              id="menu-item-2"
-            >
+            <Link href="/services/e-commerce" className={dropClass}>
               E-Commerce & Marketing
             </Link>
-            <Link
-              onClick={() => setMouseEnter(false)}
-              href="/services/production"
-              className="block px-4 py-2 text-sm text-gray-700"
-              role="menuitem"
-              id="menu-item-2"
-            >
+            <Link href="/services/production" className={dropClass}>
               Production
             </Link>
-            <Link
-              onClick={() => setMouseEnter(false)}
-              href="/services/media"
-              className="block px-4 py-2 text-sm text-gray-700"
-              role="menuitem"
-              id="menu-item-2"
-            >
+            <Link href="/services/media" className={dropClass}>
               Print Media & Public Relations (PR)
             </Link>
           </div>

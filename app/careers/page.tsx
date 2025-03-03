@@ -53,7 +53,7 @@ export default function Careers() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
         <>
           <h1 className="font-bold">
@@ -79,7 +79,7 @@ export default function Careers() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
         <h1 id="c2" className="text-xl font-amazingSlab font-semibold">
           Internship opportunities
@@ -94,7 +94,7 @@ export default function Careers() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
         <>
           <h1 id="c4" className="text-xl font-amazingSlab font-semibold">
@@ -112,7 +112,7 @@ export default function Careers() {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
         <>
           <h1 id="c5" className="text-xl font-amazingSlab font-semibold">
@@ -131,7 +131,7 @@ export default function Careers() {
         className="mt-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeInOut" }}
+        transition={{ duration: 1, ease: "easeInOut" }}
       >
         <h1 className="text-[var(--bg-blue-100)] font-amazingSlab text-2xl mt-10 mb-2 font-bold">
           Application
