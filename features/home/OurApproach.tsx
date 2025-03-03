@@ -1,7 +1,6 @@
 "use client";
 
 import CustomSection from "@/lib/ui/customSection";
-import style from "./index.module.css";
 import classnames from "@/lib/function/classnames";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -31,15 +30,8 @@ const InfoCard = ({ src, heading, content }: InfoCardProps) => {
         />
       </div>
       <div>
-        <div className={classnames(style.h1, "flex justify-center")}>
-          {heading}
-        </div>
-        <div
-          className={classnames(
-            style.h4,
-            "whitespace-pre-wrap text-center max-w-72"
-          )}
-        >
+        <div className={classnames("flex justify-center")}>{heading}</div>
+        <div className={classnames("whitespace-pre-wrap text-center max-w-72")}>
           {content}
         </div>
       </div>
