@@ -1,0 +1,19 @@
+
+      {
+        "header": "Digital Marketing",
+        "cardData": [
+  {
+    "firstTitle":"Branding",
+    "firstImage": "/images/services/Digital Marketing/brands-marketing.svg",
+    "firstPartialContent":
+      "A strong <strong> Brand Identity </strong> sets you apart in a competitive market. <br/><br/> more...",
+    "firstFullContent":
+      "A strong Brand identity sets you apart in a competitive market.<br></br> We create Strategic Branding Solutions that enhance brand recognition, build customer trust, and drive business growth through compelling visual storytelling and market positioning.",
+      "secondTitle":"Search Engine Optimization & Marketing",
+    "secondImage": "/images/services/Digital Marketing/brands-marketing.svg",
+    "secondPartialContent":
+      "Our <strong> SEO Strategies </strong> drive organic traffic, improve Google rankings, and enhance visibility. <br/><br/> more...",
+    "secondFullContent":
+      "Our SEO Strategies drive organic traffic, improve Google rankings, and enhance online visibility. We optimize with high-intent keywords, technical SEO, and content marketing, ensuring your brand stays ahead in search engine results and attracts qualified leads."
+  }]
+}

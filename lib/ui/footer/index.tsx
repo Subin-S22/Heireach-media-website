@@ -90,7 +90,7 @@ export default function Footer() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div id="footer-section" className={"bg-[#121212] px-4 md:px-8"}>
+    <div id="footer-section" className={"bg-[#121212] px-4 md:px-8 max-w-screen-xl mx-auto"}>
       <div className="grid grid-cols-4 gap-4 auto-rows-auto relative place-content-center">
         {/* <div>
           <motion.div

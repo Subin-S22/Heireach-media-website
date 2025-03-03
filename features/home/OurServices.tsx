@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const serviceDetails = [
   {
@@ -114,6 +115,7 @@ const extendsImage = {
 };
 export default function OurServices() {
   const [contentExtend, setExtend] = useState("rest");
+  const router = useRouter();
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
   const handleHoverEnd = () => {
     setExtend("rest");
@@ -123,6 +125,11 @@ export default function OurServices() {
     setExtend("hover");
     setHoveredImage(id);
   };
+  const handleNavigation = (title: string) => {
+      localStorage.setItem("selectedService", title);
+      router.push("/services");
+  };
+  
   return (
     <CustomSection sectionId="our-services">
       <div className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] md:min-h-[1000px] lg:min-h-[870px] py-8">
@@ -146,6 +153,7 @@ export default function OurServices() {
             {serviceDetails.map((service) => (
               <motion.div
                 key={service.id}
+                onClick={() => handleNavigation(service.title)}
                 id="image-scroll"
                 className="flex border-2 border-[#0066FF] rounded-[15px] bg-[#000000] sm:min-w-[450px] md:min-w-[300px] lg:min-w-[400px]   h-[179px] group hover:shadow-[2px_2px_6px_0px_#0066FF]"
                 whileHover="hover"
@@ -155,7 +163,7 @@ export default function OurServices() {
                 onHoverEnd={handleHoverEnd}
               >
                 <div className="pl-2 md:pl-10 flex justify-center items-center w-full ">
-                  <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center">
+                  <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center" >
                     {service.id === 6
                       ? service.title.split("&").map((part, index) => (
                           <span key={index}>

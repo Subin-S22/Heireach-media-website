@@ -7,7 +7,13 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const InfoCard = ({ src, heading, content }) => {
+interface InfoCardProps {
+  src: string;
+  heading: string;
+  content: string;
+}
+
+const InfoCard = ({ src, heading, content }: InfoCardProps) => {
   return (
     <div className="p-5">
       <div
@@ -31,7 +37,7 @@ const InfoCard = ({ src, heading, content }) => {
         <div
           className={classnames(
             style.h4,
-            "whitespace-pre-wrap text-center max-w-72",
+            "whitespace-pre-wrap text-center max-w-72"
           )}
         >
           {content}

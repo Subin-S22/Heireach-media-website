@@ -1,10 +1,10 @@
 "use client";
-import { Extend } from "@/lib/ui/animation";
+import DigitalServices from "./digital/page";
 
 export default function Services() {
   return (
     <div>
-      <Extend></Extend>
+      <DigitalServices />
     </div>
   );
 }
