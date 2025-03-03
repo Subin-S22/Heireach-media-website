@@ -127,7 +127,19 @@ export default function OurServices() {
   };
   const handleNavigation = (title: string) => {
       localStorage.setItem("selectedService", title);
-      router.push("/services");
+      if(title.includes("Digital")){
+        router.push("/services/digital")
+      } else if(title.includes("Web & App")){
+        router.push("/services/webapp")
+      } else if(title.includes("Market Place")){
+        router.push("/services/marketplace")
+      } else if(title.includes("E-Commerce")){
+        router.push("/services/e-commerce")
+      } else if(title.includes("Production")){
+        router.push("/services/production")
+      } else if(title.includes("Print Media")){
+        router.push("/services/media")
+      }
   };
   
   return (
@@ -148,7 +160,7 @@ export default function OurServices() {
             />
           </div>
         </div>
-        <div className="pb-56 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 lg:px-20">
+        <div className="pb-56 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 lg:px-10">
           <AnimatePresence mode="wait">
             {serviceDetails.map((service) => (
               <motion.div
