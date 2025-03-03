@@ -1,0 +1,39 @@
+        #a1{
+            background-color: var(--background-color);
+            font-family: 'Amazing Slab', serif;
+            padding: 1rem 3rem;
+        }
+        .blue{
+            color:#0066ee;
+            
+        }
+        .white{
+            color: white;
+           
+        }
+        #c1{
+            color: white;
+            
+        }
+        #c2{
+            color:#0066ee ;
+           
+        }
+        #c3{
+            color: white;
+           
+        }
+        #c4{
+            color: #0066ee;
+            
+        }
+        #c6{
+            color: white;
+          
+        }
+        #c5{
+            color: #0066ee;
+        }
+        #c7{
+            color: white;
+        }

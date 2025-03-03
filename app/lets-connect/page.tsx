@@ -2,19 +2,13 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, ToastContainer } from "react-toastify";
+import InputField from "@/lib/ui/input";
 
 //Initialize emailjs with the publickey
 emailjs.init({ publicKey: process.env.NEXT_PUBLIC_USER_ID });
 const classNames = {
   paragraph: "font-amazingSlab text-base",
 };
-
-interface InputFieldProps {
-  labelName: string;
-  name: string;
-  value: string | number;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
 
 interface LayoutProps
   extends React.DetailedHTMLProps<
@@ -131,19 +125,5 @@ const Layout = ({ children, ...rest }: LayoutProps) => {
       {children}
       <ToastContainer />
     </section>
-  );
-};
-
-const InputField = ({ labelName, name, value, onChange }: InputFieldProps) => {
-  return (
-    <div className="flex flex-col w-full px-8">
-      <label>{labelName}</label>
-      <input
-        name={name}
-        onChange={onChange}
-        value={value}
-        className="bg-background border-b border-white outline-none text-white px-1 py-2"
-      />
-    </div>
   );
 };
