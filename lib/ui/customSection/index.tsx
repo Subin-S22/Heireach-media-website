@@ -32,7 +32,7 @@ export default function CustomSection({ children, sectionId }: Props) {
   return (
     <div id={sectionId} className="min-h-96 relative">
       <motion.div
-        className="absolute top-0 left-0 w-[120px] h-[200px] md:w-[200px] md:h-[300px]"
+        className="absolute top-0 left-0 w-[120px] h-[200px] md:w-[200px] md:h-[300px] -z-10"
         initial={{ x: -100, opacity: 0, width: 0 }}
         animate={
           isVisible
@@ -51,7 +51,7 @@ export default function CustomSection({ children, sectionId }: Props) {
       </motion.div>
       {children}
       <motion.div
-        className="absolute bottom-0 right-0 w-[120px] h-[200px] md:w-[200px] md:h-[300px]"
+        className="absolute bottom-0 right-0 w-[120px] h-[200px] md:w-[200px] md:h-[300px] -z-10"
         initial={{ x: 100, opacity: 0, width: 0 }}
         animate={
           isVisible
