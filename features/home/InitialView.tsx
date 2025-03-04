@@ -1,6 +1,3 @@
-import { MotionConfig } from "motion/react";
-import Image from "next/image";
-import { motion } from "motion/react";
 import ImageRevolver from "@/lib/ui/animation/ImageRevolver";
 import Marquee from "./Marquee/MarqueeImages";
 import Space from "@/lib/ui/space";

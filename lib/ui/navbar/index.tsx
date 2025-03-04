@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+import { useRouter } from "next/navigation";
 
 const navbarContent = [
   {
@@ -42,6 +43,8 @@ export default function Navbar() {
   const [mouseEnter, setMouseEnter] = useState<boolean>(false);
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
   const [showSerivces, setShowServices] = useState<boolean>(false);
+  //router
+  const router = useRouter();
 
   return (
     <div
@@ -131,8 +134,18 @@ export default function Navbar() {
           /> */}
           |||
         </div>
-        <Image src="/images/logo.svg" alt="logo" width={40} height={40} />
-        <div className="leading-0">
+        <Image
+          src="/images/logo.svg"
+          alt="logo"
+          width={40}
+          height={40}
+          onClick={() => router.push("/home")}
+          className="cursor-pointer"
+        />
+        <div
+          className="hidden lg:block leading-0 cursor-pointer"
+          onClick={() => router.push("/home")}
+        >
           <div className="font-amazingSlab font-extrabold text-xl md:text-3xl text-white whitespace-nowrap">
             HEIREACH MEDIA
           </div>
