@@ -1,20 +1,15 @@
 "use client";
 
 import CustomSection from "@/lib/ui/customSection";
+// import style from "./index.module.css";
 import classnames from "@/lib/function/classnames";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-interface InfoCardProps {
-  src: string;
-  heading: string;
-  content: string;
-}
-
-const InfoCard = ({ src, heading, content }: InfoCardProps) => {
+const InfoCard = ({ src, heading, content }) => {
   return (
-    <div className="p-5">
+    <div className="p-5" id="our-approach">
       <div
         className="relative w-full h-60 mt-6 overflow-hidden rounded-lg"
         style={{
@@ -30,8 +25,10 @@ const InfoCard = ({ src, heading, content }: InfoCardProps) => {
         />
       </div>
       <div>
-        <div className={classnames("flex justify-center")}>{heading}</div>
-        <div className={classnames("whitespace-pre-wrap text-center max-w-72")}>
+        <div className="flex justify-center font-amazingSlab text-2xl font-extrabold  ">
+          {heading}
+        </div>
+        <div className="whitespace-pre-wrap text-center max-w-72 font-amazingSlab text-l font-bold ">
           {content}
         </div>
       </div>
@@ -92,9 +89,24 @@ export default function OurApproach() {
         animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 2, ease: "anticipate" }}
       >
+        <div id="our-approach" className="pb-24 flex w-full">
+          <div className="text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
+            Our approach
+          </div>
+          <div className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14"></div>
+        </div>
+        <div className="relative my-24 h-96 w-full lg:block hidden">
+          <Image
+            src={"/images/OurApproachsvg.svg"}
+            alt="Our approach"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
+
         <div
           id="our-approach"
-          className="flex flex-wrap justify-center p-20 space-4"
+          className="flex flex-wrap justify-center p-20 space-4 lg:hidden block"
         >
           {infoCards.map((card, index) => (
             <InfoCard
