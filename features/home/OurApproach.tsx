@@ -7,7 +7,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const InfoCard = ({ src, heading, content }) => {
+const InfoCard = ({ src, heading, content }: any) => {
   return (
     <div className="p-5" id="our-approach">
       <div
@@ -25,10 +25,10 @@ const InfoCard = ({ src, heading, content }) => {
         />
       </div>
       <div>
-        <div className="flex justify-center font-amazingSlab text-2xl font-extrabold  ">
+        <div className="flex justify-center font-amazingSlab text-2xl font-bold my-2">
           {heading}
         </div>
-        <div className="whitespace-pre-wrap text-center max-w-72 font-amazingSlab text-l font-bold ">
+        <div className="whitespace-pre-wrap text-center max-w-72 font-amazingSlab text-base font-normal ">
           {content}
         </div>
       </div>
@@ -86,7 +86,7 @@ export default function OurApproach() {
     <CustomSection sectionId="our-approach-side">
       <motion.div
         initial={{ opacity: 0 }}
-        animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 2, ease: "anticipate" }}
       >
         <div id="our-approach" className="pb-24 flex w-full">
