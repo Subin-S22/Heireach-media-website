@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 const InfoCard = ({ src, heading, content }: any) => {
   return (
-    <div className="p-5" id="our-approach">
+    <div id="our-approach">
       <div
         className="relative w-full h-60 mt-6 overflow-hidden rounded-lg"
         style={{
@@ -89,13 +89,13 @@ export default function OurApproach() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2, ease: "anticipate" }}
       >
-        <div id="our-approach" className="pb-24 flex w-full">
+        <div id="our-approach" className="flex w-full">
           <div className="text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
             Our approach
           </div>
           <div className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14"></div>
         </div>
-        <div className="relative my-24 h-96 w-full lg:block hidden">
+        <div className="relative mb-24 my-4 h-96 w-full lg:block hidden">
           <Image
             src={"/images/OurApproachsvg.svg"}
             alt="Our approach"
@@ -106,7 +106,7 @@ export default function OurApproach() {
 
         <div
           id="our-approach"
-          className="flex flex-wrap justify-center p-20 space-4 lg:hidden block"
+          className="flex flex-wrap gap-8 justify-center px-10 py-4 space-4 lg:hidden"
         >
           {infoCards.map((card, index) => (
             <InfoCard
