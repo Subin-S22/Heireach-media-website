@@ -2,7 +2,6 @@
 
 import CustomSection from "@/lib/ui/customSection";
 // import style from "./index.module.css";
-import classnames from "@/lib/function/classnames";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -11,7 +10,7 @@ const InfoCard = ({ src, heading, content }: any) => {
   return (
     <div id="our-approach">
       <div
-        className="relative w-full h-60 mt-6 overflow-hidden rounded-lg"
+        className="relative w-full h-48 mt-6 overflow-hidden rounded-2xl bg-white"
         style={{
           border: "2px solid var(--bg-blue-100)",
         }}
@@ -20,8 +19,7 @@ const InfoCard = ({ src, heading, content }: any) => {
           src={src}
           alt="Side Graphic Bottom Right"
           layout="fill"
-          objectFit="contain"
-          className="rounded-lg"
+          objectFit="cover"
         />
       </div>
       <div>
@@ -38,25 +36,25 @@ const InfoCard = ({ src, heading, content }: any) => {
 
 const infoCards = [
   {
-    src: "/images/aboutCompany/contentColor1.svg",
+    src: "/images/approach/Discovery.svg",
     heading: "Discovery",
     content:
       "We dive deep into understanding your brand essence, mission & vision.",
   },
   {
-    src: "/images/aboutCompany/contentColor1.svg",
+    src: "/images/approach/Strategy.svg",
     heading: "Strategy",
     content:
       "We craft bespoke strategies that position your brand as a market leader.",
   },
   {
-    src: "/images/aboutCompany/contentColor1.svg",
+    src: "/images/approach/Execution.svg",
     heading: "Execution",
     content:
       "We bring ideas to life with stunning visuals, compelling content & data-backed campaigns.",
   },
   {
-    src: "/images/aboutCompany/contentColor1.svg",
+    src: "/images/approach/Optimization.svg",
     heading: "Optimization",
     content:
       "We analyze, refine & elevate performance to ensure long-term success.",
