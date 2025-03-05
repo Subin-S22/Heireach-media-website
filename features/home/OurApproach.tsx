@@ -95,7 +95,7 @@ export default function OurApproach() {
           </div>
           <div className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14"></div>
         </div>
-        <div className="relative mb-24 my-4 h-[400px] w-full lg:block hidden">
+        <div className="relative mb-24 my-4 h-[500px] w-full lg:block hidden">
           <Image
             src={"/images/OurApproachsvg.svg"}
             alt="Our approach"
