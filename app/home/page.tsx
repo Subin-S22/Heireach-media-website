@@ -4,6 +4,7 @@ import OurServices from "@/features/home/OurServices";
 import OurWorks from "./components/our-works";
 import WhyChooseUs from "../about-us/components/why-choosen-us";
 import OurApproach from "@/features/home/OurApproach";
+import Space from "@/lib/ui/space";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
         <CompanyDescription />
         <OurServices />
         <OurApproach />
+        <Space className="h-20" />
         <WhyChooseUs />
         <OurWorks />
       </main>

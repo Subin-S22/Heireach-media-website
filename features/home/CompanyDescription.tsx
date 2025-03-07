@@ -32,7 +32,7 @@ export default function CompanyDescription() {
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
           transition={{ duration: 2, ease: "anticipate" }}
           // className="flex justify-center items-center min-h-[600px] sm:min-h-[700px] md:min-h-[800px] px-4 sm:px-6 lg:px-7"
-          className="p-10 pb-20 pt-36"
+          className="p-10 px-12 md:px-36 pb-20 pt-36"
         >
           <div id="company-description" className="w-full">
             <div className="flex items-center justify-start gap-4 ">

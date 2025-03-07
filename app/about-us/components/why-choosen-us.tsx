@@ -63,16 +63,17 @@ export default function WhyChooseUs() {
     return "rest";
   };
 
+  const initial = (x: number) => ({ x: x, opacity: 0, width: 0, y: x });
+
   return (
     <section
       id="about-us-section"
       className="relative bg-[#0a0a0a] text-white py-16 overflow-hidden"
     >
-      {/* Top Left Image */}
       <motion.div
-        className="absolute top-0 left-0 w-[150px] h-[200px]"
-        initial={{ x: -100, opacity: 0 }}
-        animate={isVisible ? { x: 0, opacity: 1 } : { x: -100, opacity: 0 }}
+        className="absolute top-0 left-0 w-[400px] h-[400px]"
+        initial={initial(-100)}
+        animate={isVisible ? { x: 20, opacity: 1, width: 200 } : initial(-100)}
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <Image
@@ -83,21 +84,21 @@ export default function WhyChooseUs() {
         />
       </motion.div>
 
-      {/* Bottom Right Image */}
       <motion.div
-        className="absolute bottom-0 right-0 w-[150px] h-[200px]"
-        initial={{ x: 100, opacity: 0 }}
+        className="absolute bottom-0 right-0 w-[400px] h-[400px]"
+        initial={initial(100)}
         animate={
           isVisible
             ? {
-                x: 0,
+                x: -20,
                 opacity: 1,
                 transition: {
                   duration: 1,
                   ease: "easeInOut",
                 },
+                width: 200,
               }
-            : { x: 100, opacity: 0 }
+            : initial(100)
         }
         transition={{ duration: 1.5, ease: "easeOut" }}
       >

@@ -126,22 +126,22 @@ export default function OurServices() {
     setHoveredImage(id);
   };
   const handleNavigation = (title: string) => {
-      localStorage.setItem("selectedService", title);
-      if(title.includes("Digital")){
-        router.push("/services/digital")
-      } else if(title.includes("Web & App")){
-        router.push("/services/webapp")
-      } else if(title.includes("Market Place")){
-        router.push("/services/marketplace")
-      } else if(title.includes("E-Commerce")){
-        router.push("/services/e-commerce")
-      } else if(title.includes("Production")){
-        router.push("/services/production")
-      } else if(title.includes("Print Media")){
-        router.push("/services/media")
-      }
+    localStorage.setItem("selectedService", title);
+    if (title.includes("Digital")) {
+      router.push("/services/digital");
+    } else if (title.includes("Web & App")) {
+      router.push("/services/webapp");
+    } else if (title.includes("Market Place")) {
+      router.push("/services/marketplace");
+    } else if (title.includes("E-Commerce")) {
+      router.push("/services/e-commerce");
+    } else if (title.includes("Production")) {
+      router.push("/services/production");
+    } else if (title.includes("Print Media")) {
+      router.push("/services/media");
+    }
   };
-  
+
   return (
     <CustomSection sectionId="our-services">
       <div className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] md:min-h-[1000px] lg:min-h-[870px] py-8">
@@ -160,7 +160,7 @@ export default function OurServices() {
             />
           </div>
         </div>
-        <div className="pb-56 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 lg:px-10">
+        <div className="pb-6 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 lg:px-10">
           <AnimatePresence mode="wait">
             {serviceDetails.map((service) => (
               <motion.div
@@ -175,7 +175,7 @@ export default function OurServices() {
                 onHoverEnd={handleHoverEnd}
               >
                 <div className="pl-2 md:pl-10 flex justify-center items-center w-full ">
-                  <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center" >
+                  <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center">
                     {service.id === 6
                       ? service.title.split("&").map((part, index) => (
                           <span key={index}>
@@ -203,13 +203,13 @@ export default function OurServices() {
                           ? index === 0
                             ? 95 + 50
                             : index === 1
-                              ? 55 + 30
-                              : 27 + 20
+                            ? 55 + 30
+                            : 27 + 20
                           : index === 0
-                            ? 95
-                            : index === 1
-                              ? 55
-                              : 27
+                          ? 95
+                          : index === 1
+                          ? 55
+                          : 27
                       }
                       height={175}
                       className="object-cover h-[175px] rounded-tr-[15px] rounded-br-[15px] absolute right-0 group-hover:shadow-[-4px_4px_4px_0px_#00000040]"

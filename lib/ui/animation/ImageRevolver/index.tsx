@@ -31,10 +31,10 @@ const ImageRevolver = ({ imageSrc, text, animationDuration = 10 }: Props) => {
   };
 
   return (
-    <div className="relative w-[60px] md:w-[120px] h-[60px] md:h-[120px] ml-auto overflow-hidden rounded-full">
+    <div className="relative w-[60px] md:w-[140px] h-[60px] md:h-[140px] ml-auto overflow-hidden rounded-full">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-      w-[30px] h-[30px] rounded-full overflow-hidden"
+      w-[40px] h-[40px] rounded-full overflow-hidden"
       >
         <Image
           src={imageSrc}
@@ -69,7 +69,7 @@ const ImageRevolver = ({ imageSrc, text, animationDuration = 10 }: Props) => {
                 x: x,
                 y: y,
                 rotate: `${angle + 90}deg`,
-                transform: `translate(-50%, -50%) rotate(${-angle}deg)`,
+                transform: `translate(-50%, -50%)`,
               }}
             >
               {char}
