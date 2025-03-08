@@ -13,16 +13,19 @@ const serviceDetails = [
     title: "Digital Marketing",
     images: [
       {
-        src: "/images/aboutCompany/dm1.svg",
-        hoverSrc: "/images/aboutCompany/dmColor1.svg",
+        src: "/images/services/Digital Marketing/digital_marketing_card/dmbw1.svg",
+        hoverSrc:
+          "/images/services/Digital Marketing/digital_marketing_card/dmcol1.svg",
       },
       {
-        src: "/images/aboutCompany/dm2.svg",
-        hoverSrc: "/images/aboutCompany/dmColor2.svg",
+        src: "/images/services/Digital Marketing/digital_marketing_card/dmbw2.svg",
+        hoverSrc:
+          "/images/services/Digital Marketing/digital_marketing_card/dmcol2.svg",
       },
       {
-        src: "/images/aboutCompany/dm3.svg",
-        hoverSrc: "/images/aboutCompany/dmColor3.svg",
+        src: "/images/services/Digital Marketing/digital_marketing_card/dmbw3.svg",
+        hoverSrc:
+          "/images/services/Digital Marketing/digital_marketing_card/dmcol3.svg",
       },
     ],
   },
@@ -31,8 +34,16 @@ const serviceDetails = [
     title: "Web & App Development",
     images: [
       {
-        src: "/images/aboutCompany/dev.svg",
-        hoverSrc: "/images/aboutCompany/devColor.svg",
+        src: "/images/services/Web&App Development/web_card/webbw1.svg",
+        hoverSrc: "/images/services/Web&App Development/web_card/webcol1.svg",
+      },
+      {
+        src: "/images/services/Web&App Development/web_card/webbw2.svg",
+        hoverSrc: "/images/services/Web&App Development/web_card/webcol2.svg",
+      },
+      {
+        src: "/images/services/Web&App Development/web_card/webbw3.svg",
+        hoverSrc: "/images/services/Web&App Development/web_card/webcol3.svg",
       },
     ],
   },
@@ -41,8 +52,19 @@ const serviceDetails = [
     title: "Market Place & Marketing",
     images: [
       {
-        src: "/images/aboutCompany/market.svg",
-        hoverSrc: "/images/aboutCompany/marketColor.svg",
+        src: "/images/services/MarketPlace & Marketing/marketing_card/marketingbw1.svg",
+        hoverSrc:
+          "/images/services/MarketPlace & Marketing/marketing_card/marketingcol1.svg",
+      },
+      {
+        src: "/images/services/MarketPlace & Marketing/marketing_card/marketingbw2.svg",
+        hoverSrc:
+          "/images/services/MarketPlace & Marketing/marketing_card/marketingcol2.svg",
+      },
+      {
+        src: "/images/services/MarketPlace & Marketing/marketing_card/marketingbw3.svg",
+        hoverSrc:
+          "/images/services/MarketPlace & Marketing/marketing_card/marketingcol3.svg",
       },
     ],
   },
@@ -51,16 +73,18 @@ const serviceDetails = [
     title: "E-Commerce & Marketing",
     images: [
       {
-        src: "/images/aboutCompany/content1.svg",
-        hoverSrc: "/images/aboutCompany/contentColor1.svg",
+        src: "/images/services/E-Commerce & Marketing/e_com_card/e_combw1.svg",
+        hoverSrc:
+          "/images/services/E-Commerce & Marketing/e_com_card/e_comcol1.svg",
       },
       {
-        src: "/images/aboutCompany/content2.svg",
-        hoverSrc: "/images/aboutCompany/contentColor2.svg",
+        src: "/images/services/E-Commerce & Marketing/e_com_card/e_combw2.svg",
+        hoverSrc:
+          "/images/services/E-Commerce & Marketing/e_com_card/e_comcol2.svg",
       },
       {
-        src: "/images/aboutCompany/content3.svg",
-        hoverSrc: "/images/aboutCompany/contentColor3.svg",
+        src: "/images/services/E-Commerce & Marketing/e_com_card/e_combw3.svg",
+        hoverSrc: "/images/E-Commerce & Marketing/e_com_card/e_comcol3.svg",
       },
     ],
   },
@@ -69,16 +93,16 @@ const serviceDetails = [
     title: "Production",
     images: [
       {
-        src: "/images/aboutCompany/content1.svg",
-        hoverSrc: "/images/aboutCompany/contentColor1.svg",
+        src: "/images/services/Production/prod_card/prodbw1.svg",
+        hoverSrc: "/images/services/Production/prod_card/prodcol1.svg",
       },
       {
-        src: "/images/aboutCompany/content2.svg",
-        hoverSrc: "/images/aboutCompany/contentColor2.svg",
+        src: "/images/services/Production/prod_card/prodbw2.svg",
+        hoverSrc: "/images/services/Production/prod_card/prodcol2.svg",
       },
       {
-        src: "/images/aboutCompany/content3.svg",
-        hoverSrc: "/images/aboutCompany/contentColor3.svg",
+        src: "/images/services/Production/prod_card/prodbw3.svg",
+        hoverSrc: "/images/services/Production/prod_card/prodcol3.svg",
       },
     ],
   },
@@ -87,16 +111,19 @@ const serviceDetails = [
     title: "Print Media & Public Relation (PR)",
     images: [
       {
-        src: "/images/aboutCompany/content1.svg",
-        hoverSrc: "/images/aboutCompany/contentColor1.svg",
+        src: "/images/services/Print Media & Public Relations (PR)/media_card/mediabw1.svg",
+        hoverSrc:
+          "/images/services/Print Media & Public Relations (PR)/media_card/mediacol1.svg",
       },
       {
-        src: "/images/aboutCompany/content2.svg",
-        hoverSrc: "/images/aboutCompany/contentColor2.svg",
+        src: "/images/services/Print Media & Public Relations (PR)/media_card/mediabw2.svg",
+        hoverSrc:
+          "/images/services/Print Media & Public Relations (PR)/media_card/mediacol2.svg",
       },
       {
-        src: "/images/aboutCompany/content3.svg",
-        hoverSrc: "/images/aboutCompany/contentColor3.svg",
+        src: "/images/services/Print Media & Public Relations (PR)/media_card/mediabw3.svg",
+        hoverSrc:
+          "/images/services/Print Media & Public Relations (PR)/media_card/mediacol3.svg",
       },
     ],
   },
@@ -203,13 +230,13 @@ export default function OurServices() {
                           ? index === 0
                             ? 95 + 50
                             : index === 1
-                            ? 55 + 30
-                            : 27 + 20
+                              ? 55 + 30
+                              : 27 + 20
                           : index === 0
-                          ? 95
-                          : index === 1
-                          ? 55
-                          : 27
+                            ? 95
+                            : index === 1
+                              ? 55
+                              : 27
                       }
                       height={175}
                       className="object-cover h-[175px] rounded-tr-[15px] rounded-br-[15px] absolute right-0 group-hover:shadow-[-4px_4px_4px_0px_#00000040]"
