@@ -1,3 +1,4 @@
+"use client";
 import CompanyDescription from "@/features/home/CompanyDescription";
 import InitialView from "@/features/home/InitialView";
 import OurServices from "@/features/home/OurServices";
@@ -5,8 +6,12 @@ import OurWorks from "./components/our-works";
 import WhyChooseUs from "../about-us/components/why-choosen-us";
 import OurApproach from "@/features/home/OurApproach";
 import Space from "@/lib/ui/space";
+import { FormContent } from "../lets-connect/page";
+import useConnectForm from "@/lib/hooks/useConnectForm";
 
 export default function Home() {
+  const { formState, formSubmit, onChange } = useConnectForm();
+
   return (
     <div className="">
       <main className="">
@@ -17,6 +22,11 @@ export default function Home() {
         <Space className="h-20" />
         <WhyChooseUs />
         <OurWorks />
+        <FormContent
+          formState={formState}
+          formSubmit={formSubmit}
+          onChange={onChange}
+        />
       </main>
     </div>
   );
