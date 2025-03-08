@@ -6,8 +6,8 @@ import OurWorks from "./components/our-works";
 import WhyChooseUs from "../about-us/components/why-choosen-us";
 import OurApproach from "@/features/home/OurApproach";
 import Space from "@/lib/ui/space";
-import { FormContent } from "../lets-connect/page";
 import useConnectForm from "@/lib/hooks/useConnectForm";
+import FormContent from "@/lib/ui/form/connect";
 
 export default function Home() {
   const { formState, formSubmit, onChange } = useConnectForm();
