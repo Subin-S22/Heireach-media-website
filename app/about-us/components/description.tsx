@@ -100,7 +100,10 @@ export default function Description() {
         {/* What We Do Best Section */}
         <div className="text-center mt-10 text-lg lg:text-lg md:text-sm">
           <h2 className="text-xl font-bold text-blue-500">What We Do Best?</h2>
-          <div className="flex gap-4 md:text-justify xs:flex-col text-lg lg:text-lg md:text-sm xs:test-center items-center justify-center text-gray-300 text-lg mt-4">
+          <div
+            className="flex gap-4 md:text-justify xs:flex-col 
+          lg:text-lg md:text-sm xs:test-center items-center justify-center text-gray-300 text-lg mt-4"
+          >
             <ul className="space-y-2">
               <li>• Branding & Identity</li>
               <li>• UI/UX & Web Design</li>

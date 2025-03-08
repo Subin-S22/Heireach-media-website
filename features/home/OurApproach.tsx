@@ -100,6 +100,14 @@ export default function OurApproach() {
             layout="fill"
             objectFit="contain"
           />
+          {/* <div className="h-28 w-28 right-[136px] -bottom-28 absolute">
+            <Image
+              src="/Layer.svg"
+              alt="layer"
+              layout="fill"
+              objectFit="contain"
+            />
+          </div> */}
         </div>
 
         <div

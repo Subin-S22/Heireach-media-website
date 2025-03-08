@@ -31,16 +31,16 @@ const ImageRevolver = ({ imageSrc, text, animationDuration = 10 }: Props) => {
   };
 
   return (
-    <div className="relative w-[60px] md:w-[140px] h-[60px] md:h-[140px] ml-auto overflow-hidden rounded-full">
+    <div className="relative w-[80px] md:w-[140px] h-[80px] md:h-[140px] ml-auto overflow-hidden rounded-full">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-      w-[40px] h-[40px] rounded-full overflow-hidden"
+      w-[30px] h-[30px] md:w-[40px] md:h-[40px] overflow-hidden"
       >
         <Image
           src={imageSrc}
           alt="Revolving Image"
-          width={40}
-          height={40}
+          width={30}
+          height={30}
           className="w-full h-full object-cover"
         />
       </div>
