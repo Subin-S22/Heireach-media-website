@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-
+import useWindowSize from "@/lib/function/useWindowSize";
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   sectionId: string;
@@ -13,7 +13,6 @@ export default function CustomSection({ children, sectionId, ...rest }: Props) {
   console.log(isVisible);
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref);
-
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById(sectionId);
@@ -92,12 +91,13 @@ interface OverLayProps extends React.HTMLAttributes<HTMLDivElement> {
 
 const OverLaySection = ({ children, ref, isInView, ...rest }: OverLayProps) => {
   const initial = (x: number) => ({ x: x, opacity: 0, width: 0, y: x });
+  const { width } = useWindowSize();
   return (
     <div className={`min-h-96 relative ${rest.className}`} ref={ref}>
       <motion.div
-        className="absolute top-0 left-0 w-[120px] h-[400px] md:w-[400px] -z-10"
+        className="absolute top-0 left-0 w-[120px] h-[400px] md:w-[400px] xs:w-[100px] -z-10"
         initial={initial(-100)}
-        animate={isInView ? { x: 20, opacity: 1, width: 200 } : initial(-100)}
+        animate={isInView ? { x: 20, opacity: 1, width: width > 800 ?  200 : 100 } : initial(-100)}
         transition={{ duration: 1.5, ease: "easeOut" }}
         id="custom-section"
       >
@@ -121,7 +121,7 @@ const OverLaySection = ({ children, ref, isInView, ...rest }: OverLayProps) => {
                   duration: 1,
                   ease: "easeInOut",
                 },
-                width: 200,
+                width: width > 800 ?  200 : 100 
               }
             : initial(100)
         }
