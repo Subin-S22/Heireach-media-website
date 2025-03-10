@@ -69,7 +69,7 @@ function BigText() {
       transition={{ duration: 1, ease: "anticipate" }}
       onHoverStart={() => setOnTextHover(true)}
       onHoverEnd={() => setOnTextHover(false)}
-      className="relative text-white font-amazingSlab text-[50px] md:text-[120px] lg:text-[180px] 
+      className="relative text-white font-amazingSlab text-[50px] xs:text-[60px] sm:text-[100px] md:text-[120px] lg:text-[180px] 
       font-bold 
     flex justify-center items-center flex-col tracking-wide text-center"
     >
