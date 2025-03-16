@@ -20,7 +20,7 @@ const InputField = ({
         name={name}
         onChange={onChange}
         value={value}
-        className="bg-background border-b border-white outline-none text-white px-1 py-2"
+        className="bg-background font-amazingSlab border-b border-white outline-none text-white px-1 py-2"
       />
     </div>
   );

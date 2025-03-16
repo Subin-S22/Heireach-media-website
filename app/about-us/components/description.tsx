@@ -35,7 +35,7 @@ export default function Description() {
         className="bg-[#0f0f0f] relative text-white pb-10 px-6 md:px-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: "easeOut" }}
+        transition={{ duration: 4, ease: "easeOut" }}
       >
         <Header name="Our Vision & Mission" className="p-4 pb-8" />
         <div className="grid relative md:grid-cols-3 gap-8 items-center text-center md:text-left">
