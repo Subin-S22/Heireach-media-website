@@ -68,7 +68,7 @@ export default function WhyChooseUs() {
   return (
     <section
       id="about-us-section"
-      className="relative bg-[#0a0a0a] text-white py-16 px-4 md:px-8 overflow-hidden"
+      className="relative bg-[#0a0a0a] text-white py-16 px-4 md:px-0 overflow-hidden"
     >
       <motion.div
         className="absolute top-0 left-0 w-[400px] h-[400px]"
