@@ -56,7 +56,7 @@ export default function Careers() {
         transition={{ duration: 1, ease: "easeInOut" }}
       >
         <>
-          <h1 className="font-bold">
+          <h1 className="font-bold font-amazingSlab">
             <span className="white text-2xl">Careers at </span>
             <span
               className="blue"

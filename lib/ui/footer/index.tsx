@@ -8,10 +8,19 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
 import React, { useEffect, useState } from "react";
 
+const linkedIn =
+  "https://www.linkedin.com/company/heireach/posts/?feedView=all";
+const youtube = "https://www.youtube.com/@Heireach";
+const facebook = "https://www.facebook.com/profile.php?id=61571799520860";
+const insta =
+  "https://www.instagram.com/heireachmedia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D";
+const whatsapp =
+  "https://api.whatsapp.com/send/?phone=917022369696&text&type=phone_number&app_absent=0";
+
 const personalDetails = [
   { info: "grow@heireachmedia.com", href: "" },
   { info: "heireachmedia", href: "https://www.heireachmedia.com/" },
-  { info: "9972772416 / 7022369696", href: "" },
+  { info: "7022369696 / 9972772416", href: "" },
 ];
 
 const ternsAndConditions = [
@@ -127,36 +136,46 @@ export default function Footer() {
                 </Typeography>
               ))}
               <div className="flex flex-wrap gap-8 sm:flex-col md:flex-row lg:flex-row">
-                <Image
-                  src="/images/footer/linkedin.svg"
-                  alt="linkedIn"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="/images/footer/youtube.svg"
-                  alt="linkedIn"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="/images/footer/Vector.svg"
-                  alt="linkedIn"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="/images/footer/facebook.svg"
-                  alt="linkedIn"
-                  width={20}
-                  height={20}
-                />
-                <Image
-                  src="/images/footer/whatsapp.svg"
-                  alt="linkedIn"
-                  width={20}
-                  height={20}
-                />
+                <Link href={linkedIn}>
+                  <Image
+                    src="/images/footer/linkedin.svg"
+                    alt="linkedIn"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <Link href={youtube}>
+                  <Image
+                    src="/images/footer/youtube.svg"
+                    alt="youtube"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <Link href={insta}>
+                  <Image
+                    src="/images/footer/Vector.svg"
+                    alt=""
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <Link href={facebook}>
+                  <Image
+                    src="/images/footer/facebook.svg"
+                    alt="facebook"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
+                <Link href={whatsapp}>
+                  <Image
+                    src="/images/footer/whatsapp.svg"
+                    alt="linkedIn"
+                    width={20}
+                    height={20}
+                  />
+                </Link>
               </div>
             </div>
 

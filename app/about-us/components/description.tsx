@@ -5,14 +5,14 @@ export default function Description() {
   return (
     <section
       id="about-us-description"
-      className="bg-black font-amazingSlab pb-20 px-10"
+      className="bg-[#0a0a0a] font-amazingSlab pb-20 px-10"
     >
       {/* About HEIREACH MEDIA */}
       <motion.div
         className="mb-12 pt-20 px-20 xs:px-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 4, ease: "easeOut" }}
+        transition={{ duration: 2, ease: "easeOut" }}
       >
         <h1 className="text-2xl text-white mx-auto  font-amazingSlab font-bold">
           About <span className="text-blue-500">HEIREACH MEDIA</span>
@@ -31,13 +31,13 @@ export default function Description() {
         </p>
       </motion.div>
       {/* Our Vision & Mission */}
-      <Header name="Our Vision & Mission" className="p-4 pb-8" />
       <motion.div
         className="bg-[#0f0f0f] relative text-white pb-10 px-6 md:px-16"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 8, ease: "easeOut" }}
+        transition={{ duration: 2, ease: "easeOut" }}
       >
+        <Header name="Our Vision & Mission" className="p-4 pb-8" />
         <div className="grid relative md:grid-cols-3 gap-8 items-center text-center md:text-left">
           {/* Vision Section */}
           <div className="space-y-4">
