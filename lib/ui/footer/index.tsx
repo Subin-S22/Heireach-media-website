@@ -59,16 +59,16 @@ const Typeography = ({ children, href }: TypeProps) => {
     </Link>
   );
 };
-// const PlaneBox = () => {
-//   return (
-//     <div
-//       className={classnames(
-//         style.bg_white_100,
-//         "w-full sm:w-[150px] md:w-[150px] lg:w-[200px] h-[100px] sm:h-[150px] md:h-[150px] lg:h-[200px]"
-//       )}
-//     />
-//   );
-// };
+const PlaneBox = () => {
+  return (
+    <div
+      className={classnames(
+        style.bg_white_100,
+        "w-full sm:w-[150px] md:w-[150px] lg:w-[200px] h-[100px] sm:h-[150px] md:h-[150px] lg:h-[200px]"
+      )}
+    />
+  );
+};
 
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false);
@@ -179,15 +179,21 @@ export default function Footer() {
             </div>
           </motion.div>
         </AnimatePresence>
-        {/* PlaneBox Section */}
-        {/* <motion.div
+        {/* 3d logo Section */}
+        <motion.div
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
           className="pr-10"
           transition={{ duration: 2, ease: "anticipate" }}
         >
-          <PlaneBox />
-        </motion.div> */}
+          <Image
+            src="/images/footer/3D_logo.svg"
+            alt="3d logo"
+            width={300}
+            height={300}
+          />
+          {/* <PlaneBox /> */}
+        </motion.div>
       </div>
 
       <div className="flex relative justify-center items-center">
