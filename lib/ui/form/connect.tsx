@@ -2,6 +2,7 @@
 import { ToastContainer } from "react-toastify";
 import CustomSection from "../customSection";
 import InputField from "../input";
+import { motion } from "motion/react";
 
 const classNames = {
   paragraph: "font-amazingSlab text-base",
@@ -86,12 +87,15 @@ const FormContent = ({ formState, onChange, formSubmit }: FormProps) => {
               })}
 
               {/** submit button */}
-              <button
+              <motion.button
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeIn" }}
                 className="bg-primary_text rounded-lg px-4 py-2 mt-8"
                 type="submit"
               >
                 Submit
-              </button>
+              </motion.button>
             </div>
           </form>
         </section>
