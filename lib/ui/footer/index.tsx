@@ -17,7 +17,7 @@ const personalDetails = [
 const ternsAndConditions = [
   {
     name: "Terms & Conditions",
-    href: "/",
+    href: "/t-and-c",
   },
   {
     name: "Privacy Policy",
