@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 const personalDetails = [
   { info: "grow@heireachmedia.com", href: "" },
   { info: "heireachmedia", href: "https://www.heireachmedia.com/" },
-  { info: "9972772416 / 7022369696", href: "" },
+  { info: "7022369696 / 9972772416", href: "" },
 ];
 
 const ternsAndConditions = [
