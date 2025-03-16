@@ -26,6 +26,7 @@ interface ServiceJsonCard {
   image: string;
 }
 
+const duration = 0.5;
 // const serviceContent = DigiContent.services[0].cardData;
 
 export default function ServiceContainerRow({
@@ -82,6 +83,7 @@ export default function ServiceContainerRow({
         <motion.div
           variants={hoverEffect.bottom === "extend" ? widthShrink : widthExtend}
           animate={hoverEffect.top === "extend" ? "hover" : "rest"}
+          transition={{ duration: duration }}
           className={`bg-blue-600 max-w-[36rem]  rounded-2xl`}
           onHoverStart={() =>
             setHoverEffect({ top: "extend", bottom: "shrink" })
@@ -103,6 +105,7 @@ export default function ServiceContainerRow({
         <motion.div
           variants={hoverEffect.top === "extend" ? widthShrink : widthExtend}
           animate={hoverEffect.bottom === "extend" ? "hover" : "rest"}
+          transition={{ duration: duration }}
           className={`bg-blue-600 max-w-[36rem]  rounded-2xl`}
           onHoverStart={() =>
             setHoverEffect({ top: "shrink", bottom: "extend" })
@@ -149,7 +152,8 @@ const ServiceCardRow = ({
       <motion.div
         animate={bottom === "extend" ? "hover" : "rest"}
         variants={widthExtendOpacity}
-        className={`relative w-full !h-[40ch] p-4`}
+        transition={{ duration: duration }}
+        className={`relative w-full h-full p-4`}
       >
         <Image
           src={image}

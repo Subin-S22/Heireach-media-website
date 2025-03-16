@@ -85,7 +85,8 @@ const serviceDetails = [
       },
       {
         src: "/images/services/E-Commerce & Marketing/e_com_card/e_combw3.svg",
-        hoverSrc: "/images/services/E-Commerce & Marketing/e_com_card/e_comcol3.svg",
+        hoverSrc:
+          "/images/services/E-Commerce & Marketing/e_com_card/e_comcol3.svg",
       },
     ],
   },
@@ -174,10 +175,13 @@ export default function OurServices() {
     <CustomSection sectionId="our-services">
       <div className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] md:min-h-[1000px] lg:min-h-[870px] py-8">
         <div className="pb-32 flex w-full">
-          <div className="text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
+          <div className="text-center font-amazingSlab whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
             Our services
           </div>
-          <Link href="/services" className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14">
+          <Link
+            href="/services"
+            className="flex gap-5 justify-center font-amazingSlab text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14"
+          >
             View all
             <Image
               src="/images/aboutCompany/arrow.svg"
@@ -206,11 +210,11 @@ export default function OurServices() {
                   <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center">
                     {service.id === 6
                       ? service.title.split("&").map((part, index) => (
-                        <span key={index}>
-                          {part} {index === 0 && "&"}
-                          {index === 0 && <br />}{" "}
-                        </span>
-                      ))
+                          <span key={index}>
+                            {part} {index === 0 && "&"}
+                            {index === 0 && <br />}{" "}
+                          </span>
+                        ))
                       : service.title}{" "}
                   </p>
                 </div>
@@ -231,13 +235,13 @@ export default function OurServices() {
                           ? index === 0
                             ? 95 + 50
                             : index === 1
-                              ? 55 + 30
-                              : 27 + 20
+                            ? 55 + 30
+                            : 27 + 20
                           : index === 0
-                            ? 95
-                            : index === 1
-                              ? 55
-                              : 27
+                          ? 95
+                          : index === 1
+                          ? 55
+                          : 27
                       }
                       height={175}
                       className="object-cover h-[175px] rounded-tr-[15px] rounded-br-[15px] absolute right-0 group-hover:shadow-[-4px_4px_4px_0px_#00000040]"

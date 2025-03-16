@@ -13,20 +13,23 @@ export default function Home() {
   const { formState, formSubmit, onChange } = useConnectForm();
 
   return (
-    <div className="">
+    <div className="max-w-screen-xl mx-auto overflow-x-hidden">
       <main className="">
         <InitialView />
         <CompanyDescription />
         <OurServices />
+        <Space className="h-20" />
         <OurApproach />
         <Space className="h-20" />
         <WhyChooseUs />
         <OurWorks />
-        <FormContent
-          formState={formState}
-          formSubmit={formSubmit}
-          onChange={onChange}
-        />
+        <div className="overflow-hidden">
+          <FormContent
+            formState={formState}
+            formSubmit={formSubmit}
+            onChange={onChange}
+          />
+        </div>
       </main>
     </div>
   );

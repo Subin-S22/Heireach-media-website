@@ -101,9 +101,7 @@ export default function Footer() {
   return (
     <div
       id="footer-section"
-      className={
-        "bg-[#121212] px-4 md:px-8 max-w-screen-xl mx-auto mt-10 md:mt-20"
-      }
+      className={"bg-black px-4 md:px-8 max-w-screen-xl mx-auto mt-10 md:mt-20"}
     >
       <div className="grid grid-cols-4 gap-4 auto-rows-auto relative place-content-center">
         {/* <div>
@@ -136,7 +134,7 @@ export default function Footer() {
                 </Typeography>
               ))}
               <div className="flex flex-wrap gap-8 sm:flex-col md:flex-row lg:flex-row">
-                <Link href={linkedIn}>
+                <Link href={linkedIn} target="_blank">
                   <Image
                     src="/images/footer/linkedin.svg"
                     alt="linkedIn"
@@ -144,7 +142,7 @@ export default function Footer() {
                     height={20}
                   />
                 </Link>
-                <Link href={youtube}>
+                <Link href={youtube} target="_blank">
                   <Image
                     src="/images/footer/youtube.svg"
                     alt="youtube"
@@ -152,7 +150,7 @@ export default function Footer() {
                     height={20}
                   />
                 </Link>
-                <Link href={insta}>
+                <Link href={insta} target="_blank">
                   <Image
                     src="/images/footer/Vector.svg"
                     alt=""
@@ -160,7 +158,7 @@ export default function Footer() {
                     height={20}
                   />
                 </Link>
-                <Link href={facebook}>
+                <Link href={facebook} target="_blank">
                   <Image
                     src="/images/footer/facebook.svg"
                     alt="facebook"
@@ -168,7 +166,7 @@ export default function Footer() {
                     height={20}
                   />
                 </Link>
-                <Link href={whatsapp}>
+                <Link href={whatsapp} target="_blank">
                   <Image
                     src="/images/footer/whatsapp.svg"
                     alt="linkedIn"

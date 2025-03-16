@@ -88,7 +88,11 @@ export default function OurApproach() {
         transition={{ duration: 2, ease: "anticipate" }}
       >
         <div id="our-approach" className="flex w-full">
-          <div className="text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
+          <div
+            className="text-center 
+          font-amazingSlab
+          whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14"
+          >
             Our approach
           </div>
           <div className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14"></div>

@@ -84,7 +84,7 @@ export default function Navbar() {
                     ) : (
                       <li
                         key={content.name}
-                        className="text-base md:text-xl font-amazingSlab px-4 py-2"
+                        className="text-base md:text-xl font-amazingSlab p-4"
                         onClick={() => setShowServices(!showSerivces)}
                       >
                         <div className="flex gap-2">

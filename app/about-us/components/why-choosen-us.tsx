@@ -36,7 +36,7 @@ type Content = `${Extend}-${Index}`;
 export default function WhyChooseUs() {
   const [isVisible, setIsVisible] = useState(false);
   const [contentExtend, setExtend] = useState<Content>("rest-0");
-  const {width} = useWindowSize()
+  const { width } = useWindowSize();
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("about-us-section");
@@ -68,12 +68,16 @@ export default function WhyChooseUs() {
   return (
     <section
       id="about-us-section"
-      className="relative bg-[#0a0a0a] text-white py-16 overflow-hidden"
+      className="relative bg-[#0a0a0a] text-white py-16 px-4 md:px-8 overflow-hidden"
     >
       <motion.div
         className="absolute top-0 left-0 w-[400px] h-[400px]"
         initial={initial(-100)}
-        animate={isVisible ? { x: 20, opacity: 1, width: width > 800 ?  200 : 100  } : initial(-100)}
+        animate={
+          isVisible
+            ? { x: 20, opacity: 1, width: width > 800 ? 200 : 100 }
+            : initial(-100)
+        }
         transition={{ duration: 1.5, ease: "easeOut" }}
       >
         <Image
@@ -96,7 +100,7 @@ export default function WhyChooseUs() {
                   duration: 1,
                   ease: "easeInOut",
                 },
-                width: width > 800 ?  200 : 100 
+                width: width > 800 ? 200 : 100,
               }
             : initial(100)
         }
