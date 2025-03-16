@@ -56,10 +56,10 @@ export default function Careers() {
         transition={{ duration: 1, ease: "easeInOut" }}
       >
         <>
-          <h1 className="font-bold font-amazingSlab">
-            <span className="white text-2xl">Careers at </span>
+          <h1 className="font-bold">
+            <span className="white text-2xl font-amazingSlab">Careers at </span>
             <span
-              className="blue"
+              className="blue font-amazingSlab"
               style={{ fontSize: "28px", fontWeight: "bold" }}
             >
               HEIREACH MEDIA

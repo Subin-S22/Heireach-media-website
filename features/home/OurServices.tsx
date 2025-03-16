@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const serviceDetails = [
   {
@@ -84,7 +85,7 @@ const serviceDetails = [
       },
       {
         src: "/images/services/E-Commerce & Marketing/e_com_card/e_combw3.svg",
-        hoverSrc: "/images/E-Commerce & Marketing/e_com_card/e_comcol3.svg",
+        hoverSrc: "/images/services/E-Commerce & Marketing/e_com_card/e_comcol3.svg",
       },
     ],
   },
@@ -176,7 +177,7 @@ export default function OurServices() {
           <div className="text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
             Our services
           </div>
-          <div className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14">
+          <Link href="/services" className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14">
             View all
             <Image
               src="/images/aboutCompany/arrow.svg"
@@ -185,7 +186,7 @@ export default function OurServices() {
               height={12}
               objectFit="contain"
             />
-          </div>
+          </Link>
         </div>
         <div className="pb-6 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 lg:px-10">
           <AnimatePresence mode="wait">
@@ -205,11 +206,11 @@ export default function OurServices() {
                   <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center">
                     {service.id === 6
                       ? service.title.split("&").map((part, index) => (
-                          <span key={index}>
-                            {part} {index === 0 && "&"}
-                            {index === 0 && <br />}{" "}
-                          </span>
-                        ))
+                        <span key={index}>
+                          {part} {index === 0 && "&"}
+                          {index === 0 && <br />}{" "}
+                        </span>
+                      ))
                       : service.title}{" "}
                   </p>
                 </div>
