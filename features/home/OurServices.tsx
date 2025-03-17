@@ -7,6 +7,7 @@ import { AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Header from "@/lib/ui/heading";
 
 const serviceDetails = [
   {
@@ -175,21 +176,33 @@ export default function OurServices() {
     <CustomSection sectionId="our-services">
       <div className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] md:min-h-[1000px] lg:min-h-[870px] py-8">
         <div className="pb-32 flex w-full">
-          <div className="text-center font-amazingSlab whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14">
-            Our services
-          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1, ease: "anticipate" }}
+            className="text-center font-amazingSlab whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14"
+          >
+            <Header name="Our services" type="h2" />
+          </motion.div>
           <Link
             href="/services"
-            className="flex gap-5 justify-center font-amazingSlab text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14"
+            className="flex gap-5 justify-center font-amazingSlab text-center whitespace-pre-wrap w-full text-xl capitalize font-bold text-white h-[29px]  size-14"
           >
-            View all
-            <Image
-              src="/images/aboutCompany/arrow.svg"
-              alt="arrow"
-              width={12}
-              height={12}
-              objectFit="contain"
-            />
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, ease: "anticipate" }}
+              className="flex justify-center items-center gap-2"
+            >
+              View all
+              <Image
+                src="/images/aboutCompany/arrow.svg"
+                alt="arrow"
+                width={12}
+                height={12}
+                objectFit="contain"
+              />
+            </motion.div>
           </Link>
         </div>
         <div className="pb-6 grid grid-flow-row sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12 lg:px-10">

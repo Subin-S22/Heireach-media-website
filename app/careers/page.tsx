@@ -133,7 +133,7 @@ export default function Careers() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 1, ease: "easeInOut" }}
       >
-        <h1 className="text-[var(--bg-blue-100)] font-amazingSlab text-2xl mt-10 mb-2 font-bold">
+        <h1 className="text-primary_text font-amazingSlab text-2xl mt-10 mb-2 font-bold">
           Application
         </h1>
         <p className="text-base font-amazingSlab">

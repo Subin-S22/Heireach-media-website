@@ -30,7 +30,7 @@ const ternsAndConditions = [
   },
   {
     name: "Privacy Policy",
-    href: "/",
+    href: "/privacy-policy",
   },
 ];
 
@@ -200,7 +200,7 @@ export default function Footer() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-          className="pr-10"
+          className="pr-0 md:pr-4 xl:pr-8"
           transition={{ duration: 2, ease: "anticipate" }}
         >
           <Image

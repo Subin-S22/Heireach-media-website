@@ -1,13 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { ForwardRefComponent, HTMLMotionProps, motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import classnames from "@/lib/function/classnames";
 import CustomSection from "@/lib/ui/customSection";
+import generatorId from "@/lib/function/idGenerator";
 
 export default function CompanyDescription() {
   const [isVisible, setIsVisible] = useState(false);
+  console.log("isVisible", isVisible);
 
+  const gen = generatorId();
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("company-description");
@@ -28,59 +31,71 @@ export default function CompanyDescription() {
     <div className="relative">
       <CustomSection sectionId="company-description-side-section">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
-          transition={{ duration: 2, ease: "anticipate" }}
+          // initial={{ opacity: 0 }}
+          // animate={isVisible ? { opacity: 1 } : { opacity: 0 }}
+          // transition={{ duration: 2, ease: "anticipate" }}
           // className="flex justify-center items-center min-h-[600px] sm:min-h-[700px] md:min-h-[800px] px-4 sm:px-6 lg:px-7"
           className="p-10 px-12 md:px-36 pb-20 pt-36"
         >
           <div id="company-description" className="w-full">
-            <div className="flex items-center justify-start gap-4 ">
+            <AnimateDiv
+              duration={gen.next().value || 1}
+              className="flex items-center justify-start gap-4 "
+            >
               <div className="font-amazingSlab font-extrabold text-4xl py-2 z-10">
                 At
                 <span
                   className={
-                    "text-[var(--bg-blue-100)] w-full whitespace-pre-wrap px-8"
+                    "text-primary_text w-full whitespace-pre-wrap px-8"
                   }
                 >
                   HEIREACH MEDIA
                 </span>
               </div>
-            </div>
+            </AnimateDiv>
 
-            <div
+            <AnimateDiv
+              duration={gen.next().value || 1}
               className={classnames(
-                "flex text-[var(--bg-blue-100)] text-xl font-amazingSlab font-bold"
+                "flex text-primary_text text-xl font-amazingSlab font-bold"
               )}
             >
               WE DON&apos;T JUST MARKET BRANDS - WE BRING THEIR STORIES TO LIFE
-            </div>
+            </AnimateDiv>
 
-            <div
+            <AnimateDiv
               className={
-                "text-[var(--bg-grey-100)] text-base font-amazingSlab py-4"
+                "text-[var(--bg-grey-100)] text-[18px] font-amazingSlab py-4"
               }
+              duration={gen.next().value || 1}
             >
               Our mission is simple yet powerful
-            </div>
+            </AnimateDiv>
 
-            <div className={"text-white text-base font-amazingSlab py-2"}>
+            <AnimateDiv
+              className={"text-white text-base font-amazingSlab py-2"}
+              duration={gen.next().value || 1}
+            >
               To craft innovative, customized solutions that align with your
               goals and position your brand at the forefront of the market. With
               a team of creative visionaries, state-of-the-art tools, and an
               unwavering passion for excellence,
-            </div>
+            </AnimateDiv>
 
-            <div className="w-full h-[auto]">
+            <AnimateDiv
+              duration={gen.next().value || 1}
+              className="w-full h-[auto]"
+            >
               <div
                 className={classnames(
-                  "text-[var(--bg-blue-100)] text-xl font-bold mb-2 font-amazingSlab pt-2 pb-4"
+                  "text-primary_text text-xl font-bold mb-2 font-amazingSlab pt-2 pb-4"
                 )}
               >
                 We ensure your brand not only stands out but shines.
               </div>
-            </div>
-            <div
+            </AnimateDiv>
+            <AnimateDiv
+              duration={gen.next().value || 1}
               className={classnames("text-white text-base font-amazingSlab")}
             >
               We believe every brand has a unique story to tell, & our job is to
@@ -90,10 +105,28 @@ export default function CompanyDescription() {
               you&apos;re looking to redefine your identity or expand your
               market reach, we&apos;re here to make it happen with passion and
               precision.
-            </div>
+            </AnimateDiv>
           </div>
         </motion.div>
       </CustomSection>
     </div>
+  );
+}
+
+interface IAnimateDivProps {
+  duration: number;
+  children: React.ReactNode;
+  className?: string;
+}
+function AnimateDiv({ duration, children, ...rest }: IAnimateDivProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 1, delay: duration / 2 }}
+      {...rest}
+    >
+      {children}
+    </motion.div>
   );
 }

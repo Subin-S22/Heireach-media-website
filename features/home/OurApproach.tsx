@@ -5,6 +5,7 @@ import CustomSection from "@/lib/ui/customSection";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Header from "@/lib/ui/heading";
 
 const InfoCard = ({ src, heading, content }: any) => {
   return (
@@ -87,13 +88,14 @@ export default function OurApproach() {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 2, ease: "anticipate" }}
       >
-        <div id="our-approach" className="flex w-full">
+        <div id="our-approach" className="flex w-full mb-20">
           <div
             className="text-center 
           font-amazingSlab
           whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14"
           >
-            Our approach
+            <Header name="Our approach" type="h2" />
+            {/* Our approach */}
           </div>
           <div className="flex gap-5 justify-center text-center whitespace-pre-wrap w-full text-lg capitalize font-bold text-white h-[29px]  size-14"></div>
         </div>

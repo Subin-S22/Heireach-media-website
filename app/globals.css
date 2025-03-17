@@ -9,7 +9,6 @@
   --foreground: #ededed;
   --bg-white-100: #d9d9d9;
   --bg-blue-100: #0066ee;
-  --bg-blue-200: #0022aa;
   --primary-color: #0066ff;
   --bg-grey-100: #8a8a8a;
   --courier-family: "Courier Prime", serif;
@@ -25,7 +24,7 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: "AmazingSlab", "serif";
+  /* font-family: "AmazingSlab", "serif"; */
   font-style: normal;
 }
 
