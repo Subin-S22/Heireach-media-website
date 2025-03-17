@@ -136,11 +136,13 @@ const extendsImage = {
     scaleX: 1,
     transformOrigin: "right",
     boxShadow: "none",
+    filter: "grayscale(100%)",
   },
   hover: {
     scaleX: 1.1,
     transformOrigin: "right",
     boxShadow: "-4px 4px 4px 0px #00000040",
+    filter: "grayscale(0%)",
   },
 };
 export default function OurServices() {
@@ -240,7 +242,8 @@ export default function OurServices() {
                     <Image
                       key={index}
                       src={
-                        hoveredImage === service.id ? image.hoverSrc : image.src
+                        // hoveredImage === service.id ? image.hoverSrc : image.src
+                        image.hoverSrc
                       }
                       alt={`img${index + 1}`}
                       width={
