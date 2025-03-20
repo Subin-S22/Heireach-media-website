@@ -222,7 +222,10 @@ export default function OurServices() {
                 onHoverEnd={handleHoverEnd}
               >
                 <div className="pl-2 md:pl-10 flex justify-center items-center w-full ">
-                  <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center">
+                  <p
+                    className="break-words text-white text-lg font-amazingSlab
+                   font-semibold group-hover:text-[#0066FF] w-full text-center"
+                  >
                     {service.id === 6
                       ? service.title.split("&").map((part, index) => (
                           <span key={index}>
