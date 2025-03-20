@@ -15,9 +15,9 @@ export default function Description() {
         transition={{ duration: 2, ease: "easeOut" }}
       >
         <h1 className="text-2xl text-white mx-auto  font-amazingSlab font-bold">
-          About <span className="text-blue-500">HEIREACH MEDIA</span>
+          About <span className="text-primary_text">HEIREACH MEDIA</span>
         </h1>
-        <h2 className="text-2xl font-bold mx-auto xs:text-xl font-amazingSlab text-blue-500 mt-2">
+        <h2 className="text-2xl font-bold mx-auto xs:text-xl font-amazingSlab text-primary_text mt-2">
           Highlighting Brands That Matter
         </h2>
         <p className="mt-4 mx-auto font-amazingSlab text-white xs:text-xs xs:text-justify">
@@ -42,7 +42,7 @@ export default function Description() {
           {/* Vision Section */}
           <div className="space-y-4">
             <div className="flex items-center justify-center xs:pt-3 md:justify-start space-x-2">
-              <h2 className="text-xl font-bold text-blue-500">Vision</h2>
+              <h2 className="text-xl font-bold text-primary_text">Vision</h2>
               <Image
                 src="/images/vision-icon.svg"
                 alt="Vision Icon"
@@ -83,7 +83,7 @@ export default function Description() {
                 height={70}
               />
 
-              <h2 className="text-xl font-bold text-blue-500">Mission</h2>
+              <h2 className="text-xl font-bold text-primary_text">Mission</h2>
             </div>
             <h3 className="font-bold xs:text-center md:text-sm text-lg lg:text-lg lg:text-end ">
               Turning Ideas into Iconic Brands
@@ -99,7 +99,9 @@ export default function Description() {
 
         {/* What We Do Best Section */}
         <div className="text-center mt-10 text-lg lg:text-lg md:text-sm">
-          <h2 className="text-xl font-bold text-blue-500">What We Do Best?</h2>
+          <h2 className="text-xl font-bold text-primary_text">
+            What We Do Best?
+          </h2>
           <div
             className="flex gap-4 md:text-justify xs:flex-col 
           lg:text-lg md:text-sm xs:test-center items-center justify-center text-gray-300 text-lg mt-4"

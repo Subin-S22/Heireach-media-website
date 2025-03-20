@@ -59,7 +59,7 @@ export default function Careers() {
           <h1 className="font-bold">
             <span className="white text-2xl font-amazingSlab">Careers at </span>
             <span
-              className="blue font-amazingSlab"
+              className="text-primary_text font-amazingSlab"
               style={{ fontSize: "28px", fontWeight: "bold" }}
             >
               HEIREACH MEDIA

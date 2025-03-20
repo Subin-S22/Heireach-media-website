@@ -1,5 +1,5 @@
 .card_background {
-  background-color: blue;
+  background-color: var(--primary-color);
   
 }
 

@@ -13,7 +13,7 @@ const InfoCard = ({ src, heading, content }: any) => {
       <div
         className="relative w-full h-48 mt-6 overflow-hidden rounded-2xl bg-white"
         style={{
-          border: "2px solid var(--bg-blue-100)",
+          border: "2px solid var(--primary-color)",
         }}
       >
         <Image

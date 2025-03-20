@@ -36,7 +36,7 @@ function BigText() {
     function shadow() {
       return `${width}px ${width}px black, ${
         width + 1
-      }px ${width}px var(--bg-blue-100)`;
+      }px ${width}px var(--primary-color)`;
     }
 
     function transition() {
