@@ -147,6 +147,7 @@ const extendsImage = {
 };
 export default function OurServices() {
   const [contentExtend, setExtend] = useState("rest");
+  const [hoverStart, setHoverStart] = useState(false);
   const router = useRouter();
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
   const handleHoverEnd = () => {
@@ -191,11 +192,33 @@ export default function OurServices() {
             className="flex gap-5 justify-center font-amazingSlab text-center whitespace-pre-wrap w-full text-xl capitalize font-bold text-white h-[29px]  size-14"
           >
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, ease: "anticipate" }}
-              className="flex justify-center items-center gap-2"
+              variants={{
+                rest: { opacity: 0 },
+                hover: { color: "var(--primary-color)" },
+                view: { opacity: 1 },
+              }}
+              initial={"rest"}
+              whileInView={"view"}
+              whileHover={"hover"}
+              onHoverStart={() => setHoverStart(true)}
+              onHoverEnd={() => setHoverStart(false)}
+              transition={{ duration: 0.2, ease: "anticipate" }}
+              className="flex justify-center items-center gap-2 relative"
             >
+              <motion.div
+                variants={{
+                  rest: { width: 0, translateY: 0, borderWidth: "0 0 1px 0" },
+                  hover: {
+                    width: 100,
+                    translateY: 2,
+                    borderWidth: "0 0 2px 0",
+                  },
+                }}
+                animate={hoverStart ? "hover" : "rest"}
+                // whileHover={"hover"}
+                transition={{ duration: 1 }}
+                className="absolute w-full !border-white h-full top-0 left-0"
+              />
               View all
               <Image
                 src="/images/aboutCompany/arrow.svg"
