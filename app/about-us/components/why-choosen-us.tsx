@@ -115,7 +115,8 @@ export default function WhyChooseUs() {
 
       <div className="container mx-auto relative z-10">
         <h2
-          className={`text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto max-w-[913px] font-amazingSlab xs:text-center font-bold 
+          className={`text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto 
+            max-w-[913px] font-amazingSlab xs:text-center font-bold 
             text-primary_text transition-opacity duration-700 ease-out ${
               isVisible
                 ? "opacity-100 translate-y-0"
@@ -126,9 +127,13 @@ export default function WhyChooseUs() {
         </h2>
 
         <p
-          className={`mt-4 text-lg md:mx-[3rem] lg:mx-[auto] font-amazingSlab max-w-[913px] xs:text-center leading-[22.5px] mx-auto transition-opacity duration-700 delay-150 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`mt-4 text-lg md:mx-[3rem] lg:mx-[auto] 
+            font-amazingSlab max-w-[913px] xs:text-center leading-[22.5px] 
+            mx-auto transition-opacity duration-700 delay-150 ease-out ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
         >
           At Heireach Media, we don&apos;t just execute marketing—we craft
           strategic, data-driven roadmaps that position your brand for long-term
@@ -171,9 +176,13 @@ export default function WhyChooseUs() {
                       />
                     </motion.div>
                     <motion.div
-                      className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] flex items-center bg-primary_text text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
-                        contentExtend === `hover-${index}` ? "block" : "hidden"
-                      }`}
+                      className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] 
+                        flex items-center bg-primary_text text-center 
+                        rounded-r-md rounded-b-md text-sm p-4 z-[1] font-amazingSlab ${
+                          contentExtend === `hover-${index}`
+                            ? "block"
+                            : "hidden"
+                        }`}
                       variants={extend}
                       animate={animateExtend(contentExtend, index)}
                       exit={{ opacity: 0, x: -200, scale: 0 }}
