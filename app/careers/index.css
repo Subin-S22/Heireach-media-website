@@ -4,7 +4,7 @@
             padding: 1rem 3rem;
         }
         .blue{
-            color:#0066ee;
+            color:var(--primary-color);
             
         }
         .white{

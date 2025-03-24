@@ -84,7 +84,7 @@ export default function ServiceContainerRow({
           variants={hoverEffect.bottom === "extend" ? widthShrink : widthExtend}
           animate={hoverEffect.top === "extend" ? "hover" : "rest"}
           transition={{ duration: duration }}
-          className={`bg-blue-600 max-w-[36rem]  rounded-2xl`}
+          className={`bg-primary_text max-w-[36rem]  rounded-2xl`}
           onHoverStart={() =>
             setHoverEffect({ top: "extend", bottom: "shrink" })
           }
@@ -113,7 +113,7 @@ export default function ServiceContainerRow({
           variants={hoverEffect.top === "extend" ? widthShrink : widthExtend}
           animate={hoverEffect.bottom === "extend" ? "hover" : "rest"}
           transition={{ duration: duration }}
-          className={`bg-blue-600 max-w-[36rem]  rounded-2xl`}
+          className={`bg-primary_text max-w-[36rem]  rounded-2xl`}
           onHoverStart={() =>
             setHoverEffect({ top: "shrink", bottom: "extend" })
           }

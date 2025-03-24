@@ -115,9 +115,12 @@ export default function WhyChooseUs() {
 
       <div className="container mx-auto relative z-10">
         <h2
-          className={`text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto max-w-[913px] font-amazingSlab xs:text-center font-bold text-blue-500 transition-opacity duration-700 ease-out ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto max-w-[913px] font-amazingSlab xs:text-center font-bold 
+            text-primary_text transition-opacity duration-700 ease-out ${
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-10"
+            }`}
         >
           Why Choose Us?
         </h2>
@@ -168,7 +171,7 @@ export default function WhyChooseUs() {
                       />
                     </motion.div>
                     <motion.div
-                      className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] flex items-center bg-blue-500 text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
+                      className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] flex items-center bg-primary_text text-center rounded-r-md rounded-b-md text-sm p-4 z-[1] ${
                         contentExtend === `hover-${index}` ? "block" : "hidden"
                       }`}
                       variants={extend}

@@ -74,7 +74,7 @@ export default function ServiceContainer({
         <motion.div
           variants={hoverEffect.bottom === "extend" ? shrink : extend}
           animate={hoverEffect.top === "extend" ? "hover" : "rest"}
-          className={`bg-blue-600 max-w-96 rounded-2xl`}
+          className={`bg-primary_text max-w-96 rounded-2xl`}
           onHoverStart={() =>
             setHoverEffect({ top: "extend", bottom: "shrink" })
           }
@@ -94,7 +94,7 @@ export default function ServiceContainer({
         <motion.div
           variants={hoverEffect.top === "extend" ? shrink : extend}
           animate={hoverEffect.bottom === "extend" ? "hover" : "rest"}
-          className={`bg-blue-600 max-w-96 rounded-2xl`}
+          className={`bg-primary_text max-w-96 rounded-2xl`}
           onHoverStart={() =>
             setHoverEffect({ top: "shrink", bottom: "extend" })
           }

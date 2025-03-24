@@ -9,7 +9,7 @@ export default function Brands() {
   return (
     <section className="bg-black text-white py-12">
       <div className="container mx-auto">
-        <h2 className="text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto max-w-[913px] font-amazingSlab font-bold text-blue-500 mb-4 xs:text-center md:text-center lg:text-left">
+        <h2 className="text-[32px] md:mx-[3rem] lg:mx-[auto] mx-auto max-w-[913px] font-amazingSlab font-bold text-primary_text mb-4 xs:text-center md:text-center lg:text-left">
           Brands That Matter
         </h2>
         <p className="mb-8 mt-4 mx-auto md:mx-[3rem] lg:mx-[auto] max-w-[913px] text-lg xs:text-center md:text-center lg:text-left text-gray-300 font-amazingSlab">

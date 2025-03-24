@@ -13,7 +13,7 @@ export default function OurWorks() {
       <div className="text-center lg:text-left">
         <h1 className="text-3xl lg:text-6xl  md:text-4xl flex lg:gap-6 flex-col md:gap-4  xs:gap-3 font-bold leading-tight">
           We Exist Because <br />
-          <span className="text-blue-500">The World Needs Us</span>
+          <span className="text-primary_text">The World Needs Us</span>
         </h1>
         <p className="mt-4 text-lg lg:text-3xl flex flex-col lg:gap-4 md:gap-2 xs:gap-2">
           A Creative Agency{" "}
@@ -26,7 +26,7 @@ export default function OurWorks() {
         </p>
         <a
           href="#"
-          className="mt-6 inline-flex  items-center lg:text-2xl text-blue-500 hover:underline"
+          className="mt-6 inline-flex  items-center lg:text-2xl text-primary_text hover:underline"
         >
           View All Works
           <span className="ml-2">

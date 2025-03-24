@@ -136,15 +136,18 @@ const extendsImage = {
     scaleX: 1,
     transformOrigin: "right",
     boxShadow: "none",
+    filter: "grayscale(100%)",
   },
   hover: {
     scaleX: 1.1,
     transformOrigin: "right",
     boxShadow: "-4px 4px 4px 0px #00000040",
+    filter: "grayscale(0%)",
   },
 };
 export default function OurServices() {
   const [contentExtend, setExtend] = useState("rest");
+  const [hoverStart, setHoverStart] = useState(false);
   const router = useRouter();
   const [hoveredImage, setHoveredImage] = useState<number | null>(null);
   const handleHoverEnd = () => {
@@ -189,11 +192,33 @@ export default function OurServices() {
             className="flex gap-5 justify-center font-amazingSlab text-center whitespace-pre-wrap w-full text-xl capitalize font-bold text-white h-[29px]  size-14"
           >
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1, ease: "anticipate" }}
-              className="flex justify-center items-center gap-2"
+              variants={{
+                rest: { opacity: 0 },
+                hover: { color: "var(--primary-color)" },
+                view: { opacity: 1 },
+              }}
+              initial={"rest"}
+              whileInView={"view"}
+              whileHover={"hover"}
+              onHoverStart={() => setHoverStart(true)}
+              onHoverEnd={() => setHoverStart(false)}
+              transition={{ duration: 0.2, ease: "anticipate" }}
+              className="flex justify-center items-center gap-2 relative"
             >
+              <motion.div
+                variants={{
+                  rest: { width: 0, translateY: 0, borderWidth: "0 0 1px 0" },
+                  hover: {
+                    width: 100,
+                    translateY: 2,
+                    borderWidth: "0 0 2px 0",
+                  },
+                }}
+                animate={hoverStart ? "hover" : "rest"}
+                // whileHover={"hover"}
+                transition={{ duration: 1 }}
+                className="absolute w-full !border-white h-full top-0 left-0"
+              />
               View all
               <Image
                 src="/images/aboutCompany/arrow.svg"
@@ -220,7 +245,10 @@ export default function OurServices() {
                 onHoverEnd={handleHoverEnd}
               >
                 <div className="pl-2 md:pl-10 flex justify-center items-center w-full ">
-                  <p className="break-words text-white text-lg font-semibold group-hover:text-[#0066FF] w-full text-center">
+                  <p
+                    className="break-words text-white text-lg font-amazingSlab
+                   font-semibold group-hover:text-[#0066FF] w-full text-center"
+                  >
                     {service.id === 6
                       ? service.title.split("&").map((part, index) => (
                           <span key={index}>
@@ -240,7 +268,8 @@ export default function OurServices() {
                     <Image
                       key={index}
                       src={
-                        hoveredImage === service.id ? image.hoverSrc : image.src
+                        // hoveredImage === service.id ? image.hoverSrc : image.src
+                        image.hoverSrc
                       }
                       alt={`img${index + 1}`}
                       width={
