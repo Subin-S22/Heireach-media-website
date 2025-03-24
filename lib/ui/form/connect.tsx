@@ -90,6 +90,7 @@ const FormContent = ({ formState, onChange, formSubmit }: FormProps) => {
               <motion.button
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{}}
                 transition={{ duration: 1, ease: "easeIn" }}
                 className="bg-primary_text rounded-lg px-4 py-2 mt-8 font-amazingSlab"
                 type="submit"

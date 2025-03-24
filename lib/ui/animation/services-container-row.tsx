@@ -41,7 +41,7 @@ export default function ServiceContainerRow({
 
   const originalWidth = 500;
   const widthChange = 150;
-  const height = 400;
+  const height = 250;
 
   const widthExtend = {
     rest: {
@@ -88,6 +88,13 @@ export default function ServiceContainerRow({
           onHoverStart={() =>
             setHoverEffect({ top: "extend", bottom: "shrink" })
           }
+          onClick={() => {
+            if (hoverEffect.top === "extend") {
+              setHoverEffect({ top: "shrink", bottom: "shrink" });
+            } else {
+              setHoverEffect({ top: "extend", bottom: "shrink" });
+            }
+          }}
           onHoverEnd={() => setHoverEffect({ top: "shrink", bottom: "shrink" })}
         >
           <ServiceCardRow
@@ -110,6 +117,13 @@ export default function ServiceContainerRow({
           onHoverStart={() =>
             setHoverEffect({ top: "shrink", bottom: "extend" })
           }
+          onClick={() => {
+            if (hoverEffect.bottom === "extend") {
+              setHoverEffect({ top: "shrink", bottom: "shrink" });
+            } else {
+              setHoverEffect({ top: "shrink", bottom: "extend" });
+            }
+          }}
           onHoverEnd={() => setHoverEffect({ top: "shrink", bottom: "shrink" })}
         >
           <ServiceCardRow
