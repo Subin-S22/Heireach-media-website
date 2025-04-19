@@ -4,9 +4,9 @@ import ServiceContainerRow from "@/lib/ui/animation/services-container-row";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Best E-Commerce Business Solutions in Bangalore | Heireach Media",
+  title: "Expert Print Media and PR Services in Bangalore | Heireach Media",
   description:
-    "Heireach Media offers the best e-commerce business solutions in Bangalore. Drive growth, sales, and online success with tailored strategies.",
+    "Heireach Media provides expert print media and PR services in Bangalore. Boost your brand image, visibility, and trust with tailored PR solutions",
 };
 
 export default function DigitalServices() {
