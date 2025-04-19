@@ -49,7 +49,7 @@ const FormContent = ({ formState, onChange, formSubmit }: FormProps) => {
     <CustomSection sectionId="let-connect">
       <Layout>
         {/** Let's connect text */}
-        <section className="w-full">
+        <section className="w-full pt-36 lg:pt-2">
           <>
             <h2 className="text-primary_text font-bold font-amazingSlab text-2xl">
               Hei, React out us!
@@ -88,8 +88,6 @@ const FormContent = ({ formState, onChange, formSubmit }: FormProps) => {
 
               {/** submit button */}
               <motion.button
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
                 whileHover={{
                   translateX: 3,
                   translateY: -3,

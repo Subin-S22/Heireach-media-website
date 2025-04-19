@@ -53,7 +53,7 @@ const OverLaySection = ({ children, ref, isInView, ...rest }: OverLayProps) => {
         initial={initial(-100)}
         animate={
           isInView
-            ? { x: 20, opacity: 1, width: width > 800 ? 200 : 100 }
+            ? { x: 20, opacity: 1, width: width > 800 ? 150 : 100 }
             : initial(-100)
         }
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -79,7 +79,7 @@ const OverLaySection = ({ children, ref, isInView, ...rest }: OverLayProps) => {
                   duration: 1,
                   ease: "easeInOut",
                 },
-                width: width > 800 ? 200 : 100,
+                width: width > 800 ? 150 : 100,
               }
             : initial(100)
         }

@@ -186,7 +186,7 @@ export default function OurServices() {
 
   return (
     <CustomSection sectionId="our-services">
-      <div className="flex flex-col justify-center items-center min-h-[650px] sm:min-h-[1000px] md:min-h-[1000px] lg:min-h-[870px] py-8">
+      <div className="flex flex-col justify-center items-center pb-8 pt-2">
         <div className="pb-32 flex w-full">
           <motion.div
             initial={{ opacity: 0 }}

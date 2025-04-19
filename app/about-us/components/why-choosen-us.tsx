@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
         initial={initial(-100)}
         animate={
           isVisible
-            ? { x: 20, opacity: 1, width: width > 800 ? 200 : 100 }
+            ? { x: 20, opacity: 1, width: width > 800 ? 150 : 100 }
             : initial(-100)
         }
         transition={{ duration: 1.5, ease: "easeOut" }}
@@ -94,12 +94,13 @@ export default function WhyChooseUs() {
           isVisible
             ? {
                 x: -20,
+                y: 100,
                 opacity: 1,
                 transition: {
                   duration: 1,
                   ease: "easeInOut",
                 },
-                width: width > 800 ? 200 : 100,
+                width: width > 800 ? 150 : 100,
               }
             : initial(100)
         }
@@ -163,8 +164,12 @@ export default function WhyChooseUs() {
                   <div className="flex">
                     <motion.div
                       layout
-                      variants={extendsImage}
-                      animate={animateExtend(contentExtend, index)}
+                      variants={width > 800 ? extendsImage : undefined}
+                      animate={
+                        width > 800
+                          ? animateExtend(contentExtend, index)
+                          : undefined
+                      }
                       className="relative w-[120px] h-[120px] lg:w-[140px] lg:h-[140px] mb-4 bg-[#D6D6D6] rounded-[5px] shrink-0 z-[2]"
                     >
                       <Image
@@ -175,15 +180,21 @@ export default function WhyChooseUs() {
                       />
                     </motion.div>
                     <motion.div
-                      className={`w-[250px] h-[120px] lg:w-[280px] lg:h-[140px] 
+                      className={` md:w-[250px] w-[200px] h-[120px] lg:w-[280px] lg:h-[140px] 
                         flex items-center bg-primary_text text-center 
-                        rounded-r-md rounded-b-md text-sm p-4 z-[1] font-amazingSlab ${
+                        rounded-r-md rounded-b-md text-xs md:text-sm p-4 z-[1] font-amazingSlab ${
                           contentExtend === `hover-${index}`
                             ? "block"
-                            : "hidden"
+                            : width > 800
+                              ? "hidden"
+                              : "block"
                         }`}
-                      variants={extend}
-                      animate={animateExtend(contentExtend, index)}
+                      variants={width > 800 ? extend : undefined}
+                      animate={
+                        width > 800
+                          ? animateExtend(contentExtend, index)
+                          : undefined
+                      }
                       exit={{ opacity: 0, x: -200, scale: 0 }}
                     >
                       {feature.description}
