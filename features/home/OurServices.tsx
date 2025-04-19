@@ -9,6 +9,10 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Header from "@/lib/ui/heading";
 
+const servicesOriginalWidth = 90;
+const addWidth = 40;
+const servicesChangeWidth = 30;
+
 const serviceDetails = [
   {
     id: 1,
@@ -158,6 +162,11 @@ export default function OurServices() {
     setExtend("hover");
     setHoveredImage(id);
   };
+
+  const getWidth = (index: number, add: number) => {
+    return servicesOriginalWidth - index * servicesChangeWidth + add * addWidth;
+  };
+
   const handleNavigation = (title: string) => {
     localStorage.setItem("selectedService", title);
     if (title.includes("Digital")) {
@@ -183,7 +192,8 @@ export default function OurServices() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, ease: "anticipate" }}
-            className="text-center font-amazingSlab whitespace-pre-wrap w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14"
+            className="text-center font-amazingSlab whitespace-pre-wrap 
+            w-full text-lg capitalize font-bold text-[#0066FF] h-[29px]  size-14"
           >
             <Header name="Our services" type="h2" />
           </motion.div>
@@ -274,19 +284,12 @@ export default function OurServices() {
                       alt={`img${index + 1}`}
                       width={
                         hoveredImage === service.id
-                          ? index === 0
-                            ? 95 + 50
-                            : index === 1
-                            ? 55 + 30
-                            : 27 + 20
-                          : index === 0
-                          ? 95
-                          : index === 1
-                          ? 55
-                          : 27
+                          ? getWidth(index, 1)
+                          : getWidth(index, 0)
                       }
                       height={175}
-                      className="object-cover h-[175px] rounded-tr-[15px] rounded-br-[15px] absolute right-0 group-hover:shadow-[-4px_4px_4px_0px_#00000040]"
+                      className="object-cover h-[175px] rounded-tr-[15px] 
+                      rounded-br-[15px] absolute right-0"
                     />
                   ))}
                 </motion.div>
