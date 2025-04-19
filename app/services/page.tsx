@@ -1,4 +1,3 @@
-"use client";
 import DigitalServices from "./digital/page";
 
 export default function Services() {
