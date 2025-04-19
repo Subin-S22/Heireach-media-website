@@ -4,9 +4,9 @@ import { Metadata } from "next";
 import ConnectContainer from "@/lib/ui/form/ConnectContainer";
 
 export const metadata: Metadata = {
-  title: " Best Marketing Agency in Bangalore | Heireach Media",
+  title: "Best Digital Marketing Agency in Bangalore | Heireach Media",
   description:
-    "The Best Marketing Agency in Bangalore. We deliver digital marketing, web & app development, e-commerce, and PR services for business growth.",
+    "Partner with the best digital marketing agency in Bangalore. We offer SEO, SMM, PPC, and branding solutions to scale your business effectively.",
 };
 
 //Initialize emailjs with the publickey
