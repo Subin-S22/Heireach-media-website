@@ -23,7 +23,7 @@ interface ServiceJsonCard {
   image: string;
 }
 
-const originHeight = 400;
+const originHeight = 350;
 const changeHeight = 200;
 
 const extend = {
@@ -79,6 +79,13 @@ export default function ServiceContainer({
           onHoverStart={() =>
             setHoverEffect({ top: "extend", bottom: "shrink" })
           }
+          onClick={() => {
+            if (hoverEffect.top === "extend") {
+              setHoverEffect({ top: "shrink", bottom: "shrink" });
+            } else {
+              setHoverEffect({ top: "extend", bottom: "shrink" });
+            }
+          }}
           onHoverEnd={() => setHoverEffect({ top: "shrink", bottom: "shrink" })}
         >
           <ServiceCard
@@ -99,6 +106,13 @@ export default function ServiceContainer({
           onHoverStart={() =>
             setHoverEffect({ top: "shrink", bottom: "extend" })
           }
+          onClick={() => {
+            if (hoverEffect.bottom === "extend") {
+              setHoverEffect({ top: "shrink", bottom: "shrink" });
+            } else {
+              setHoverEffect({ top: "shrink", bottom: "extend" });
+            }
+          }}
           onHoverEnd={() => setHoverEffect({ top: "shrink", bottom: "shrink" })}
         >
           <ServiceCard
