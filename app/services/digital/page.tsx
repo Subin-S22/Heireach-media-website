@@ -1,11 +1,17 @@
-"use client";
 import servicesData from "@/features/Json/ServicesData.json";
 import ServiceContainer from "@/lib/ui/animation/services-container";
 import ServiceContainerRow from "@/lib/ui/animation/services-container-row";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Top Digital Marketing Agency in Bangalore | Heireach Media",
+  description:
+    "Boost your brand’s growth with Heireach Media, a top digital marketing agency in Bangalore. We specialize in SEO, PPC, and social media strategies to enhance your online presence.",
+};
 
 export default function DigitalServices() {
   const service = servicesData.services.find(
-    (value) => value.header === "Digital Marketing"
+    (value) => value.header === "Digital Marketing",
   );
   if (!service) return <div>No data found</div>;
   return (

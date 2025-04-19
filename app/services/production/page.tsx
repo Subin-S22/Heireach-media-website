@@ -1,11 +1,17 @@
-"use client";
 import servicesData from "@/features/Json/ServicesData.json";
 import ServiceContainer from "@/lib/ui/animation/services-container";
 import ServiceContainerRow from "@/lib/ui/animation/services-container-row";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Production Services in Bangalore | Heireach Media",
+  description:
+    "Heireach Media offers the best production services in Bangalore. Create impactful videos, audio, and multimedia content to elevate your brand.",
+};
 
 export default function DigitalServices() {
   const service = servicesData.services.find(
-    (value) => value.header === "Production"
+    (value) => value.header === "Production",
   );
   if (!service) return <div>No data found</div>;
   return (

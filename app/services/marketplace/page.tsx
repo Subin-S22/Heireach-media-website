@@ -1,11 +1,17 @@
-"use client";
 import servicesData from "@/features/Json/ServicesData.json";
 import ServiceContainer from "@/lib/ui/animation/services-container";
 import ServiceContainerRow from "@/lib/ui/animation/services-container-row";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Marketplace & Marketing Services in Bangalore | Heireach Media",
+  description:
+    "Get the best marketplace and marketing services in Bangalore with Heireach Media. Boost sales, visibility, and growth with tailored strategies.",
+};
 
 export default function DigitalServices() {
   const service = servicesData.services.find(
-    (value) => value.header === "Market Place & Marketing"
+    (value) => value.header === "Market Place & Marketing",
   );
   if (!service) return <div>No data found</div>;
   return (

@@ -14,8 +14,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const COMPANY_NAME = "Heireach Media";
+
 export const metadata: Metadata = {
-  title: "Heireach Media",
+  title: COMPANY_NAME,
   description: "Heireach Media is a digital marketing agency",
 };
 

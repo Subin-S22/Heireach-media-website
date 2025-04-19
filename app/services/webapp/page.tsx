@@ -1,11 +1,17 @@
-"use client";
 import servicesData from "@/features/Json/ServicesData.json";
 import ServiceContainer from "@/lib/ui/animation/services-container";
 import ServiceContainerRow from "@/lib/ui/animation/services-container-row";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Best Website Development Services Bangalore | Heireach Media",
+  description:
+    "Heireach Media is a top digital marketing agency in Bangalore, specializing in SEO, PPC, and social media strategies to drive brand growth and online visibility.",
+};
 
 export default function DigitalServices() {
   const service = servicesData.services.find(
-    (value) => value.header === "Web & App Development"
+    (value) => value.header === "Web & App Development",
   );
   if (!service) return <div>No data found</div>;
   return (
