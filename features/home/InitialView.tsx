@@ -4,7 +4,6 @@ import Marquee from "./Marquee/MarqueeImages";
 import Space from "@/lib/ui/space";
 import { motion } from "motion/react";
 import { useState } from "react";
-import { on } from "events";
 
 export default function InitialView() {
   return (

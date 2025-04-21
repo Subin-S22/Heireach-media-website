@@ -17,12 +17,14 @@ interface FormProps {
   };
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   formSubmit: (e: React.ChangeEvent<HTMLFormElement>) => Promise<void>;
+  children?: React.ReactNode;
 }
 
 export default function ConnectForm({
   formSubmit,
   formState,
   onChange,
+  children = null,
 }: FormProps) {
   return (
     <form
@@ -79,6 +81,7 @@ export default function ConnectForm({
           />
           Submit
         </motion.button>
+        {children}
       </div>
     </form>
   );
