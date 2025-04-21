@@ -3,6 +3,10 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/lib/ui/navbar";
 import Footer from "@/lib/ui/footer";
+import emailjs from "@emailjs/browser";
+
+//Initialize emailjs with the publickey
+emailjs.init({ publicKey: process.env.NEXT_PUBLIC_USER_ID });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

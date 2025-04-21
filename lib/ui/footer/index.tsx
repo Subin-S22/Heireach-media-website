@@ -7,15 +7,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "motion/react";
 import React, { useEffect, useState } from "react";
-
-const linkedIn =
-  "https://www.linkedin.com/company/heireach/posts/?feedView=all";
-const youtube = "https://www.youtube.com/@Heireach";
-const facebook = "https://www.facebook.com/profile.php?id=61571799520860";
-const insta =
-  "https://www.instagram.com/heireachmedia?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D";
-const whatsapp =
-  "https://api.whatsapp.com/send/?phone=917022369696&text&type=phone_number&app_absent=0";
+import { facebook, insta, linkedIn, whatsapp, youtube } from "@/lib/constant";
 
 const personalDetails = [
   { info: "grow@heireachmedia.com", href: "" },

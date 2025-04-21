@@ -7,6 +7,7 @@ import OurApproach from "@/features/home/OurApproach";
 import Space from "@/lib/ui/space";
 import { Metadata } from "next";
 import FormContainer from "./components/FormContaier";
+import Modal from "@/lib/ui/modal/Modal";
 
 export const metadata: Metadata = {
   title: "Best Digital Marketing Services in Bangalore | Heireach Media",
@@ -28,6 +29,7 @@ export default function Home() {
         <OurWorks />
         <FormContainer />
       </main>
+      <Modal />
     </div>
   );
 }
