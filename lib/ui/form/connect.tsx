@@ -7,13 +7,6 @@ const classNames = {
   paragraph: "font-amazingSlab text-base",
 };
 
-const formContent = [
-  { name: "Name", state: "name", type: "text" },
-  { name: "Phone", state: "phone", type: "text" },
-  { name: "Email", state: "email", type: "email" },
-  { name: "Message", state: "message", type: "text" },
-];
-
 interface LayoutProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLElement>,
