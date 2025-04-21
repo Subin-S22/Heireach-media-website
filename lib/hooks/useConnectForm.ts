@@ -3,6 +3,9 @@ import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
+//Initialize emailjs with the publickey
+emailjs.init({ publicKey: process.env.NEXT_PUBLIC_USER_ID });
+
 export default function useConnectForm() {
   //state
   const [formState, setFormState] = useState<{
@@ -30,7 +33,7 @@ export default function useConnectForm() {
       const response = await emailjs.send(
         process.env.NEXT_PUBLIC_SERVICE_ID as string,
         process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
-        formState
+        formState,
       );
       if (response.status) {
         toast.success("Thanks!!, we will connect to you soon.");
