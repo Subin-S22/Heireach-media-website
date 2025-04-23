@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Fragment } from "react";
 import Link from "next/link";
 import { facebook, insta, linkedIn, whatsapp, youtube } from "@/lib/constant";
+import Header from "../heading";
 
 export default function Modal() {
   const formContext = useConnectForm();
@@ -14,18 +15,23 @@ export default function Modal() {
   useEffect(() => {
     setTimeout(() => {
       setOpenModal(true);
-    }, 3000);
+    }, 5000);
   }, []);
   return (
     <Fragment>
       {openModal ? (
         <div
-          className="fixed top-1/2 left-1/2 w-[90%] sm:w-[75%] lg:w-[50%] 
-          -translate-x-1/2 -translate-y-1/2 bg-gray-800 p-8 z-50 rounded-2xl"
+          className="fixed top-1/2 left-1/2 w-[90%] sm:w-[75%] lg:w-[50%] overflow-auto
+          -translate-x-1/2 -translate-y-1/2 bg-gray-950 p-8 z-50 rounded-2xl max-h-[90vh]"
         >
           <div className="flex justify-between items-center">
-            <div></div>
             <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
+            <section className="text-center">
+              <Header typeof="h3" name="Make Your Brand Stand Out" />
+              <p className="font-amazingSlab text-base font-semibold">
+                Schedule Your Free Brand Growth Call Now
+              </p>
+            </section>
             <div
               className="text-xl font-bold cursor-pointer"
               onClick={() => setOpenModal(false)}

@@ -35,7 +35,7 @@ export default function ConnectForm({
       <div className="absolute -z-[1] top-2 -left-3 w-full h-full border border-primary_text"></div>
 
       {/** for blue section */}
-      <div className="hidden w-full max-w-96 h-[440px] md:flex justify-center items-center bg-black">
+      <div className="hidden w-full max-w-96 md:flex justify-center items-center bg-black">
         <video
           src="/logov.mp4"
           autoPlay
@@ -47,7 +47,7 @@ export default function ConnectForm({
       </div>
 
       {/**form section */}
-      <div className="w-full h-[440px] flex justify-center items-center flex-col gap-2 bg-background">
+      <div className="w-full flex justify-center items-center flex-col gap-2 bg-background p-4">
         {formContent.map((content) => {
           const key = content.state as keyof typeof formState;
           return (
