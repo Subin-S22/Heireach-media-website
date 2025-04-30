@@ -1,34 +1,16 @@
 "use client";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import useWindowSize from "@/lib/function/useWindowSize";
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   sectionId: string;
 }
 
-export default function CustomSection({ children, sectionId, ...rest }: Props) {
-  const [isVisible, setIsVisible] = useState(false);
-  console.log(isVisible);
+export default function CustomSection({ children, ...rest }: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref);
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById(sectionId);
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        const isVisible =
-          rect.top < window.innerHeight - 100 && rect.bottom > 100;
-        setIsVisible(isVisible);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [sectionId]);
 
   return (
     <OverLaySection ref={ref} isInView={isInView} {...rest}>

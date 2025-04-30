@@ -17,6 +17,12 @@ export default function Modal() {
       setOpenModal(true);
     }, 5000);
   }, []);
+
+  useEffect(() => {
+    if (formContext.hasSubmitted) {
+      setOpenModal(false);
+    }
+  }, [formContext.hasSubmitted]);
   return (
     <Fragment>
       {openModal ? (
@@ -25,7 +31,7 @@ export default function Modal() {
           -translate-x-1/2 -translate-y-1/2 bg-gray-950 p-8 z-50 rounded-2xl max-h-[90vh]"
         >
           <div className="flex justify-between items-center">
-            <Image src="/images/logo.svg" alt="logo" width={50} height={50} />
+            {/* <Image src="/images/logo.svg" alt="logo" width={50} height={50} /> */}
             <section className="text-center">
               <Header typeof="h3" name="Make Your Brand Stand Out" />
               <p className="font-amazingSlab text-base font-semibold">

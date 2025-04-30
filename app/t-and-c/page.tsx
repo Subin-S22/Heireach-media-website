@@ -18,7 +18,6 @@ const termsAndConditions = [
 ];
 
 export default function TermsAndConditions() {
-  console.log("termsAndConditions", termsAndConditions);
   return (
     <div className="min-h-96 px-24">
       <Header

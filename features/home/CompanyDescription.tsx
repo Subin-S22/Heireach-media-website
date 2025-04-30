@@ -7,18 +7,11 @@ import CustomSection from "@/lib/ui/customSection";
 import generatorId from "@/lib/function/idGenerator";
 
 export default function CompanyDescription() {
-  const [isVisible, setIsVisible] = useState(false);
-  console.log("isVisible", isVisible);
-
   const gen = generatorId();
   useEffect(() => {
     const handleScroll = () => {
       const section = document.getElementById("company-description");
       if (section) {
-        const rect = section.getBoundingClientRect();
-        const isVisible =
-          rect.top < window.innerHeight - 100 && rect.bottom > 100;
-        setIsVisible(isVisible);
       }
     };
 
@@ -57,7 +50,7 @@ export default function CompanyDescription() {
             <AnimateDiv
               duration={gen.next().value || 1}
               className={classnames(
-                "flex text-primary_text text-xl font-amazingSlab font-bold"
+                "flex text-primary_text text-xl font-amazingSlab font-bold",
               )}
             >
               WE DON&apos;T JUST MARKET BRANDS - WE BRING THEIR STORIES TO LIFE
@@ -88,7 +81,7 @@ export default function CompanyDescription() {
             >
               <div
                 className={classnames(
-                  "text-primary_text text-xl font-bold mb-2 font-amazingSlab pt-2 pb-4"
+                  "text-primary_text text-xl font-bold mb-2 font-amazingSlab pt-2 pb-4",
                 )}
               >
                 We ensure your brand not only stands out but shines.
