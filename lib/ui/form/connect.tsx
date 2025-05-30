@@ -44,7 +44,7 @@ const FormContent = ({ formState, onChange, formSubmit }: FormProps) => {
         <section className="w-full pt-36 lg:pt-2">
           <>
             <h2 className="text-primary_text font-bold font-amazingSlab text-2xl">
-              Hei, React out us!
+              Hei, Reach out us!
             </h2>
             <p className={classNames.paragraph}>
               Ready to elevate your Brand to new heights{" "}
